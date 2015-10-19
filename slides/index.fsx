@@ -13,6 +13,13 @@
 
 ---
 
+### ¿Qué es Programación Funcional?
+* Paradigma de Programación Declarativo
+    - Realizado con expressiones en contraste a *statements*
+* 
+
+---
+
 ### Introducción a F#
 - Un poquitín de historia
 - Por qué F#
@@ -60,6 +67,31 @@ Chart.Line pib
 ---
 
 *)
+module JuegoCartasBoundedContext = 
+
+    type Palo = Copas | Bastos | Espadas | Oros
+                // | significa una elección -- toma uno de la lista
+                
+    type Valor = Uno | Dos | Tres | Cuatro | Cinco | Seis | Siete 
+                | Sota | Caballo | Rey
+
+    type Carta = Palo * Valor   // * significa un par -- uno de cada tipo
+    
+    type Mano = Carta list
+    type Baraja = Carta list
+    
+    type Jugador = {Nombre:string; Mano:Mano}
+    type Juego = {Baraja:Baraja; Jugadores: Jugador list}
+    
+    type Reparte = Baraja -> (Baraja * Carta) // X -> Y es una función
+                                      // entrada de tipo X
+                                      // salida de tipo Y
+
+    type CogeCarta = (Mano * Carta)-> Mano
+
+(**
+---
+*)
 type Contact = {
 
   FirstName: string
@@ -71,44 +103,15 @@ type Contact = {
 
   }
 (**
----
-
-### ¿Qué falta en este diseño?
-
----
-*)
-type Contact' = {
-
-  FirstName: string
-  MiddleInitial: string
-  LastName: string
-
-  EmailAddress: string
-  IsEmailVerified: bool  // true if ownership of email address is confirmed
-
-  }
-(**
-
-<div class="fragment">
-
-¿Qué valores son opcionales, son todos obligatorios?
-
-</div>
-<div class="fragment">
-
-¿Cuáles son las restricciones?
-
-</div>
-<div class="fragment">
-
-¿Hay algunos valores que estén releacionados?
-
-</div>
-<div class="fragment">
-
-¿Hay alguna **lógica de dominio** que tenga que conocer?
-
-</div>
+<section data-markdown>
+    <script type="text/template">
+        ### ¿Qué falta en este diseño? <!-- .element: class="fragment" data-fragment-index="1" -->
+        - ¿Qué valores son opcionales, son todos obligatorios? <!-- .element: class="fragment" data-fragment-index="2" -->
+        - ¿Cuáles son las restricciones? <!-- .element: class="fragment" data-fragment-index="3" -->
+        - ¿Hay algunos valores que estén releacionados? <!-- .element: class="fragment" data-fragment-index="4" -->
+        - ¿Hay alguna lógica de dominio que tenga que conocer? <!-- .element: class="fragment" data-fragment-index="5" -->
+    </script>
+</section>
 
 ---
 
@@ -137,30 +140,6 @@ module VerifiedEmailExample =
         Email: EmailContactInfo }
 (**
 ---
-*)
-module JuegoCartasBoundedContext = 
-
-    type Palo = Copas | Bastos | Espadas | Oros
-                // | significa una elección -- toma uno de la lista
-                
-    type Valor = Uno | Dos | Tres | Cuatro | Cinco | Seis | Siete 
-                | Sota | Caballo | Rey
-
-    type Carta = Palo * Valor   // * significa un par -- uno de cada tipo
-    
-    type Mano = Carta list
-    type Baraja = Carta list
-    
-    type Jugador = {Nombre:string; Mano:Mano}
-    type Juego = {Baraja:Baraja; Jugadores: Jugador list}
-    
-    type Reparte = Baraja -> (Baraja * Carta) // X -> Y es una función
-                                      // entrada de tipo X
-                                      // salida de tipo Y
-
-    type CogeCarta = (Mano * Carta)-> Mano
-
-(**
 
 ***
 
