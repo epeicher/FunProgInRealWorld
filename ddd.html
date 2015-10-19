@@ -1,0 +1,1395 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Presentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="unkown">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="//code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="//code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <link type="text/css" rel="stylesheet" href="fsharp.formatting/styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="fsharp.formatting/styles/deedle.css" />
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+    <script src="fsharp.formatting/styles/tips.js" type="text/javascript"></script>
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/fsreveal.css">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <script language="javascript" type="text/javascript">
+        function init()
+        {
+            websocket = new WebSocket("ws://localhost:8083/websocket");
+            websocket.onmessage = function(evt) { location.reload(); };
+        }
+        window.addEventListener("load", init, false);
+    </script>
+</head>
+<body>
+    <div class="reveal">
+        
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section >
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">  1: </span>
+<span class="l">  2: </span>
+<span class="l">  3: </span>
+<span class="l">  4: </span>
+<span class="l">  5: </span>
+<span class="l">  6: </span>
+<span class="l">  7: </span>
+<span class="l">  8: </span>
+<span class="l">  9: </span>
+<span class="l"> 10: </span>
+<span class="l"> 11: </span>
+<span class="l"> 12: </span>
+<span class="l"> 13: </span>
+<span class="l"> 14: </span>
+<span class="l"> 15: </span>
+<span class="l"> 16: </span>
+<span class="l"> 17: </span>
+<span class="l"> 18: </span>
+<span class="l"> 19: </span>
+<span class="l"> 20: </span>
+<span class="l"> 21: </span>
+<span class="l"> 22: </span>
+<span class="l"> 23: </span>
+<span class="l"> 24: </span>
+<span class="l"> 25: </span>
+<span class="l"> 26: </span>
+<span class="l"> 27: </span>
+<span class="l"> 28: </span>
+<span class="l"> 29: </span>
+<span class="l"> 30: </span>
+<span class="l"> 31: </span>
+<span class="l"> 32: </span>
+<span class="l"> 33: </span>
+<span class="l"> 34: </span>
+<span class="l"> 35: </span>
+<span class="l"> 36: </span>
+<span class="l"> 37: </span>
+<span class="l"> 38: </span>
+<span class="l"> 39: </span>
+<span class="l"> 40: </span>
+<span class="l"> 41: </span>
+<span class="l"> 42: </span>
+<span class="l"> 43: </span>
+<span class="l"> 44: </span>
+<span class="l"> 45: </span>
+<span class="l"> 46: </span>
+<span class="l"> 47: </span>
+<span class="l"> 48: </span>
+<span class="l"> 49: </span>
+<span class="l"> 50: </span>
+<span class="l"> 51: </span>
+<span class="l"> 52: </span>
+<span class="l"> 53: </span>
+<span class="l"> 54: </span>
+<span class="l"> 55: </span>
+<span class="l"> 56: </span>
+<span class="l"> 57: </span>
+<span class="l"> 58: </span>
+<span class="l"> 59: </span>
+<span class="l"> 60: </span>
+<span class="l"> 61: </span>
+<span class="l"> 62: </span>
+<span class="l"> 63: </span>
+<span class="l"> 64: </span>
+<span class="l"> 65: </span>
+<span class="l"> 66: </span>
+<span class="l"> 67: </span>
+<span class="l"> 68: </span>
+<span class="l"> 69: </span>
+<span class="l"> 70: </span>
+<span class="l"> 71: </span>
+<span class="l"> 72: </span>
+<span class="l"> 73: </span>
+<span class="l"> 74: </span>
+<span class="l"> 75: </span>
+<span class="l"> 76: </span>
+<span class="l"> 77: </span>
+<span class="l"> 78: </span>
+<span class="l"> 79: </span>
+<span class="l"> 80: </span>
+<span class="l"> 81: </span>
+<span class="l"> 82: </span>
+<span class="l"> 83: </span>
+<span class="l"> 84: </span>
+<span class="l"> 85: </span>
+<span class="l"> 86: </span>
+<span class="l"> 87: </span>
+<span class="l"> 88: </span>
+<span class="l"> 89: </span>
+<span class="l"> 90: </span>
+<span class="l"> 91: </span>
+<span class="l"> 92: </span>
+<span class="l"> 93: </span>
+<span class="l"> 94: </span>
+<span class="l"> 95: </span>
+<span class="l"> 96: </span>
+<span class="l"> 97: </span>
+<span class="l"> 98: </span>
+<span class="l"> 99: </span>
+<span class="l">100: </span>
+<span class="l">101: </span>
+<span class="l">102: </span>
+<span class="l">103: </span>
+<span class="l">104: </span>
+<span class="l">105: </span>
+<span class="l">106: </span>
+<span class="l">107: </span>
+<span class="l">108: </span>
+<span class="l">109: </span>
+<span class="l">110: </span>
+<span class="l">111: </span>
+<span class="l">112: </span>
+<span class="l">113: </span>
+<span class="l">114: </span>
+<span class="l">115: </span>
+<span class="l">116: </span>
+<span class="l">117: </span>
+<span class="l">118: </span>
+<span class="l">119: </span>
+<span class="l">120: </span>
+<span class="l">121: </span>
+<span class="l">122: </span>
+<span class="l">123: </span>
+<span class="l">124: </span>
+<span class="l">125: </span>
+<span class="l">126: </span>
+<span class="l">127: </span>
+<span class="l">128: </span>
+<span class="l">129: </span>
+<span class="l">130: </span>
+<span class="l">131: </span>
+<span class="l">132: </span>
+<span class="l">133: </span>
+<span class="l">134: </span>
+<span class="l">135: </span>
+<span class="l">136: </span>
+<span class="l">137: </span>
+<span class="l">138: </span>
+<span class="l">139: </span>
+<span class="l">140: </span>
+<span class="l">141: </span>
+<span class="l">142: </span>
+<span class="l">143: </span>
+<span class="l">144: </span>
+<span class="l">145: </span>
+<span class="l">146: </span>
+<span class="l">147: </span>
+<span class="l">148: </span>
+<span class="l">149: </span>
+<span class="l">150: </span>
+<span class="l">151: </span>
+<span class="l">152: </span>
+<span class="l">153: </span>
+<span class="l">154: </span>
+<span class="l">155: </span>
+<span class="l">156: </span>
+<span class="l">157: </span>
+<span class="l">158: </span>
+<span class="l">159: </span>
+<span class="l">160: </span>
+<span class="l">161: </span>
+<span class="l">162: </span>
+<span class="l">163: </span>
+<span class="l">164: </span>
+<span class="l">165: </span>
+<span class="l">166: </span>
+<span class="l">167: </span>
+<span class="l">168: </span>
+<span class="l">169: </span>
+<span class="l">170: </span>
+<span class="l">171: </span>
+<span class="l">172: </span>
+<span class="l">173: </span>
+<span class="l">174: </span>
+<span class="l">175: </span>
+<span class="l">176: </span>
+<span class="l">177: </span>
+<span class="l">178: </span>
+<span class="l">179: </span>
+<span class="l">180: </span>
+<span class="l">181: </span>
+<span class="l">182: </span>
+<span class="l">183: </span>
+<span class="l">184: </span>
+<span class="l">185: </span>
+<span class="l">186: </span>
+<span class="l">187: </span>
+<span class="l">188: </span>
+<span class="l">189: </span>
+<span class="l">190: </span>
+<span class="l">191: </span>
+<span class="l">192: </span>
+<span class="l">193: </span>
+<span class="l">194: </span>
+<span class="l">195: </span>
+<span class="l">196: </span>
+<span class="l">197: </span>
+<span class="l">198: </span>
+<span class="l">199: </span>
+<span class="l">200: </span>
+<span class="l">201: </span>
+<span class="l">202: </span>
+<span class="l">203: </span>
+<span class="l">204: </span>
+<span class="l">205: </span>
+<span class="l">206: </span>
+<span class="l">207: </span>
+<span class="l">208: </span>
+<span class="l">209: </span>
+<span class="l">210: </span>
+<span class="l">211: </span>
+<span class="l">212: </span>
+<span class="l">213: </span>
+<span class="l">214: </span>
+<span class="l">215: </span>
+<span class="l">216: </span>
+<span class="l">217: </span>
+<span class="l">218: </span>
+<span class="l">219: </span>
+<span class="l">220: </span>
+<span class="l">221: </span>
+<span class="l">222: </span>
+<span class="l">223: </span>
+<span class="l">224: </span>
+<span class="l">225: </span>
+<span class="l">226: </span>
+<span class="l">227: </span>
+<span class="l">228: </span>
+<span class="l">229: </span>
+<span class="l">230: </span>
+<span class="l">231: </span>
+<span class="l">232: </span>
+<span class="l">233: </span>
+<span class="l">234: </span>
+<span class="l">235: </span>
+<span class="l">236: </span>
+<span class="l">237: </span>
+<span class="l">238: </span>
+<span class="l">239: </span>
+<span class="l">240: </span>
+<span class="l">241: </span>
+<span class="l">242: </span>
+<span class="l">243: </span>
+<span class="l">244: </span>
+<span class="l">245: </span>
+<span class="l">246: </span>
+<span class="l">247: </span>
+<span class="l">248: </span>
+<span class="l">249: </span>
+<span class="l">250: </span>
+<span class="l">251: </span>
+<span class="l">252: </span>
+<span class="l">253: </span>
+<span class="l">254: </span>
+<span class="l">255: </span>
+<span class="l">256: </span>
+<span class="l">257: </span>
+<span class="l">258: </span>
+<span class="l">259: </span>
+<span class="l">260: </span>
+<span class="l">261: </span>
+<span class="l">262: </span>
+<span class="l">263: </span>
+<span class="l">264: </span>
+<span class="l">265: </span>
+<span class="l">266: </span>
+<span class="l">267: </span>
+<span class="l">268: </span>
+<span class="l">269: </span>
+<span class="l">270: </span>
+<span class="l">271: </span>
+<span class="l">272: </span>
+<span class="l">273: </span>
+<span class="l">274: </span>
+<span class="l">275: </span>
+<span class="l">276: </span>
+<span class="l">277: </span>
+<span class="l">278: </span>
+<span class="l">279: </span>
+<span class="l">280: </span>
+<span class="l">281: </span>
+<span class="l">282: </span>
+<span class="l">283: </span>
+<span class="l">284: </span>
+<span class="l">285: </span>
+<span class="l">286: </span>
+<span class="l">287: </span>
+<span class="l">288: </span>
+<span class="l">289: </span>
+<span class="l">290: </span>
+<span class="l">291: </span>
+<span class="l">292: </span>
+<span class="l">293: </span>
+<span class="l">294: </span>
+<span class="l">295: </span>
+<span class="l">296: </span>
+<span class="l">297: </span>
+<span class="l">298: </span>
+<span class="l">299: </span>
+<span class="l">300: </span>
+<span class="l">301: </span>
+<span class="l">302: </span>
+<span class="l">303: </span>
+<span class="l">304: </span>
+<span class="l">305: </span>
+<span class="l">306: </span>
+<span class="l">307: </span>
+<span class="l">308: </span>
+<span class="l">309: </span>
+<span class="l">310: </span>
+<span class="l">311: </span>
+<span class="l">312: </span>
+<span class="l">313: </span>
+<span class="l">314: </span>
+<span class="l">315: </span>
+<span class="l">316: </span>
+<span class="l">317: </span>
+<span class="l">318: </span>
+<span class="l">319: </span>
+<span class="l">320: </span>
+<span class="l">321: </span>
+<span class="l">322: </span>
+<span class="l">323: </span>
+<span class="l">324: </span>
+<span class="l">325: </span>
+<span class="l">326: </span>
+<span class="l">327: </span>
+<span class="l">328: </span>
+<span class="l">329: </span>
+<span class="l">330: </span>
+<span class="l">331: </span>
+<span class="l">332: </span>
+<span class="l">333: </span>
+<span class="l">334: </span>
+<span class="l">335: </span>
+<span class="l">336: </span>
+<span class="l">337: </span>
+<span class="l">338: </span>
+<span class="l">339: </span>
+<span class="l">340: </span>
+<span class="l">341: </span>
+<span class="l">342: </span>
+<span class="l">343: </span>
+<span class="l">344: </span>
+<span class="l">345: </span>
+<span class="l">346: </span>
+<span class="l">347: </span>
+<span class="l">348: </span>
+<span class="l">349: </span>
+<span class="l">350: </span>
+<span class="l">351: </span>
+<span class="l">352: </span>
+<span class="l">353: </span>
+<span class="l">354: </span>
+<span class="l">355: </span>
+<span class="l">356: </span>
+<span class="l">357: </span>
+<span class="l">358: </span>
+<span class="l">359: </span>
+<span class="l">360: </span>
+<span class="l">361: </span>
+<span class="l">362: </span>
+<span class="l">363: </span>
+<span class="l">364: </span>
+<span class="l">365: </span>
+<span class="l">366: </span>
+<span class="l">367: </span>
+<span class="l">368: </span>
+<span class="l">369: </span>
+<span class="l">370: </span>
+<span class="l">371: </span>
+<span class="l">372: </span>
+<span class="l">373: </span>
+<span class="l">374: </span>
+<span class="l">375: </span>
+<span class="l">376: </span>
+<span class="l">377: </span>
+<span class="l">378: </span>
+<span class="l">379: </span>
+<span class="l">380: </span>
+<span class="l">381: </span>
+<span class="l">382: </span>
+<span class="l">383: </span>
+<span class="l">384: </span>
+<span class="l">385: </span>
+<span class="l">386: </span>
+<span class="l">387: </span>
+<span class="l">388: </span>
+<span class="l">389: </span>
+<span class="l">390: </span>
+<span class="l">391: </span>
+<span class="l">392: </span>
+<span class="l">393: </span>
+<span class="l">394: </span>
+<span class="l">395: </span>
+<span class="l">396: </span>
+<span class="l">397: </span>
+<span class="l">398: </span>
+<span class="l">399: </span>
+<span class="l">400: </span>
+<span class="l">401: </span>
+<span class="l">402: </span>
+<span class="l">403: </span>
+<span class="l">404: </span>
+<span class="l">405: </span>
+<span class="l">406: </span>
+<span class="l">407: </span>
+<span class="l">408: </span>
+<span class="l">409: </span>
+<span class="l">410: </span>
+<span class="l">411: </span>
+<span class="l">412: </span>
+<span class="l">413: </span>
+<span class="l">414: </span>
+<span class="l">415: </span>
+<span class="l">416: </span>
+<span class="l">417: </span>
+<span class="l">418: </span>
+<span class="l">419: </span>
+<span class="l">420: </span>
+<span class="l">421: </span>
+<span class="l">422: </span>
+<span class="l">423: </span>
+<span class="l">424: </span>
+<span class="l">425: </span>
+<span class="l">426: </span>
+<span class="l">427: </span>
+<span class="l">428: </span>
+<span class="l">429: </span>
+<span class="l">430: </span>
+<span class="l">431: </span>
+<span class="l">432: </span>
+<span class="l">433: </span>
+<span class="l">434: </span>
+<span class="l">435: </span>
+<span class="l">436: </span>
+<span class="l">437: </span>
+<span class="l">438: </span>
+<span class="l">439: </span>
+<span class="l">440: </span>
+<span class="l">441: </span>
+<span class="l">442: </span>
+<span class="l">443: </span>
+<span class="l">444: </span>
+<span class="l">445: </span>
+<span class="l">446: </span>
+<span class="l">447: </span>
+<span class="l">448: </span>
+<span class="l">449: </span>
+<span class="l">450: </span>
+<span class="l">451: </span>
+<span class="l">452: </span>
+<span class="l">453: </span>
+<span class="l">454: </span>
+<span class="l">455: </span>
+<span class="l">456: </span>
+<span class="l">457: </span>
+<span class="l">458: </span>
+<span class="l">459: </span>
+<span class="l">460: </span>
+<span class="l">461: </span>
+<span class="l">462: </span>
+<span class="l">463: </span>
+<span class="l">464: </span>
+<span class="l">465: </span>
+<span class="l">466: </span>
+<span class="l">467: </span>
+<span class="l">468: </span>
+<span class="l">469: </span>
+<span class="l">470: </span>
+<span class="l">471: </span>
+<span class="l">472: </span>
+<span class="l">473: </span>
+<span class="l">474: </span>
+<span class="l">475: </span>
+<span class="l">476: </span>
+<span class="l">477: </span>
+<span class="l">478: </span>
+<span class="l">479: </span>
+<span class="l">480: </span>
+<span class="l">481: </span>
+<span class="l">482: </span>
+<span class="l">483: </span>
+<span class="l">484: </span>
+<span class="l">485: </span>
+<span class="l">486: </span>
+<span class="l">487: </span>
+<span class="l">488: </span>
+<span class="l">489: </span>
+<span class="l">490: </span>
+<span class="l">491: </span>
+<span class="l">492: </span>
+<span class="l">493: </span>
+<span class="l">494: </span>
+<span class="l">495: </span>
+<span class="l">496: </span>
+<span class="l">497: </span>
+<span class="l">498: </span>
+<span class="l">499: </span>
+<span class="l">500: </span>
+<span class="l">501: </span>
+<span class="l">502: </span>
+<span class="l">503: </span>
+<span class="l">504: </span>
+<span class="l">505: </span>
+<span class="l">506: </span>
+<span class="l">507: </span>
+<span class="l">508: </span>
+<span class="l">509: </span>
+<span class="l">510: </span>
+<span class="l">511: </span>
+<span class="l">512: </span>
+<span class="l">513: </span>
+<span class="l">514: </span>
+<span class="l">515: </span>
+<span class="l">516: </span>
+<span class="l">517: </span>
+<span class="l">518: </span>
+<span class="l">519: </span>
+<span class="l">520: </span>
+<span class="l">521: </span>
+<span class="l">522: </span>
+<span class="l">523: </span>
+<span class="l">524: </span>
+<span class="l">525: </span>
+<span class="l">526: </span>
+<span class="l">527: </span>
+<span class="l">528: </span>
+<span class="l">529: </span>
+<span class="l">530: </span>
+<span class="l">531: </span>
+<span class="l">532: </span>
+<span class="l">533: </span>
+<span class="l">534: </span>
+<span class="l">535: </span>
+<span class="l">536: </span>
+<span class="l">537: </span>
+<span class="l">538: </span>
+<span class="l">539: </span>
+<span class="l">540: </span>
+<span class="l">541: </span>
+<span class="l">542: </span>
+<span class="l">543: </span>
+<span class="l">544: </span>
+<span class="l">545: </span>
+<span class="l">546: </span>
+<span class="l">547: </span>
+<span class="l">548: </span>
+<span class="l">549: </span>
+<span class="l">550: </span>
+<span class="l">551: </span>
+<span class="l">552: </span>
+<span class="l">553: </span>
+<span class="l">554: </span>
+<span class="l">555: </span>
+<span class="l">556: </span>
+<span class="l">557: </span>
+<span class="l">558: </span>
+<span class="l">559: </span>
+<span class="l">560: </span>
+<span class="l">561: </span>
+<span class="l">562: </span>
+<span class="l">563: </span>
+<span class="l">564: </span>
+<span class="l">565: </span>
+<span class="l">566: </span>
+<span class="l">567: </span>
+<span class="l">568: </span>
+<span class="l">569: </span>
+<span class="l">570: </span>
+<span class="l">571: </span>
+<span class="l">572: </span>
+<span class="l">573: </span>
+<span class="l">574: </span>
+<span class="l">575: </span>
+<span class="l">576: </span>
+<span class="l">577: </span>
+<span class="l">578: </span>
+<span class="l">579: </span>
+<span class="l">580: </span>
+<span class="l">581: </span>
+<span class="l">582: </span>
+<span class="l">583: </span>
+<span class="l">584: </span>
+<span class="l">585: </span>
+<span class="l">586: </span>
+<span class="l">587: </span>
+<span class="l">588: </span>
+<span class="l">589: </span>
+<span class="l">590: </span>
+<span class="l">591: </span>
+<span class="l">592: </span>
+<span class="l">593: </span>
+<span class="l">594: </span>
+<span class="l">595: </span>
+<span class="l">596: </span>
+<span class="l">597: </span>
+<span class="l">598: </span>
+<span class="l">599: </span>
+<span class="l">600: </span>
+<span class="l">601: </span>
+<span class="l">602: </span>
+<span class="l">603: </span>
+<span class="l">604: </span>
+<span class="l">605: </span>
+<span class="l">606: </span>
+<span class="l">607: </span>
+<span class="l">608: </span>
+<span class="l">609: </span>
+<span class="l">610: </span>
+<span class="l">611: </span>
+<span class="l">612: </span>
+<span class="l">613: </span>
+<span class="l">614: </span>
+<span class="l">615: </span>
+<span class="l">616: </span>
+<span class="l">617: </span>
+<span class="l">618: </span>
+<span class="l">619: </span>
+<span class="l">620: </span>
+<span class="l">621: </span>
+<span class="l">622: </span>
+<span class="l">623: </span>
+<span class="l">624: </span>
+<span class="l">625: </span>
+<span class="l">626: </span>
+<span class="l">627: </span>
+<span class="l">628: </span>
+<span class="l">629: </span>
+<span class="l">630: </span>
+<span class="l">631: </span>
+<span class="l">632: </span>
+<span class="l">633: </span>
+<span class="l">634: </span>
+<span class="l">635: </span>
+<span class="l">636: </span>
+<span class="l">637: </span>
+<span class="l">638: </span>
+<span class="l">639: </span>
+<span class="l">640: </span>
+<span class="l">641: </span>
+<span class="l">642: </span>
+<span class="l">643: </span>
+<span class="l">644: </span>
+<span class="l">645: </span>
+<span class="l">646: </span>
+<span class="l">647: </span>
+<span class="l">648: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="c">// ======================================================</span>
+<span class="c">// This page contains code snippets for the talk</span>
+<span class="c">// &quot;Domain-driven design with the F# type system&quot;</span>
+<span class="c">// ======================================================</span>
+
+<span class="c">// To execute code in VisualStudio, </span>
+<span class="c">//  (a) Open F# interactive (Menu-&gt;View-&gt;Other Windows-&gt;F# interactive)</span>
+<span class="c">//  (b) Highlight code, right click and choose &quot;Send to Interactive&quot;</span>
+<span class="c">// To execute code in trysharp.org, just highlight and click &quot;Run&quot;</span>
+
+<span class="c">// Try it! highlight from here ===&gt;</span>
+<span class="k">let</span> <span class="i">three</span> <span class="o">=</span> <span class="n">1</span> <span class="o">+</span> <span class="n">2</span>
+<span class="k">let</span> <span class="i">square</span> <span class="i">x</span> <span class="o">=</span> <span class="i">x</span> <span class="o">*</span> <span class="i">x</span>
+<span class="i">printfn</span> <span class="s">&quot;Three is %i&quot;</span> <span class="i">three</span>
+<span class="i">printfn</span> <span class="s">&quot;Three squared is %i&quot;</span> (<span class="i">square</span> <span class="i">three</span>)
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+<span class="c">// ======================================================</span>
+<span class="c">// demonstration of Value types in F#</span>
+<span class="c">// ======================================================</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">FirstSlide</span> <span class="o">=</span> 
+
+    <span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
+
+      <span class="i">FirstName</span><span class="o">:</span> <span class="i">string</span>
+      <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">string</span>
+      <span class="i">LastName</span><span class="o">:</span> <span class="i">string</span>
+
+      <span class="i">EmailAddress</span><span class="o">:</span> <span class="i">string</span>
+      <span class="i">IsEmailVerified</span><span class="o">:</span> <span class="i">bool</span>  <span class="c">// true if ownership of email address is confirmed</span>
+
+      }
+
+    <span class="c">// The issues with this design are:</span>
+    <span class="c">// * Which values are optional?</span>
+    <span class="c">// * Whare the constraints?</span>
+    <span class="c">// * What groups of properties are linked?</span>
+    <span class="c">// * Is there any domain logic that we need to be aware of?</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+<span class="c">// ======================================================</span>
+<span class="c">// demonstration of Value types in F#</span>
+<span class="c">// ======================================================</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="c">// define the type</span>
+<span class="k">module</span> <span class="i">ValueTypeExample</span> <span class="o">=</span> 
+
+    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">:</span><span class="i">string</span>; <span class="i">LastName</span><span class="o">:</span><span class="i">string</span>}
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="c">// test the code </span>
+<span class="k">module</span> <span class="i">TestValueTypeExample</span> <span class="o">=</span> 
+    <span class="k">open</span> <span class="i">ValueTypeExample</span>
+        
+    <span class="k">let</span> <span class="i">alice</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}
+    <span class="k">let</span> <span class="i">aliceClone</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}
+    <span class="i">printfn</span> <span class="s">&quot;Alice&#39;s name is %A&quot;</span> <span class="i">alice</span>
+    <span class="i">printfn</span> <span class="s">&quot;AliceClone&#39;s name is %A&quot;</span> <span class="i">aliceClone</span>
+    <span class="i">printfn</span> <span class="s">&quot;Are Alice and clone equal? %b&quot;</span> (<span class="i">alice</span> <span class="o">=</span> <span class="i">aliceClone</span>)
+<span class="c">// &lt;==== highlight to here and Run </span>
+
+<span class="c">// NOTE you may need to scroll up in the outpt window to see the print statements</span>
+
+
+
+<span class="c">// ======================================================</span>
+<span class="c">// demonstration of Entity types in F#</span>
+<span class="c">// ======================================================</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="c">// define the type</span>
+<span class="k">module</span> <span class="i">EntityTypeExample</span> <span class="o">=</span> 
+
+    <span class="c">// value type</span>
+    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">:</span><span class="i">string</span>; <span class="i">LastName</span><span class="o">:</span><span class="i">string</span>}
+    
+    <span class="c">// entity type</span>
+    [&lt;<span class="i">CustomEquality</span>; <span class="i">NoComparison</span>&gt;]    
+    <span class="k">type</span> <span class="i">Person</span> <span class="o">=</span> {<span class="i">Id</span><span class="o">:</span><span class="i">int</span>; <span class="i">Name</span><span class="o">:</span><span class="i">PersonalName</span>} <span class="k">with</span>
+        
+        <span class="k">override</span> <span class="i">this</span><span class="o">.</span><span class="i">Equals</span>(<span class="i">other</span>) <span class="o">=</span>
+            <span class="k">match</span> <span class="i">other</span> <span class="k">with</span>
+            | <span class="o">:?</span> <span class="i">Person</span> <span class="k">as</span> <span class="i">p</span> <span class="k">-&gt;</span> (<span class="i">this</span><span class="o">.</span><span class="i">Id</span> <span class="o">=</span> <span class="i">p</span><span class="o">.</span><span class="i">Id</span>)
+            | _ <span class="k">-&gt;</span> <span class="k">false</span>
+        
+        <span class="k">override</span> <span class="i">this</span><span class="o">.</span><span class="i">GetHashCode</span>() <span class="o">=</span> <span class="i">hash</span> <span class="i">this</span><span class="o">.</span><span class="i">Id</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="c">// test the code </span>
+<span class="k">module</span> <span class="i">TestEntityTypeExample</span> <span class="o">=</span> 
+    <span class="k">open</span> <span class="i">EntityTypeExample</span>
+    
+    <span class="k">let</span> <span class="i">alice</span> <span class="o">=</span> {<span class="i">Id</span><span class="o">=</span><span class="n">1</span>; <span class="i">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}}
+    <span class="k">let</span> <span class="i">bilbo</span> <span class="o">=</span> {<span class="i">Id</span><span class="o">=</span><span class="n">1</span>; <span class="i">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Bilbo&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Baggins&quot;</span>}}
+    <span class="i">printfn</span> <span class="s">&quot;Alice is %A&quot;</span> <span class="i">alice</span>
+    <span class="i">printfn</span> <span class="s">&quot;Bilbo is %A&quot;</span> <span class="i">bilbo</span>
+    <span class="i">printfn</span> <span class="s">&quot;Are Alice and Bilbo equal? %b&quot;</span> (<span class="i">alice</span> <span class="o">=</span> <span class="i">bilbo</span>)
+    <span class="i">printfn</span> <span class="s">&quot;Are Alice.Name and Bilbo.Name equal? %b&quot;</span> (<span class="i">alice</span><span class="o">.</span><span class="i">Name</span> <span class="o">=</span> <span class="i">bilbo</span><span class="o">.</span><span class="i">Name</span>)
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+<span class="c">// ======================================================</span>
+<span class="c">// Entity versioning in F#</span>
+<span class="c">// ======================================================</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="c">// define the type</span>
+<span class="k">module</span> <span class="i">EntityVersioningExample</span> <span class="o">=</span> 
+
+    <span class="k">open</span> <span class="i">System</span>
+    
+    <span class="c">//value type</span>
+    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">:</span><span class="i">string</span>; <span class="i">LastName</span><span class="o">:</span><span class="i">string</span>}
+    
+    <span class="c">// entity type</span>
+    [&lt;<span class="i">NoEquality</span>; <span class="i">NoComparison</span>&gt;]    
+    <span class="k">type</span> <span class="i">Person</span> <span class="o">=</span> {<span class="i">Id</span><span class="o">:</span><span class="i">int</span>; <span class="i">Version</span><span class="o">:</span><span class="i">Guid</span>; <span class="i">Name</span><span class="o">:</span><span class="i">PersonalName</span>} 
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="c">// test the code </span>
+<span class="k">module</span> <span class="i">TestEntityVersioningExample</span> <span class="o">=</span> 
+    <span class="k">open</span> <span class="i">EntityVersioningExample</span> 
+    <span class="k">open</span> <span class="i">System</span>
+
+    <span class="k">let</span> <span class="i">alice</span> <span class="o">=</span>{<span class="i">Id</span><span class="o">=</span><span class="n">1</span>; <span class="i">Version</span><span class="o">=</span><span class="i">Guid</span><span class="o">.</span><span class="i">NewGuid</span>(); 
+                <span class="i">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}}
+                
+    <span class="k">let</span> <span class="i">aliceV2</span> <span class="o">=</span> {<span class="i">alice</span> <span class="k">with</span> 
+                    <span class="i">Version</span><span class="o">=</span><span class="i">Guid</span><span class="o">.</span><span class="i">NewGuid</span>(); 
+                    <span class="i">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Al&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adamson&quot;</span>}}
+    
+    <span class="i">printfn</span> <span class="s">&quot;Alice is %A&quot;</span> <span class="i">alice</span>
+    <span class="i">printfn</span> <span class="s">&quot;AliceV2 is %A&quot;</span> <span class="i">aliceV2</span>
+    <span class="c">//printfn &quot;Are Alice and AliceV2 equal? %b&quot; (alice = aliceV2)   // uncomment this to get a compiler error</span>
+    <span class="i">printfn</span> <span class="s">&quot;Are Alice and AliceV2 same id? %b&quot;</span> (<span class="i">alice</span><span class="o">.</span><span class="i">Id</span> <span class="o">=</span> <span class="i">aliceV2</span><span class="o">.</span><span class="i">Id</span>)
+    <span class="i">printfn</span> <span class="s">&quot;Are Alice and AliceV2 same version? %b&quot;</span> (<span class="i">alice</span><span class="o">.</span><span class="i">Version</span> <span class="o">=</span> <span class="i">aliceV2</span><span class="o">.</span><span class="i">Version</span>)
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+<span class="c">// ======================================================</span>
+<span class="c">// Entity object definition in F# with mutability</span>
+<span class="c">// ======================================================</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="c">// define the type</span>
+<span class="k">module</span> <span class="i">EntityMutabilityExample</span> <span class="o">=</span> 
+    
+    <span class="c">//value type</span>
+    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">:</span><span class="i">string</span>; <span class="i">LastName</span><span class="o">:</span><span class="i">string</span>}
+    
+    <span class="c">// entity type</span>
+    [&lt;<span class="i">NoEquality</span>; <span class="i">NoComparison</span>&gt;]    
+    <span class="k">type</span> <span class="i">Person</span> <span class="o">=</span> {<span class="i">Id</span><span class="o">:</span><span class="i">int</span>; <span class="k">mutable</span> <span class="i">Name</span><span class="o">:</span><span class="i">PersonalName</span>} 
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="c">// test the code </span>
+<span class="k">module</span> <span class="i">TestEntityMutabilityExample</span> <span class="o">=</span> 
+    <span class="k">open</span> <span class="i">EntityMutabilityExample</span> 
+    
+    <span class="k">let</span> <span class="i">alice</span> <span class="o">=</span>{<span class="i">Id</span><span class="o">=</span><span class="n">1</span>; <span class="i">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}}
+    <span class="i">printfn</span> <span class="s">&quot;Alice before change  is %A&quot;</span> <span class="i">alice</span>
+                
+    <span class="i">alice</span><span class="o">.</span><span class="i">Name</span> <span class="o">&lt;-</span> {<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Al&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adamson&quot;</span>}
+    <span class="i">printfn</span> <span class="s">&quot;Alice after change  is %A&quot;</span> <span class="i">alice</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+<span class="c">// ======================================================</span>
+<span class="c">// Review of code so far</span>
+<span class="c">// ======================================================</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">ValueAndEntityReview</span> <span class="o">=</span> 
+
+    [&lt;<span class="i">StructuralEquality</span>;<span class="i">NoComparison</span>&gt;]
+    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {         <span class="c">// a Value Object</span>
+        <span class="i">FirstName</span> <span class="o">:</span> <span class="i">string</span>; 
+        <span class="i">LastName</span> <span class="o">:</span> <span class="i">string</span> }
+    
+    [&lt;<span class="i">NoEquality</span>; <span class="i">NoComparison</span>&gt;]       
+    <span class="k">type</span> <span class="i">Person</span> <span class="o">=</span> {               <span class="c">// an Entity</span>
+        <span class="i">Id</span> <span class="o">:</span> <span class="i">int</span>; 
+        <span class="i">Name</span> <span class="o">:</span> <span class="i">PersonalName</span> }  
+
+
+    <span class="c">// try to put an Entity inside a Value</span>
+    <span class="c">//[&lt;StructuralEquality;NoComparison&gt;]      // uncomment to get a compiler error</span>
+    <span class="c">//type PersonWrapper = { Person: Person }  // uncomment to get a compiler error</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+<span class="c">// ======================================================</span>
+<span class="c">// Ubiquitous language</span>
+<span class="c">// ======================================================</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">CardGameBoundedContext</span> <span class="o">=</span> 
+
+    <span class="k">type</span> <span class="i">Suit</span> <span class="o">=</span> <span class="i">Club</span> | <span class="i">Diamond</span> | <span class="i">Spade</span> | <span class="i">Heart</span>
+                <span class="c">// | means a choice -- pick one from the list</span>
+                
+    <span class="k">type</span> <span class="i">Rank</span> <span class="o">=</span> <span class="i">Two</span> | <span class="i">Three</span> | <span class="i">Four</span> | <span class="i">Five</span> | <span class="i">Six</span> | <span class="i">Seven</span> | <span class="i">Eight</span> 
+                | <span class="i">Nine</span> | <span class="i">Ten</span> | <span class="i">Jack</span> | <span class="i">Queen</span> | <span class="i">King</span> | <span class="i">Ace</span>
+
+    <span class="k">type</span> <span class="i">Card</span> <span class="o">=</span> <span class="i">Suit</span> <span class="o">*</span> <span class="i">Rank</span>   <span class="c">// * means a pair -- one from each type</span>
+    
+    <span class="k">type</span> <span class="i">Hand</span> <span class="o">=</span> <span class="i">Card</span> <span class="i">list</span>
+    <span class="k">type</span> <span class="i">Deck</span> <span class="o">=</span> <span class="i">Card</span> <span class="i">list</span>
+    
+    <span class="k">type</span> <span class="i">Player</span> <span class="o">=</span> {<span class="i">Name</span><span class="o">:</span><span class="i">string</span>; <span class="i">Hand</span><span class="o">:</span><span class="i">Hand</span>}
+    <span class="k">type</span> <span class="i">Game</span> <span class="o">=</span> {<span class="i">Deck</span><span class="o">:</span><span class="i">Deck</span>; <span class="i">Players</span><span class="o">:</span> <span class="i">Player</span> <span class="i">list</span>}
+    
+    <span class="k">type</span> <span class="i">Deal</span> <span class="o">=</span> <span class="i">Deck</span> <span class="k">-&gt;</span> (<span class="i">Deck</span> <span class="o">*</span> <span class="i">Card</span>) <span class="c">// X -&gt; Y means a function</span>
+                                      <span class="c">// input of type X</span>
+                                      <span class="c">// output of type Y</span>
+
+    <span class="k">type</span> <span class="i">PickupCard</span> <span class="o">=</span> (<span class="i">Hand</span> <span class="o">*</span> <span class="i">Card</span>)<span class="k">-&gt;</span> <span class="i">Hand</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">TestCardGameBoundedContext</span> <span class="o">=</span> 
+    <span class="k">open</span> <span class="i">CardGameBoundedContext</span>
+
+    <span class="k">let</span> <span class="i">aceHearts</span>  <span class="o">=</span> (<span class="i">Heart</span>, <span class="i">Ace</span>)
+    <span class="k">let</span> <span class="i">aceSpades</span> <span class="o">=</span> (<span class="i">Spade</span>, <span class="i">Ace</span>)
+    <span class="k">let</span> <span class="i">twoClubs</span> <span class="o">=</span> (<span class="i">Club</span>, <span class="i">Two</span>)
+
+    <span class="k">let</span> <span class="i">myHand</span> <span class="o">=</span> [<span class="i">aceHearts</span>; <span class="i">aceSpades</span>; <span class="i">twoClubs</span>]
+
+    <span class="k">let</span> <span class="i">deck</span> <span class="o">=</span> [<span class="i">aceHearts</span>; <span class="i">aceSpades</span>; <span class="i">twoClubs</span>]
+
+    <span class="k">let</span> <span class="i">deal</span> <span class="i">cards</span> <span class="o">=</span> 
+        <span class="k">let</span> <span class="i">head</span><span class="o">::</span><span class="i">tail</span> <span class="o">=</span> <span class="i">cards</span>   <span class="c">// compiler has found a potential bug here!</span>
+        (<span class="i">tail</span>, <span class="i">head</span>)
+
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+
+<span class="c">// ======================================================</span>
+<span class="c">// Understanding the F# type system</span>
+<span class="c">// ======================================================</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">ProductTypeExamples</span> <span class="o">=</span> 
+
+    <span class="k">let</span> <span class="i">x</span> <span class="o">=</span> (<span class="n">1</span>,<span class="n">2</span>)    <span class="c">//  int * int</span>
+    <span class="k">let</span> <span class="i">y</span> <span class="o">=</span> (<span class="k">true</span>,<span class="k">false</span>)    <span class="c">//  bool * bool </span>
+
+    <span class="k">type</span> <span class="i">Person</span> <span class="o">=</span> <span class="i">Person</span> <span class="k">of</span> <span class="i">string</span> <span class="c">// dummy type    </span>
+    <span class="k">type</span> <span class="i">Date</span> <span class="o">=</span> <span class="i">Date</span> <span class="k">of</span> <span class="i">string</span> <span class="c">// dummy type    </span>
+
+    <span class="k">type</span> <span class="i">Birthday</span> <span class="o">=</span> <span class="i">Person</span> <span class="o">*</span> <span class="i">Date</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">TestProductTypeExamples</span> <span class="o">=</span> 
+    <span class="k">open</span> <span class="i">ProductTypeExamples</span>
+
+    <span class="k">let</span> <span class="i">alice</span> <span class="o">=</span> <span class="i">Person</span> <span class="s">&quot;Alice&quot;</span>
+    <span class="k">let</span> <span class="i">date1</span> <span class="o">=</span> <span class="i">Date</span> <span class="s">&quot;Jan 12th&quot;</span>
+    <span class="k">let</span> <span class="i">aliceBDay</span> <span class="o">=</span> (<span class="i">alice</span>,<span class="i">date1</span>)
+    <span class="k">let</span> <span class="i">aliceBDay2</span> <span class="o">:</span> <span class="i">Birthday</span> <span class="o">=</span> (<span class="i">alice</span>,<span class="i">date1</span>)  <span class="c">// with explicit typing</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">ChoiceTypeExamples</span> <span class="o">=</span> 
+    
+    <span class="k">type</span> <span class="i">Temp</span> <span class="o">=</span> 
+      | <span class="i">F</span> <span class="k">of</span> <span class="i">int</span>
+      | <span class="i">C</span> <span class="k">of</span> <span class="i">float</span>
+
+
+    <span class="k">type</span> <span class="i">CardType</span> <span class="o">=</span> <span class="i">CardType</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">CardNumber</span> <span class="o">=</span> <span class="i">CardNumber</span> <span class="k">of</span> <span class="i">string</span>
+
+    <span class="k">type</span> <span class="i">PaymentMethod</span> <span class="o">=</span> 
+      | <span class="i">Cash</span>
+      | <span class="i">Cheque</span> <span class="k">of</span> <span class="i">int</span>
+      | <span class="i">Card</span> <span class="k">of</span> <span class="i">CardType</span> <span class="o">*</span> <span class="i">CardNumber</span>
+
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">TestChoiceTypeExamples</span> <span class="o">=</span> 
+    <span class="k">open</span> <span class="i">ChoiceTypeExamples</span>
+
+    <span class="k">let</span> <span class="i">isFever</span> <span class="i">temp</span> <span class="o">=</span> 
+        <span class="k">match</span> <span class="i">temp</span> <span class="k">with</span>
+        | <span class="i">F</span> <span class="i">tempInF</span> <span class="k">-&gt;</span> <span class="i">tempInF</span> <span class="o">&gt;</span> <span class="n">101</span>
+        | <span class="i">C</span> <span class="i">tempInC</span> <span class="k">-&gt;</span> <span class="i">tempInC</span> <span class="o">&gt;</span> <span class="n">38.0</span>
+
+    <span class="k">let</span> <span class="i">temp1</span> <span class="o">=</span> <span class="i">F</span> <span class="n">103</span> 
+    <span class="i">printfn</span> <span class="s">&quot;temp %A is fever? %b&quot;</span> <span class="i">temp1</span> (<span class="i">isFever</span> <span class="i">temp1</span>)
+
+    <span class="k">let</span> <span class="i">temp2</span> <span class="o">=</span> <span class="i">C</span> <span class="n">37.0</span>
+    <span class="i">printfn</span> <span class="s">&quot;temp %A is fever? %b&quot;</span> <span class="i">temp2</span> (<span class="i">isFever</span> <span class="i">temp2</span>)
+
+    <span class="k">let</span> <span class="i">printPayment</span> <span class="i">paymentMethod</span> <span class="o">=</span> 
+        <span class="k">match</span> <span class="i">paymentMethod</span> <span class="k">with</span>
+        | <span class="i">Cash</span> <span class="k">-&gt;</span> 
+            <span class="i">printfn</span> <span class="s">&quot;Paid in cash&quot;</span>
+        | <span class="i">Cheque</span> <span class="i">checkNo</span> <span class="k">-&gt;</span>
+            <span class="i">printfn</span> <span class="s">&quot;Paid by cheque: %i&quot;</span> <span class="i">checkNo</span>
+        | <span class="i">Card</span> (<span class="i">cardType</span>,<span class="i">cardNo</span>) <span class="k">-&gt;</span>
+            <span class="i">printfn</span> <span class="s">&quot;Paid with %A %A&quot;</span> <span class="i">cardType</span> <span class="i">cardNo</span>
+
+    <span class="k">let</span> <span class="i">cashPayment</span> <span class="o">=</span> <span class="i">Cash</span>
+    <span class="k">let</span> <span class="i">chequePayment</span>  <span class="o">=</span> <span class="i">Cheque</span> <span class="n">123</span>
+    <span class="k">let</span> <span class="i">cardPayment</span>  <span class="o">=</span> <span class="i">Card</span> (<span class="i">CardType</span> <span class="s">&quot;Visa&quot;</span>,<span class="i">CardNumber</span> <span class="s">&quot;123&quot;</span>)
+    
+    <span class="i">printPayment</span> <span class="i">cashPayment</span>
+    <span class="i">printPayment</span> <span class="i">chequePayment</span>
+    <span class="i">printPayment</span> <span class="i">cardPayment</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+
+<span class="c">// ======================================================</span>
+<span class="c">// Designing with types</span>
+<span class="c">// ======================================================</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">OptionalType</span> <span class="o">=</span> 
+
+    <span class="k">type</span> <span class="i">OptionalString</span> <span class="o">=</span> 
+        | <span class="i">SomeString</span> <span class="k">of</span> <span class="i">string</span>
+        | <span class="i">Nothing</span>
+
+    <span class="k">type</span> <span class="i">OptionalInt</span> <span class="o">=</span> 
+        | <span class="i">SomeInt</span> <span class="k">of</span> <span class="i">string</span>
+        | <span class="i">Nothing</span>
+
+    <span class="k">type</span> <span class="i">OptionalBool</span> <span class="o">=</span> 
+        | <span class="i">SomeBool</span> <span class="k">of</span> <span class="i">string</span>
+        | <span class="i">Nothing</span>
+
+    <span class="c">// built in!</span>
+<span class="c">//    type Option&lt;&#39;T&gt; = </span>
+<span class="c">//        | Some of &#39;T</span>
+<span class="c">//        | None</span>
+
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">TestOptionalType</span> <span class="o">=</span> 
+
+    <span class="k">type</span> <span class="i">PersonalName1</span> <span class="o">=</span> 
+        {
+        <span class="i">FirstName</span><span class="o">:</span> <span class="i">string</span>
+        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">Option</span><span class="o">&lt;</span><span class="i">string</span><span class="o">&gt;</span>
+        <span class="i">LastName</span><span class="o">:</span> <span class="i">string</span>
+        }
+
+    <span class="k">type</span> <span class="i">PersonalName2</span> <span class="o">=</span> 
+        {
+        <span class="i">FirstName</span><span class="o">:</span> <span class="i">string</span>
+        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">string</span> <span class="i">option</span>
+        <span class="i">LastName</span><span class="o">:</span> <span class="i">string</span>
+        }
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">SingleChoiceType</span> <span class="o">=</span>
+
+    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">PhoneNumber</span> <span class="o">=</span> <span class="i">PhoneNumber</span> <span class="k">of</span> <span class="i">string</span>
+
+    <span class="k">type</span> <span class="i">CustomerId</span> <span class="o">=</span> <span class="i">CustomerId</span> <span class="k">of</span> <span class="i">int</span>
+    <span class="k">type</span> <span class="i">OrderId</span> <span class="o">=</span> <span class="i">OrderId</span> <span class="k">of</span> <span class="i">int</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">TestSingleChoiceType</span> <span class="o">=</span> 
+    <span class="k">open</span> <span class="i">SingleChoiceType</span>       
+
+    <span class="k">let</span> <span class="i">email1</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="s">&quot;abc&quot;</span>
+    <span class="k">let</span> <span class="i">email2</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="s">&quot;def&quot;</span>
+    <span class="k">let</span> <span class="i">phone1</span> <span class="o">=</span> <span class="i">PhoneNumber</span> <span class="s">&quot;abc&quot;</span>
+
+    <span class="i">printfn</span> <span class="s">&quot;%A = %A? %b&quot;</span> <span class="i">email1</span> <span class="i">email2</span> (<span class="i">email1</span><span class="o">=</span><span class="i">email2</span>)
+    <span class="c">//printfn &quot;%A = %A? %b&quot; email1 phone1 (email1=phone1)   // uncommento get compiler error</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">EmailAddressType</span> <span class="o">=</span>
+    <span class="k">open</span> <span class="i">System</span><span class="o">.</span><span class="i">Text</span><span class="o">.</span><span class="i">RegularExpressions</span> 
+
+    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+
+    <span class="c">// createEmailAddress : string -&gt; EmailAddress option</span>
+    <span class="k">let</span> <span class="i">createEmailAddress</span> (<span class="i">s</span><span class="o">:</span><span class="i">string</span>) <span class="o">=</span> 
+        <span class="k">if</span> <span class="i">Regex</span><span class="o">.</span><span class="i">IsMatch</span>(<span class="i">s</span>,<span class="s">@&quot;^\S+@\S+\.\S+$&quot;</span>) 
+            <span class="k">then</span> <span class="i">Some</span> (<span class="i">EmailAddress</span> <span class="i">s</span>)
+            <span class="k">else</span> <span class="i">None</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">TestEmailAddressType</span> <span class="o">=</span>
+    <span class="k">open</span> <span class="i">EmailAddressType</span>
+
+    <span class="k">let</span> <span class="i">email1</span> <span class="o">=</span> <span class="i">createEmailAddress</span> <span class="s">&quot;a@example.com&quot;</span>
+    <span class="k">let</span> <span class="i">email2</span> <span class="o">=</span> <span class="i">createEmailAddress</span> <span class="s">&quot;example.com&quot;</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">ConstrainedString</span> <span class="o">=</span>
+
+    <span class="k">type</span> <span class="i">String50</span> <span class="o">=</span> <span class="i">String50</span> <span class="k">of</span> <span class="i">string</span>
+
+    <span class="k">let</span> <span class="i">createString50</span> (<span class="i">s</span><span class="o">:</span><span class="i">string</span>) <span class="o">=</span> 
+        <span class="k">if</span> <span class="i">s</span> <span class="o">=</span> <span class="k">null</span>
+            <span class="k">then</span> <span class="i">None</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="i">s</span><span class="o">.</span><span class="i">Length</span> <span class="o">&lt;=</span> <span class="n">50</span>
+            <span class="k">then</span> <span class="i">Some</span> (<span class="i">String50</span> <span class="i">s</span>)
+            <span class="k">else</span> <span class="i">None</span>    
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">TestConstrainedString</span> <span class="o">=</span>
+    <span class="k">open</span> <span class="i">ConstrainedString</span>
+
+    <span class="k">let</span> <span class="i">s1</span> <span class="o">=</span> <span class="i">createString50</span> <span class="s">&quot;12345&quot;</span>
+    <span class="k">let</span> <span class="i">s2</span> <span class="o">=</span> <span class="i">createString50</span> (<span class="i">String</span><span class="o">.</span><span class="i">replicate</span> <span class="n">100</span> <span class="s">&quot;a&quot;</span>)
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">ConstrainedInteger</span> <span class="o">=</span>
+
+    <span class="k">type</span> <span class="i">OrderLineQty</span> <span class="o">=</span> <span class="i">OrderLineQty</span> <span class="k">of</span> <span class="i">int</span>
+
+    <span class="k">let</span> <span class="i">createOrderLineQty</span> <span class="i">qty</span> <span class="o">=</span> 
+        <span class="k">if</span> <span class="i">qty</span> <span class="o">&gt;</span><span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="i">qty</span> <span class="o">&lt;=</span> <span class="n">99</span>
+            <span class="k">then</span> <span class="i">Some</span> (<span class="i">OrderLineQty</span> <span class="i">qty</span>)
+            <span class="k">else</span> <span class="i">None</span>
+
+    <span class="k">let</span> <span class="i">increment</span> (<span class="i">OrderLineQty</span> <span class="i">i</span>) <span class="o">=</span>
+        <span class="i">createOrderLineQty</span> (<span class="i">i</span> <span class="o">+</span> <span class="n">1</span>)
+
+    <span class="k">let</span> <span class="i">decrement</span> (<span class="i">OrderLineQty</span> <span class="i">i</span>) <span class="o">=</span>
+        <span class="i">createOrderLineQty</span> (<span class="i">i</span> <span class="o">-</span> <span class="n">1</span>)
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="i">TestConstrainedInteger</span> <span class="o">=</span>
+    <span class="k">open</span> <span class="i">ConstrainedInteger</span>
+
+    <span class="k">let</span> <span class="i">qty1</span> <span class="o">=</span> <span class="i">createOrderLineQty</span> <span class="n">1</span>
+    <span class="k">let</span> <span class="i">qty2</span> <span class="o">=</span> <span class="i">createOrderLineQty</span> <span class="n">0</span>
+
+    <span class="k">let</span> <span class="i">qty3</span> <span class="o">=</span> 
+        <span class="k">match</span> <span class="i">qty1</span> <span class="k">with</span>
+        | <span class="i">Some</span> <span class="i">i</span> <span class="k">-&gt;</span> <span class="i">decrement</span> <span class="i">i</span>
+        | <span class="i">None</span> <span class="k">-&gt;</span> <span class="i">None</span>
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+<span class="c">// ======================================================</span>
+<span class="c">// Prologue revisited</span>
+<span class="c">// ======================================================</span>
+
+<span class="k">module</span> <span class="i">PrologueVersion2</span> <span class="o">=</span> 
+
+    <span class="k">type</span> <span class="i">String1</span> <span class="o">=</span> <span class="i">String1</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">String50</span> <span class="o">=</span> <span class="i">String50</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+
+    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {
+        <span class="i">FirstName</span><span class="o">:</span> <span class="i">String50</span>
+        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">String1</span> <span class="i">option</span>
+        <span class="i">LastName</span><span class="o">:</span> <span class="i">String50</span> }
+
+    <span class="k">type</span> <span class="i">EmailContactInfo</span> <span class="o">=</span> {
+        <span class="i">EmailAddress</span><span class="o">:</span> <span class="i">EmailAddress</span>
+        <span class="i">IsEmailVerified</span><span class="o">:</span> <span class="i">bool</span> }
+
+    <span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
+        <span class="i">Name</span><span class="o">:</span> <span class="i">PersonalName</span> 
+        <span class="i">Email</span><span class="o">:</span> <span class="i">EmailContactInfo</span> }
+
+
+<span class="c">// ======================================================</span>
+<span class="c">// Verified email</span>
+<span class="c">//</span>
+<span class="c">// &quot;Rule 1: If the email is changed, the verified flag must be reset to false&quot;</span>
+<span class="c">// &quot;Rule 2: The verified flag can only be set by a special verification service&quot;</span>
+<span class="c">// ======================================================</span>
+
+<span class="k">module</span> <span class="i">VerifiedEmailExample</span> <span class="o">=</span> 
+    <span class="k">type</span> <span class="i">String1</span> <span class="o">=</span> <span class="i">String1</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">String50</span> <span class="o">=</span> <span class="i">String50</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+
+    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {
+        <span class="i">FirstName</span><span class="o">:</span> <span class="i">String50</span>
+        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">String1</span> <span class="i">option</span>
+        <span class="i">LastName</span><span class="o">:</span> <span class="i">String50</span> }
+
+    <span class="k">type</span> <span class="i">VerifiedEmail</span> <span class="o">=</span> <span class="i">VerifiedEmail</span> <span class="k">of</span> <span class="i">EmailAddress</span>
+    <span class="k">type</span> <span class="i">VerificationHash</span> <span class="o">=</span> <span class="i">VerificationHash</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">VerificationService</span> <span class="o">=</span> 
+        (<span class="i">EmailAddress</span> <span class="o">*</span> <span class="i">VerificationHash</span>) <span class="k">-&gt;</span>  <span class="i">VerifiedEmail</span> <span class="i">option</span>
+
+    <span class="k">type</span> <span class="i">EmailContactInfo</span> <span class="o">=</span> 
+        | <span class="i">Unverified</span> <span class="k">of</span> <span class="i">EmailAddress</span>
+        | <span class="i">Verified</span> <span class="k">of</span> <span class="i">VerifiedEmail</span>
+
+    <span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
+        <span class="i">Name</span><span class="o">:</span> <span class="i">PersonalName</span> 
+        <span class="i">Email</span><span class="o">:</span> <span class="i">EmailContactInfo</span> }
+
+
+<span class="c">// ======================================================</span>
+<span class="c">// A contact must have an email or a postal address</span>
+<span class="c">// ======================================================</span>
+
+<span class="k">module</span> <span class="i">EMailAndContactExample_Before</span> <span class="o">=</span> 
+
+
+    <span class="k">type</span> <span class="i">String1</span> <span class="o">=</span> <span class="i">String1</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">String50</span> <span class="o">=</span> <span class="i">String50</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+
+    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {
+        <span class="i">FirstName</span><span class="o">:</span> <span class="i">String50</span>
+        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">String1</span> <span class="i">option</span>
+        <span class="i">LastName</span><span class="o">:</span> <span class="i">String50</span> }
+
+    <span class="k">type</span> <span class="i">VerifiedEmail</span> <span class="o">=</span> <span class="i">VerifiedEmail</span> <span class="k">of</span> <span class="i">EmailAddress</span>
+    <span class="k">type</span> <span class="i">VerificationHash</span> <span class="o">=</span> <span class="i">VerificationHash</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">VerificationService</span> <span class="o">=</span> 
+        (<span class="i">EmailAddress</span> <span class="o">*</span> <span class="i">VerificationHash</span>) <span class="k">-&gt;</span>  <span class="i">VerifiedEmail</span> <span class="i">option</span>
+
+    <span class="k">type</span> <span class="i">EmailContactInfo</span> <span class="o">=</span> 
+        | <span class="i">Unverified</span> <span class="k">of</span> <span class="i">EmailAddress</span>
+        | <span class="i">Verified</span> <span class="k">of</span> <span class="i">VerifiedEmail</span>
+
+    <span class="k">type</span> <span class="i">PostalContactInfo</span> <span class="o">=</span> {
+        <span class="i">Address1</span><span class="o">:</span> <span class="i">String50</span>
+        <span class="i">Address2</span><span class="o">:</span> <span class="i">String50</span> <span class="i">option</span>
+        <span class="i">Town</span><span class="o">:</span> <span class="i">String50</span>
+        <span class="i">PostCode</span><span class="o">:</span> <span class="i">String50</span> }
+
+    <span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
+        <span class="i">Name</span><span class="o">:</span> <span class="i">PersonalName</span> 
+        <span class="i">Email</span><span class="o">:</span> <span class="i">EmailContactInfo</span> 
+        <span class="i">Address</span><span class="o">:</span> <span class="i">PostalContactInfo</span> 
+        }
+
+
+<span class="k">module</span> <span class="i">EMailAndContactExample_After</span> <span class="o">=</span> 
+
+    <span class="k">type</span> <span class="i">String1</span> <span class="o">=</span> <span class="i">String1</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">String50</span> <span class="o">=</span> <span class="i">String50</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+
+    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {
+        <span class="i">FirstName</span><span class="o">:</span> <span class="i">String50</span>
+        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">String1</span> <span class="i">option</span>
+        <span class="i">LastName</span><span class="o">:</span> <span class="i">String50</span> }
+
+    <span class="k">type</span> <span class="i">VerifiedEmail</span> <span class="o">=</span> <span class="i">VerifiedEmail</span> <span class="k">of</span> <span class="i">EmailAddress</span>
+    <span class="k">type</span> <span class="i">VerificationHash</span> <span class="o">=</span> <span class="i">VerificationHash</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">VerificationService</span> <span class="o">=</span> 
+        (<span class="i">EmailAddress</span> <span class="o">*</span> <span class="i">VerificationHash</span>) <span class="k">-&gt;</span>  <span class="i">VerifiedEmail</span> <span class="i">option</span>
+
+    <span class="k">type</span> <span class="i">EmailContactInfo</span> <span class="o">=</span> 
+        | <span class="i">Unverified</span> <span class="k">of</span> <span class="i">EmailAddress</span>
+        | <span class="i">Verified</span> <span class="k">of</span> <span class="i">VerifiedEmail</span>
+
+    <span class="k">type</span> <span class="i">PostalContactInfo</span> <span class="o">=</span> {
+        <span class="i">Address1</span><span class="o">:</span> <span class="i">String50</span>
+        <span class="i">Address2</span><span class="o">:</span> <span class="i">String50</span> <span class="i">option</span>
+        <span class="i">Town</span><span class="o">:</span> <span class="i">String50</span>
+        <span class="i">PostCode</span><span class="o">:</span> <span class="i">String50</span> }
+
+    <span class="k">type</span> <span class="i">ContactInfo</span> <span class="o">=</span> 
+        | <span class="i">EmailOnly</span> <span class="k">of</span> <span class="i">EmailContactInfo</span>
+        | <span class="i">AddrOnly</span> <span class="k">of</span> <span class="i">PostalContactInfo</span>
+        | <span class="i">EmailAndAddr</span> <span class="k">of</span> <span class="i">EmailContactInfo</span> <span class="o">*</span> <span class="i">PostalContactInfo</span>
+
+    <span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
+        <span class="i">Name</span><span class="o">:</span> <span class="i">PersonalName</span> 
+        <span class="i">ContactInfo</span><span class="o">:</span> <span class="i">ContactInfo</span> 
+        }
+
+
+<span class="c">// ======================================================</span>
+<span class="c">// A contact must have at least one way of being contacted</span>
+<span class="c">// ======================================================</span>
+
+
+<span class="k">module</span> <span class="i">EMailAndContactExample_Alternative</span> <span class="o">=</span> 
+
+    <span class="k">type</span> <span class="i">String1</span> <span class="o">=</span> <span class="i">String1</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">String50</span> <span class="o">=</span> <span class="i">String50</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+
+    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {
+        <span class="i">FirstName</span><span class="o">:</span> <span class="i">String50</span>
+        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">String1</span> <span class="i">option</span>
+        <span class="i">LastName</span><span class="o">:</span> <span class="i">String50</span> }
+
+    <span class="k">type</span> <span class="i">VerifiedEmail</span> <span class="o">=</span> <span class="i">VerifiedEmail</span> <span class="k">of</span> <span class="i">EmailAddress</span>
+    <span class="k">type</span> <span class="i">VerificationHash</span> <span class="o">=</span> <span class="i">VerificationHash</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">VerificationService</span> <span class="o">=</span> 
+        (<span class="i">EmailAddress</span> <span class="o">*</span> <span class="i">VerificationHash</span>) <span class="k">-&gt;</span>  <span class="i">VerifiedEmail</span> <span class="i">option</span>
+
+    <span class="k">type</span> <span class="i">EmailContactInfo</span> <span class="o">=</span> 
+        | <span class="i">Unverified</span> <span class="k">of</span> <span class="i">EmailAddress</span>
+        | <span class="i">Verified</span> <span class="k">of</span> <span class="i">VerifiedEmail</span>
+
+    <span class="k">type</span> <span class="i">PostalContactInfo</span> <span class="o">=</span> {
+        <span class="i">Address1</span><span class="o">:</span> <span class="i">String50</span>
+        <span class="i">Address2</span><span class="o">:</span> <span class="i">String50</span> <span class="i">option</span>
+        <span class="i">Town</span><span class="o">:</span> <span class="i">String50</span>
+        <span class="i">PostCode</span><span class="o">:</span> <span class="i">String50</span> }
+
+    <span class="k">type</span> <span class="i">ContactInfo</span> <span class="o">=</span> 
+        | <span class="i">EmailOnly</span> <span class="k">of</span> <span class="i">EmailContactInfo</span>
+        | <span class="i">AddrOnly</span> <span class="k">of</span> <span class="i">PostalContactInfo</span>
+
+    <span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
+        <span class="i">Name</span><span class="o">:</span> <span class="i">PersonalName</span> 
+        <span class="i">PrimaryContactInfo</span><span class="o">:</span> <span class="i">ContactInfo</span>
+        <span class="i">SecondaryContactInfo</span><span class="o">:</span> <span class="i">ContactInfo</span> <span class="i">option</span>
+        }
+</code></pre></td>
+</tr>
+</table>
+
+</section>
+
+
+
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        // Add the nohighlight class and data-noescape attribute to code elements that have already been formatted by FSharp.Formatting
+        $('pre.highlighted code').addClass('nohighlight').attr('data-noescape', '');
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+                { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+                { src: 'plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+</body>
+</html>
+
