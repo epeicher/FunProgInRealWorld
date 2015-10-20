@@ -53,7 +53,7 @@
 
 <section >
 
-<h3>Programación Funcional</h3>
+<h2>Programación Funcional</h2>
 
 <ul>
 <li>Qué es</li>
@@ -64,13 +64,65 @@
 
 <section author="Roberto Aranda López" description="Introducción a la Programación Funcional" theme="moon" title="FunProgInRealWorld" transition="default">
 
-<h3>Introducción a F#</h3>
+<h3>¿Qué es Programación Funcional?</h3>
+
+<ul>
+<li>Paradigma de Programación Declarativo: Qué hacer, no cómo hacerlo. Realizado con expressiones en contraste a estamentos.</li>
+<li>Se utilizan funciones para transformar los datos. Dada una entrada, siempre se produce la misma salida.</li>
+<li>No se producen efectos laterales. Existe lo que se denomina <em>referencia transparencial</em>.</li>
+<li>Estructuras de datos inmutables. No se cambia el estado. No hay variables que cambien su valor.</li>
+</ul>
+
+</section>
+
+<section author="Roberto Aranda López" description="Introducción a la Programación Funcional" theme="moon" title="FunProgInRealWorld" transition="default">
+
+<h3>¿Por qué me debería interesar la Programación Funcional?</h3>
+
+<ul>
+<li>La ausencia de efectos laterales provoca:
+<ul>
+<li>Fácilmente paralelizables ya que el orden de ejecución de funciones no importa.</li>
+<li>Refactorizar es más simple.</li>
+<li>Funciones de alto nivel son mucho más fácilmente reutilizables.</li>
+</ul></li>
+<li>El incremento en número de <em>cores</em> implica la necesidad de concurrencia. 
+En este aspecto los lenguajes funcionales destacan sobre los imperativos.</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Introducción a F#</h2>
 
 <ul>
 <li>Un poquitín de historia</li>
 <li>Por qué F#</li>
 <li>Características principales</li>
 </ul>
+
+</section>
+
+<section author="Roberto Aranda López" description="Introducción a la Programación Funcional" theme="moon" title="FunProgInRealWorld" transition="default">
+
+<h3>Breve contexto histórico</h3>
+
+<ul>
+<li>En 1970 se desarrolla el lenguaje ML <em>(Meta Language)</em> en la Universidad de Edinburgh con fines académicos.</li>
+<li>Surgen los dialectos CAML <em>(Categorical Abstract Machine Language)</em> en Francia.</li>
+<li>En 2005, Don Syme a través del <em>Microsoft Research Cambridge</em> implementa F# basándose en la familia de lenguages CAML.</li>
+</ul>
+
+</section>
+
+<section author="Roberto Aranda López" description="Introducción a la Programación Funcional" theme="moon" title="FunProgInRealWorld" transition="default">
+
+<h1>Enséñame el código</h1>
 
 </section>
 
@@ -159,26 +211,42 @@
 <span class="l"> 8: </span>
 <span class="l"> 9: </span>
 <span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+<span class="l">14: </span>
+<span class="l">15: </span>
+<span class="l">16: </span>
+<span class="l">17: </span>
+<span class="l">18: </span>
+<span class="l">19: </span>
+<span class="l">20: </span>
+<span class="l">21: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">module</span> <span class="i">JuegoCartasBoundedContext</span> <span class="o">=</span> 
 
-  <span class="i">FirstName</span><span class="o">:</span> <span class="i">string</span>
-  <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">string</span>
-  <span class="i">LastName</span><span class="o">:</span> <span class="i">string</span>
+    <span class="k">type</span> <span class="i">Palo</span> <span class="o">=</span> <span class="i">Copas</span> | <span class="i">Bastos</span> | <span class="i">Espadas</span> | <span class="i">Oros</span>
+                <span class="c">// | significa una elecci&#243;n -- toma uno de la lista</span>
+                
+    <span class="k">type</span> <span class="i">Valor</span> <span class="o">=</span> <span class="i">Uno</span> | <span class="i">Dos</span> | <span class="i">Tres</span> | <span class="i">Cuatro</span> | <span class="i">Cinco</span> | <span class="i">Seis</span> | <span class="i">Siete</span> 
+                | <span class="i">Sota</span> | <span class="i">Caballo</span> | <span class="i">Rey</span>
 
-  <span class="i">EmailAddress</span><span class="o">:</span> <span class="i">string</span>
-  <span class="i">IsEmailVerified</span><span class="o">:</span> <span class="i">bool</span>  <span class="c">// true if ownership of email address is confirmed</span>
+    <span class="k">type</span> <span class="i">Carta</span> <span class="o">=</span> <span class="i">Palo</span> <span class="o">*</span> <span class="i">Valor</span>   <span class="c">// * significa un par -- uno de cada tipo</span>
+    
+    <span class="k">type</span> <span class="i">Mano</span> <span class="o">=</span> <span class="i">Carta</span> <span class="i">list</span>
+    <span class="k">type</span> <span class="i">Baraja</span> <span class="o">=</span> <span class="i">Carta</span> <span class="i">list</span>
+    
+    <span class="k">type</span> <span class="i">Jugador</span> <span class="o">=</span> {<span class="i">Nombre</span><span class="o">:</span><span class="i">string</span>; <span class="i">Mano</span><span class="o">:</span><span class="i">Mano</span>}
+    <span class="k">type</span> <span class="i">Juego</span> <span class="o">=</span> {<span class="i">Baraja</span><span class="o">:</span><span class="i">Baraja</span>; <span class="i">Jugadores</span><span class="o">:</span> <span class="i">Jugador</span> <span class="i">list</span>}
+    
+    <span class="k">type</span> <span class="i">Reparte</span> <span class="o">=</span> <span class="i">Baraja</span> <span class="k">-&gt;</span> (<span class="i">Baraja</span> <span class="o">*</span> <span class="i">Carta</span>) <span class="c">// X -&gt; Y es una funci&#243;n</span>
+                                      <span class="c">// entrada de tipo X</span>
+                                      <span class="c">// salida de tipo Y</span>
 
-  }
+    <span class="k">type</span> <span class="i">CogeCarta</span> <span class="o">=</span> (<span class="i">Mano</span> <span class="o">*</span> <span class="i">Carta</span>)<span class="k">-&gt;</span> <span class="i">Mano</span>
 </code></pre></td>
 </tr>
 </table>
-
-</section>
-
-<section author="Roberto Aranda López" description="Introducción a la Programación Funcional" theme="moon" title="FunProgInRealWorld" transition="default">
-
-<h3>¿Qué falta en este diseño?</h3>
 
 </section>
 
@@ -195,7 +263,7 @@
 <span class="l"> 9: </span>
 <span class="l">10: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">Contact&#39;</span> <span class="o">=</span> {
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
 
   <span class="i">FirstName</span><span class="o">:</span> <span class="i">string</span>
   <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">string</span>
@@ -209,26 +277,15 @@
 </tr>
 </table>
 
-<div class="fragment">
-
-<p>¿Qué valores son opcionales, son todos obligatorios?</p>
-
-</div>
-<div class="fragment">
-
-<p>¿Cuáles son las restricciones?</p>
-
-</div>
-<div class="fragment">
-
-<p>¿Hay algunos valores que estén releacionados?</p>
-
-</div>
-<div class="fragment">
-
-<p>¿Hay alguna <strong>lógica de dominio</strong> que tenga que conocer?</p>
-
-</div>
+<section data-markdown>
+    <script type="text/template">
+        ### ¿Qué falta en este diseño? <!-- .element: class="fragment" data-fragment-index="1" -->
+        - ¿Qué valores son opcionales, son todos obligatorios? <!-- .element: class="fragment" data-fragment-index="2" -->
+        - ¿Cuáles son las restricciones? <!-- .element: class="fragment" data-fragment-index="3" -->
+        - ¿Hay algunos valores que estén releacionados? <!-- .element: class="fragment" data-fragment-index="4" -->
+        - ¿Hay alguna lógica de dominio que tenga que conocer? <!-- .element: class="fragment" data-fragment-index="5" -->
+    </script>
+</section>
 
 </section>
 
@@ -286,53 +343,6 @@
 </section>
 
 <section author="Roberto Aranda López" description="Introducción a la Programación Funcional" theme="moon" title="FunProgInRealWorld" transition="default">
-
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
-<span class="l"> 2: </span>
-<span class="l"> 3: </span>
-<span class="l"> 4: </span>
-<span class="l"> 5: </span>
-<span class="l"> 6: </span>
-<span class="l"> 7: </span>
-<span class="l"> 8: </span>
-<span class="l"> 9: </span>
-<span class="l">10: </span>
-<span class="l">11: </span>
-<span class="l">12: </span>
-<span class="l">13: </span>
-<span class="l">14: </span>
-<span class="l">15: </span>
-<span class="l">16: </span>
-<span class="l">17: </span>
-<span class="l">18: </span>
-<span class="l">19: </span>
-<span class="l">20: </span>
-<span class="l">21: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">module</span> <span class="i">JuegoCartasBoundedContext</span> <span class="o">=</span> 
-
-    <span class="k">type</span> <span class="i">Palo</span> <span class="o">=</span> <span class="i">Copas</span> | <span class="i">Bastos</span> | <span class="i">Espadas</span> | <span class="i">Oros</span>
-                <span class="c">// | significa una elecci&#243;n -- toma uno de la lista</span>
-                
-    <span class="k">type</span> <span class="i">Valor</span> <span class="o">=</span> <span class="i">Uno</span> | <span class="i">Dos</span> | <span class="i">Tres</span> | <span class="i">Cuatro</span> | <span class="i">Cinco</span> | <span class="i">Seis</span> | <span class="i">Siete</span> 
-                | <span class="i">Sota</span> | <span class="i">Caballo</span> | <span class="i">Rey</span>
-
-    <span class="k">type</span> <span class="i">Carta</span> <span class="o">=</span> <span class="i">Palo</span> <span class="o">*</span> <span class="i">Valor</span>   <span class="c">// * significa un par -- uno de cada tipo</span>
-    
-    <span class="k">type</span> <span class="i">Mano</span> <span class="o">=</span> <span class="i">Carta</span> <span class="i">list</span>
-    <span class="k">type</span> <span class="i">Baraja</span> <span class="o">=</span> <span class="i">Carta</span> <span class="i">list</span>
-    
-    <span class="k">type</span> <span class="i">Jugador</span> <span class="o">=</span> {<span class="i">Nombre</span><span class="o">:</span><span class="i">string</span>; <span class="i">Mano</span><span class="o">:</span><span class="i">Mano</span>}
-    <span class="k">type</span> <span class="i">Juego</span> <span class="o">=</span> {<span class="i">Baraja</span><span class="o">:</span><span class="i">Baraja</span>; <span class="i">Jugadores</span><span class="o">:</span> <span class="i">Jugador</span> <span class="i">list</span>}
-    
-    <span class="k">type</span> <span class="i">Reparte</span> <span class="o">=</span> <span class="i">Baraja</span> <span class="k">-&gt;</span> (<span class="i">Baraja</span> <span class="o">*</span> <span class="i">Carta</span>) <span class="c">// X -&gt; Y es una funci&#243;n</span>
-                                      <span class="c">// entrada de tipo X</span>
-                                      <span class="c">// salida de tipo Y</span>
-
-    <span class="k">type</span> <span class="i">CogeCarta</span> <span class="o">=</span> (<span class="i">Mano</span> <span class="o">*</span> <span class="i">Carta</span>)<span class="k">-&gt;</span> <span class="i">Mano</span>
-</code></pre></td>
-</tr>
-</table>
 
 </section>
 
