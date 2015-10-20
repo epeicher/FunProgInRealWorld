@@ -7,23 +7,45 @@
 
 ***
 
-### Programación Funcional
+## Programación Funcional
 - Qué es
 - Por qué me debería interesar
 
 ---
 
 ### ¿Qué es Programación Funcional?
-* Paradigma de Programación Declarativo
-    - Realizado con expressiones en contraste a *statements*
-* 
+* Paradigma de Programación Declarativo: Qué hacer, no cómo hacerlo. Realizado con expressiones en contraste a estamentos.
+* Se utilizan funciones para transformar los datos. Dada una entrada, siempre se produce la misma salida. 
+* No se producen efectos laterales. Existe lo que se denomina *referencia transparencial*.
+* Estructuras de datos inmutables. No se cambia el estado. No hay variables que cambien su valor.
 
 ---
 
-### Introducción a F#
+### ¿Por qué me debería interesar la Programación Funcional?
+* La ausencia de efectos laterales provoca:
+    - Fácilmente paralelizables ya que el orden de ejecución de funciones no importa.    
+    - Refactorizar es más simple.
+    - Funciones de alto nivel son mucho más fácilmente reutilizables.
+* El incremento en número de *cores* implica la necesidad de concurrencia. 
+En este aspecto los lenguajes funcionales destacan sobre los imperativos.
+
+***
+
+## Introducción a F#
 - Un poquitín de historia
 - Por qué F#
 - Características principales
+
+---
+
+### Breve contexto histórico
+- En 1970 se desarrolla el lenguaje ML *(Meta Language)* en la Universidad de Edinburgh con fines académicos.
+- Surgen los dialectos CAML *(Categorical Abstract Machine Language)* en Francia.
+- En 2005, Don Syme a través del *Microsoft Research Cambridge* implementa F# basándose en la familia de lenguages CAML.
+
+---
+
+# Enséñame el código
 
 ---
 
