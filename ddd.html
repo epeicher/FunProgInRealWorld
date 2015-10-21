@@ -46,7 +46,263 @@
 </head>
 <body>
     <div class="reveal">
-        
+        <div class="tip" id="fs1">val three : int<br /><br />Full name: Ddd.three</div>
+<div class="tip" id="fs2">val square : x:int -&gt; int<br /><br />Full name: Ddd.square</div>
+<div class="tip" id="fs3">val x : int</div>
+<div class="tip" id="fs4">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
+<div class="tip" id="fs5">type Contact =<br />&#160;&#160;{FirstName: string;<br />&#160;&#160;&#160;MiddleInitial: string;<br />&#160;&#160;&#160;LastName: string;<br />&#160;&#160;&#160;EmailAddress: string;<br />&#160;&#160;&#160;IsEmailVerified: bool;}<br /><br />Full name: Ddd.FirstSlide.Contact</div>
+<div class="tip" id="fs6">Contact.FirstName: string</div>
+<div class="tip" id="fs7">Multiple items<br />val string : value:&#39;T -&gt; string<br /><br />Full name: Microsoft.FSharp.Core.Operators.string<br /><br />--------------------<br />type string = System.String<br /><br />Full name: Microsoft.FSharp.Core.string</div>
+<div class="tip" id="fs8">Contact.MiddleInitial: string</div>
+<div class="tip" id="fs9">Contact.LastName: string</div>
+<div class="tip" id="fs10">Contact.EmailAddress: string</div>
+<div class="tip" id="fs11">Contact.IsEmailVerified: bool</div>
+<div class="tip" id="fs12">type bool = System.Boolean<br /><br />Full name: Microsoft.FSharp.Core.bool</div>
+<div class="tip" id="fs13">type PersonalName =<br />&#160;&#160;{FirstName: string;<br />&#160;&#160;&#160;LastName: string;}<br /><br />Full name: Ddd.ValueTypeExample.PersonalName</div>
+<div class="tip" id="fs14">PersonalName.FirstName: string</div>
+<div class="tip" id="fs15">PersonalName.LastName: string</div>
+<div class="tip" id="fs16">module ValueTypeExample<br /><br />from Ddd</div>
+<div class="tip" id="fs17">val alice : PersonalName<br /><br />Full name: Ddd.TestValueTypeExample.alice</div>
+<div class="tip" id="fs18">val aliceClone : PersonalName<br /><br />Full name: Ddd.TestValueTypeExample.aliceClone</div>
+<div class="tip" id="fs19">type PersonalName =<br />&#160;&#160;{FirstName: string;<br />&#160;&#160;&#160;LastName: string;}<br /><br />Full name: Ddd.EntityTypeExample.PersonalName</div>
+<div class="tip" id="fs20">Multiple items<br />type CustomEqualityAttribute =<br />&#160;&#160;inherit Attribute<br />&#160;&#160;new : unit -&gt; CustomEqualityAttribute<br /><br />Full name: Microsoft.FSharp.Core.CustomEqualityAttribute<br /><br />--------------------<br />new : unit -&gt; CustomEqualityAttribute</div>
+<div class="tip" id="fs21">Multiple items<br />type NoComparisonAttribute =<br />&#160;&#160;inherit Attribute<br />&#160;&#160;new : unit -&gt; NoComparisonAttribute<br /><br />Full name: Microsoft.FSharp.Core.NoComparisonAttribute<br /><br />--------------------<br />new : unit -&gt; NoComparisonAttribute</div>
+<div class="tip" id="fs22">type Person =<br />&#160;&#160;{Id: int;<br />&#160;&#160;&#160;Name: PersonalName;}<br />&#160;&#160;override Equals : other:obj -&gt; bool<br />&#160;&#160;override GetHashCode : unit -&gt; int<br /><br />Full name: Ddd.EntityTypeExample.Person</div>
+<div class="tip" id="fs23">Person.Id: int</div>
+<div class="tip" id="fs24">Multiple items<br />val int : value:&#39;T -&gt; int (requires member op_Explicit)<br /><br />Full name: Microsoft.FSharp.Core.Operators.int<br /><br />--------------------<br />type int = int32<br /><br />Full name: Microsoft.FSharp.Core.int<br /><br />--------------------<br />type int&lt;&#39;Measure&gt; = int<br /><br />Full name: Microsoft.FSharp.Core.int&lt;_&gt;</div>
+<div class="tip" id="fs25">Person.Name: PersonalName</div>
+<div class="tip" id="fs26">val this : Person</div>
+<div class="tip" id="fs27">override Person.Equals : other:obj -&gt; bool<br /><br />Full name: Ddd.EntityTypeExample.Person.Equals</div>
+<div class="tip" id="fs28">val other : obj</div>
+<div class="tip" id="fs29">val p : Person</div>
+<div class="tip" id="fs30">override Person.GetHashCode : unit -&gt; int<br /><br />Full name: Ddd.EntityTypeExample.Person.GetHashCode</div>
+<div class="tip" id="fs31">val hash : obj:&#39;T -&gt; int (requires equality)<br /><br />Full name: Microsoft.FSharp.Core.Operators.hash</div>
+<div class="tip" id="fs32">module EntityTypeExample<br /><br />from Ddd</div>
+<div class="tip" id="fs33">val alice : Person<br /><br />Full name: Ddd.TestEntityTypeExample.alice</div>
+<div class="tip" id="fs34">val bilbo : Person<br /><br />Full name: Ddd.TestEntityTypeExample.bilbo</div>
+<div class="tip" id="fs35">namespace System</div>
+<div class="tip" id="fs36">type PersonalName =<br />&#160;&#160;{FirstName: string;<br />&#160;&#160;&#160;LastName: string;}<br /><br />Full name: Ddd.EntityVersioningExample.PersonalName</div>
+<div class="tip" id="fs37">Multiple items<br />val string : value:&#39;T -&gt; string<br /><br />Full name: Microsoft.FSharp.Core.Operators.string<br /><br />--------------------<br />type string = String<br /><br />Full name: Microsoft.FSharp.Core.string</div>
+<div class="tip" id="fs38">Multiple items<br />type NoEqualityAttribute =<br />&#160;&#160;inherit Attribute<br />&#160;&#160;new : unit -&gt; NoEqualityAttribute<br /><br />Full name: Microsoft.FSharp.Core.NoEqualityAttribute<br /><br />--------------------<br />new : unit -&gt; NoEqualityAttribute</div>
+<div class="tip" id="fs39">type Person =<br />&#160;&#160;{Id: int;<br />&#160;&#160;&#160;Version: Guid;<br />&#160;&#160;&#160;Name: PersonalName;}<br /><br />Full name: Ddd.EntityVersioningExample.Person</div>
+<div class="tip" id="fs40">Multiple items<br />Person.Version: Guid<br /><br />--------------------<br />type Version =<br />&#160;&#160;new : unit -&gt; Version + 4 overloads<br />&#160;&#160;member Build : int<br />&#160;&#160;member Clone : unit -&gt; obj<br />&#160;&#160;member CompareTo : version:obj -&gt; int + 1 overload<br />&#160;&#160;member Equals : obj:obj -&gt; bool + 1 overload<br />&#160;&#160;member GetHashCode : unit -&gt; int<br />&#160;&#160;member Major : int<br />&#160;&#160;member MajorRevision : int16<br />&#160;&#160;member Minor : int<br />&#160;&#160;member MinorRevision : int16<br />&#160;&#160;...<br /><br />Full name: System.Version<br /><br />--------------------<br />Version() : unit<br />Version(version: string) : unit<br />Version(major: int, minor: int) : unit<br />Version(major: int, minor: int, build: int) : unit<br />Version(major: int, minor: int, build: int, revision: int) : unit</div>
+<div class="tip" id="fs41">Multiple items<br />type Guid =<br />&#160;&#160;struct<br />&#160;&#160;&#160;&#160;new : b:byte[] -&gt; Guid + 4 overloads<br />&#160;&#160;&#160;&#160;member CompareTo : value:obj -&gt; int + 1 overload<br />&#160;&#160;&#160;&#160;member Equals : o:obj -&gt; bool + 1 overload<br />&#160;&#160;&#160;&#160;member GetHashCode : unit -&gt; int<br />&#160;&#160;&#160;&#160;member ToByteArray : unit -&gt; byte[]<br />&#160;&#160;&#160;&#160;member ToString : unit -&gt; string + 2 overloads<br />&#160;&#160;&#160;&#160;static val Empty : Guid<br />&#160;&#160;&#160;&#160;static member NewGuid : unit -&gt; Guid<br />&#160;&#160;&#160;&#160;static member Parse : input:string -&gt; Guid<br />&#160;&#160;&#160;&#160;static member ParseExact : input:string * format:string -&gt; Guid<br />&#160;&#160;&#160;&#160;...<br />&#160;&#160;end<br /><br />Full name: System.Guid<br /><br />--------------------<br />Guid()<br />Guid(b: byte []) : unit<br />Guid(g: string) : unit<br />Guid(a: int, b: int16, c: int16, d: byte []) : unit<br />Guid(a: uint32, b: uint16, c: uint16, d: byte, e: byte, f: byte, g: byte, h: byte, i: byte, j: byte, k: byte) : unit<br />Guid(a: int, b: int16, c: int16, d: byte, e: byte, f: byte, g: byte, h: byte, i: byte, j: byte, k: byte) : unit</div>
+<div class="tip" id="fs42">module EntityVersioningExample<br /><br />from Ddd</div>
+<div class="tip" id="fs43">val alice : Person<br /><br />Full name: Ddd.TestEntityVersioningExample.alice</div>
+<div class="tip" id="fs44">Multiple items<br />type Version =<br />&#160;&#160;new : unit -&gt; Version + 4 overloads<br />&#160;&#160;member Build : int<br />&#160;&#160;member Clone : unit -&gt; obj<br />&#160;&#160;member CompareTo : version:obj -&gt; int + 1 overload<br />&#160;&#160;member Equals : obj:obj -&gt; bool + 1 overload<br />&#160;&#160;member GetHashCode : unit -&gt; int<br />&#160;&#160;member Major : int<br />&#160;&#160;member MajorRevision : int16<br />&#160;&#160;member Minor : int<br />&#160;&#160;member MinorRevision : int16<br />&#160;&#160;...<br /><br />Full name: System.Version<br /><br />--------------------<br />Version() : unit<br />Version(version: string) : unit<br />Version(major: int, minor: int) : unit<br />Version(major: int, minor: int, build: int) : unit<br />Version(major: int, minor: int, build: int, revision: int) : unit</div>
+<div class="tip" id="fs45">Guid.NewGuid() : Guid</div>
+<div class="tip" id="fs46">val aliceV2 : Person<br /><br />Full name: Ddd.TestEntityVersioningExample.aliceV2</div>
+<div class="tip" id="fs47">Person.Version: Guid</div>
+<div class="tip" id="fs48">type PersonalName =<br />&#160;&#160;{FirstName: string;<br />&#160;&#160;&#160;LastName: string;}<br /><br />Full name: Ddd.EntityMutabilityExample.PersonalName</div>
+<div class="tip" id="fs49">type Person =<br />&#160;&#160;{Id: int;<br />&#160;&#160;&#160;mutable Name: PersonalName;}<br /><br />Full name: Ddd.EntityMutabilityExample.Person</div>
+<div class="tip" id="fs50">module EntityMutabilityExample<br /><br />from Ddd</div>
+<div class="tip" id="fs51">val alice : Person<br /><br />Full name: Ddd.TestEntityMutabilityExample.alice</div>
+<div class="tip" id="fs52">Multiple items<br />type StructuralEqualityAttribute =<br />&#160;&#160;inherit Attribute<br />&#160;&#160;new : unit -&gt; StructuralEqualityAttribute<br /><br />Full name: Microsoft.FSharp.Core.StructuralEqualityAttribute<br /><br />--------------------<br />new : unit -&gt; StructuralEqualityAttribute</div>
+<div class="tip" id="fs53">type PersonalName =<br />&#160;&#160;{FirstName: string;<br />&#160;&#160;&#160;LastName: string;}<br /><br />Full name: Ddd.ValueAndEntityReview.PersonalName</div>
+<div class="tip" id="fs54">type Person =<br />&#160;&#160;{Id: int;<br />&#160;&#160;&#160;Name: PersonalName;}<br /><br />Full name: Ddd.ValueAndEntityReview.Person</div>
+<div class="tip" id="fs55">type Suit =<br />&#160;&#160;| Club<br />&#160;&#160;| Diamond<br />&#160;&#160;| Spade<br />&#160;&#160;| Heart<br /><br />Full name: Ddd.CardGameBoundedContext.Suit</div>
+<div class="tip" id="fs56">union case Suit.Club: Suit</div>
+<div class="tip" id="fs57">union case Suit.Diamond: Suit</div>
+<div class="tip" id="fs58">union case Suit.Spade: Suit</div>
+<div class="tip" id="fs59">union case Suit.Heart: Suit</div>
+<div class="tip" id="fs60">type Rank =<br />&#160;&#160;| Two<br />&#160;&#160;| Three<br />&#160;&#160;| Four<br />&#160;&#160;| Five<br />&#160;&#160;| Six<br />&#160;&#160;| Seven<br />&#160;&#160;| Eight<br />&#160;&#160;| Nine<br />&#160;&#160;| Ten<br />&#160;&#160;| Jack<br />&#160;&#160;...<br /><br />Full name: Ddd.CardGameBoundedContext.Rank</div>
+<div class="tip" id="fs61">union case Rank.Two: Rank</div>
+<div class="tip" id="fs62">union case Rank.Three: Rank</div>
+<div class="tip" id="fs63">union case Rank.Four: Rank</div>
+<div class="tip" id="fs64">union case Rank.Five: Rank</div>
+<div class="tip" id="fs65">union case Rank.Six: Rank</div>
+<div class="tip" id="fs66">union case Rank.Seven: Rank</div>
+<div class="tip" id="fs67">union case Rank.Eight: Rank</div>
+<div class="tip" id="fs68">union case Rank.Nine: Rank</div>
+<div class="tip" id="fs69">union case Rank.Ten: Rank</div>
+<div class="tip" id="fs70">union case Rank.Jack: Rank</div>
+<div class="tip" id="fs71">union case Rank.Queen: Rank</div>
+<div class="tip" id="fs72">union case Rank.King: Rank</div>
+<div class="tip" id="fs73">union case Rank.Ace: Rank</div>
+<div class="tip" id="fs74">type Card = Suit * Rank<br /><br />Full name: Ddd.CardGameBoundedContext.Card</div>
+<div class="tip" id="fs75">type Hand = Card list<br /><br />Full name: Ddd.CardGameBoundedContext.Hand</div>
+<div class="tip" id="fs76">type &#39;T list = List&lt;&#39;T&gt;<br /><br />Full name: Microsoft.FSharp.Collections.list&lt;_&gt;</div>
+<div class="tip" id="fs77">type Deck = Card list<br /><br />Full name: Ddd.CardGameBoundedContext.Deck</div>
+<div class="tip" id="fs78">type Player =<br />&#160;&#160;{Name: string;<br />&#160;&#160;&#160;Hand: Hand;}<br /><br />Full name: Ddd.CardGameBoundedContext.Player</div>
+<div class="tip" id="fs79">Player.Name: string</div>
+<div class="tip" id="fs80">Multiple items<br />Player.Hand: Hand<br /><br />--------------------<br />type Hand = Card list<br /><br />Full name: Ddd.CardGameBoundedContext.Hand</div>
+<div class="tip" id="fs81">type Game =<br />&#160;&#160;{Deck: Deck;<br />&#160;&#160;&#160;Players: Player list;}<br /><br />Full name: Ddd.CardGameBoundedContext.Game</div>
+<div class="tip" id="fs82">Multiple items<br />Game.Deck: Deck<br /><br />--------------------<br />type Deck = Card list<br /><br />Full name: Ddd.CardGameBoundedContext.Deck</div>
+<div class="tip" id="fs83">Game.Players: Player list</div>
+<div class="tip" id="fs84">type Deal = Deck -&gt; Deck * Card<br /><br />Full name: Ddd.CardGameBoundedContext.Deal</div>
+<div class="tip" id="fs85">type PickupCard = Hand * Card -&gt; Hand<br /><br />Full name: Ddd.CardGameBoundedContext.PickupCard</div>
+<div class="tip" id="fs86">module CardGameBoundedContext<br /><br />from Ddd</div>
+<div class="tip" id="fs87">val aceHearts : Suit * Rank<br /><br />Full name: Ddd.TestCardGameBoundedContext.aceHearts</div>
+<div class="tip" id="fs88">val aceSpades : Suit * Rank<br /><br />Full name: Ddd.TestCardGameBoundedContext.aceSpades</div>
+<div class="tip" id="fs89">val twoClubs : Suit * Rank<br /><br />Full name: Ddd.TestCardGameBoundedContext.twoClubs</div>
+<div class="tip" id="fs90">val myHand : (Suit * Rank) list<br /><br />Full name: Ddd.TestCardGameBoundedContext.myHand</div>
+<div class="tip" id="fs91">val deck : (Suit * Rank) list<br /><br />Full name: Ddd.TestCardGameBoundedContext.deck</div>
+<div class="tip" id="fs92">val deal : cards:&#39;a list -&gt; &#39;a list * &#39;a<br /><br />Full name: Ddd.TestCardGameBoundedContext.deal</div>
+<div class="tip" id="fs93">val cards : &#39;a list</div>
+<div class="tip" id="fs94">val head : &#39;a</div>
+<div class="tip" id="fs95">val tail : &#39;a list</div>
+<div class="tip" id="fs96">val x : int * int<br /><br />Full name: Ddd.ProductTypeExamples.x</div>
+<div class="tip" id="fs97">val y : bool * bool<br /><br />Full name: Ddd.ProductTypeExamples.y</div>
+<div class="tip" id="fs98">Multiple items<br />union case Person.Person: string -&gt; Person<br /><br />--------------------<br />type Person = | Person of string<br /><br />Full name: Ddd.ProductTypeExamples.Person</div>
+<div class="tip" id="fs99">Multiple items<br />union case Date.Date: string -&gt; Date<br /><br />--------------------<br />type Date = | Date of string<br /><br />Full name: Ddd.ProductTypeExamples.Date</div>
+<div class="tip" id="fs100">type Birthday = Person * Date<br /><br />Full name: Ddd.ProductTypeExamples.Birthday</div>
+<div class="tip" id="fs101">module ProductTypeExamples<br /><br />from Ddd</div>
+<div class="tip" id="fs102">val alice : Person<br /><br />Full name: Ddd.TestProductTypeExamples.alice</div>
+<div class="tip" id="fs103">val date1 : Date<br /><br />Full name: Ddd.TestProductTypeExamples.date1</div>
+<div class="tip" id="fs104">val aliceBDay : Person * Date<br /><br />Full name: Ddd.TestProductTypeExamples.aliceBDay</div>
+<div class="tip" id="fs105">val aliceBDay2 : Birthday<br /><br />Full name: Ddd.TestProductTypeExamples.aliceBDay2</div>
+<div class="tip" id="fs106">type Temp =<br />&#160;&#160;| F of int<br />&#160;&#160;| C of float<br /><br />Full name: Ddd.ChoiceTypeExamples.Temp</div>
+<div class="tip" id="fs107">union case Temp.F: int -&gt; Temp</div>
+<div class="tip" id="fs108">union case Temp.C: float -&gt; Temp</div>
+<div class="tip" id="fs109">Multiple items<br />val float : value:&#39;T -&gt; float (requires member op_Explicit)<br /><br />Full name: Microsoft.FSharp.Core.Operators.float<br /><br />--------------------<br />type float = System.Double<br /><br />Full name: Microsoft.FSharp.Core.float<br /><br />--------------------<br />type float&lt;&#39;Measure&gt; = float<br /><br />Full name: Microsoft.FSharp.Core.float&lt;_&gt;</div>
+<div class="tip" id="fs110">Multiple items<br />union case CardType.CardType: string -&gt; CardType<br /><br />--------------------<br />type CardType = | CardType of string<br /><br />Full name: Ddd.ChoiceTypeExamples.CardType</div>
+<div class="tip" id="fs111">Multiple items<br />union case CardNumber.CardNumber: string -&gt; CardNumber<br /><br />--------------------<br />type CardNumber = | CardNumber of string<br /><br />Full name: Ddd.ChoiceTypeExamples.CardNumber</div>
+<div class="tip" id="fs112">type PaymentMethod =<br />&#160;&#160;| Cash<br />&#160;&#160;| Cheque of int<br />&#160;&#160;| Card of CardType * CardNumber<br /><br />Full name: Ddd.ChoiceTypeExamples.PaymentMethod</div>
+<div class="tip" id="fs113">union case PaymentMethod.Cash: PaymentMethod</div>
+<div class="tip" id="fs114">union case PaymentMethod.Cheque: int -&gt; PaymentMethod</div>
+<div class="tip" id="fs115">union case PaymentMethod.Card: CardType * CardNumber -&gt; PaymentMethod</div>
+<div class="tip" id="fs116">module ChoiceTypeExamples<br /><br />from Ddd</div>
+<div class="tip" id="fs117">val isFever : temp:Temp -&gt; bool<br /><br />Full name: Ddd.TestChoiceTypeExamples.isFever</div>
+<div class="tip" id="fs118">val temp : Temp</div>
+<div class="tip" id="fs119">val tempInF : int</div>
+<div class="tip" id="fs120">val tempInC : float</div>
+<div class="tip" id="fs121">val temp1 : Temp<br /><br />Full name: Ddd.TestChoiceTypeExamples.temp1</div>
+<div class="tip" id="fs122">val temp2 : Temp<br /><br />Full name: Ddd.TestChoiceTypeExamples.temp2</div>
+<div class="tip" id="fs123">val printPayment : paymentMethod:PaymentMethod -&gt; unit<br /><br />Full name: Ddd.TestChoiceTypeExamples.printPayment</div>
+<div class="tip" id="fs124">val paymentMethod : PaymentMethod</div>
+<div class="tip" id="fs125">val checkNo : int</div>
+<div class="tip" id="fs126">val cardType : CardType</div>
+<div class="tip" id="fs127">val cardNo : CardNumber</div>
+<div class="tip" id="fs128">val cashPayment : PaymentMethod<br /><br />Full name: Ddd.TestChoiceTypeExamples.cashPayment</div>
+<div class="tip" id="fs129">val chequePayment : PaymentMethod<br /><br />Full name: Ddd.TestChoiceTypeExamples.chequePayment</div>
+<div class="tip" id="fs130">val cardPayment : PaymentMethod<br /><br />Full name: Ddd.TestChoiceTypeExamples.cardPayment</div>
+<div class="tip" id="fs131">type OptionalString =<br />&#160;&#160;| SomeString of string<br />&#160;&#160;| Nothing<br /><br />Full name: Ddd.OptionalType.OptionalString</div>
+<div class="tip" id="fs132">union case OptionalString.SomeString: string -&gt; OptionalString</div>
+<div class="tip" id="fs133">union case OptionalString.Nothing: OptionalString</div>
+<div class="tip" id="fs134">type OptionalInt =<br />&#160;&#160;| SomeInt of string<br />&#160;&#160;| Nothing<br /><br />Full name: Ddd.OptionalType.OptionalInt</div>
+<div class="tip" id="fs135">union case OptionalInt.SomeInt: string -&gt; OptionalInt</div>
+<div class="tip" id="fs136">union case OptionalInt.Nothing: OptionalInt</div>
+<div class="tip" id="fs137">type OptionalBool =<br />&#160;&#160;| SomeBool of string<br />&#160;&#160;| Nothing<br /><br />Full name: Ddd.OptionalType.OptionalBool</div>
+<div class="tip" id="fs138">union case OptionalBool.SomeBool: string -&gt; OptionalBool</div>
+<div class="tip" id="fs139">union case OptionalBool.Nothing: OptionalBool</div>
+<div class="tip" id="fs140">type PersonalName1 =<br />&#160;&#160;{FirstName: string;<br />&#160;&#160;&#160;MiddleInitial: Option&lt;string&gt;;<br />&#160;&#160;&#160;LastName: string;}<br /><br />Full name: Ddd.TestOptionalType.PersonalName1</div>
+<div class="tip" id="fs141">PersonalName1.FirstName: string</div>
+<div class="tip" id="fs142">PersonalName1.MiddleInitial: Option&lt;string&gt;</div>
+<div class="tip" id="fs143">module Option<br /><br />from Microsoft.FSharp.Core</div>
+<div class="tip" id="fs144">PersonalName1.LastName: string</div>
+<div class="tip" id="fs145">type PersonalName2 =<br />&#160;&#160;{FirstName: string;<br />&#160;&#160;&#160;MiddleInitial: string option;<br />&#160;&#160;&#160;LastName: string;}<br /><br />Full name: Ddd.TestOptionalType.PersonalName2</div>
+<div class="tip" id="fs146">PersonalName2.FirstName: string</div>
+<div class="tip" id="fs147">PersonalName2.MiddleInitial: string option</div>
+<div class="tip" id="fs148">type &#39;T option = Option&lt;&#39;T&gt;<br /><br />Full name: Microsoft.FSharp.Core.option&lt;_&gt;</div>
+<div class="tip" id="fs149">PersonalName2.LastName: string</div>
+<div class="tip" id="fs150">Multiple items<br />union case EmailAddress.EmailAddress: string -&gt; EmailAddress<br /><br />--------------------<br />type EmailAddress = | EmailAddress of string<br /><br />Full name: Ddd.SingleChoiceType.EmailAddress</div>
+<div class="tip" id="fs151">Multiple items<br />union case PhoneNumber.PhoneNumber: string -&gt; PhoneNumber<br /><br />--------------------<br />type PhoneNumber = | PhoneNumber of string<br /><br />Full name: Ddd.SingleChoiceType.PhoneNumber</div>
+<div class="tip" id="fs152">Multiple items<br />union case CustomerId.CustomerId: int -&gt; CustomerId<br /><br />--------------------<br />type CustomerId = | CustomerId of int<br /><br />Full name: Ddd.SingleChoiceType.CustomerId</div>
+<div class="tip" id="fs153">Multiple items<br />union case OrderId.OrderId: int -&gt; OrderId<br /><br />--------------------<br />type OrderId = | OrderId of int<br /><br />Full name: Ddd.SingleChoiceType.OrderId</div>
+<div class="tip" id="fs154">module SingleChoiceType<br /><br />from Ddd</div>
+<div class="tip" id="fs155">val email1 : EmailAddress<br /><br />Full name: Ddd.TestSingleChoiceType.email1</div>
+<div class="tip" id="fs156">val email2 : EmailAddress<br /><br />Full name: Ddd.TestSingleChoiceType.email2</div>
+<div class="tip" id="fs157">val phone1 : PhoneNumber<br /><br />Full name: Ddd.TestSingleChoiceType.phone1</div>
+<div class="tip" id="fs158">namespace System.Text</div>
+<div class="tip" id="fs159">namespace System.Text.RegularExpressions</div>
+<div class="tip" id="fs160">Multiple items<br />union case EmailAddress.EmailAddress: string -&gt; EmailAddress<br /><br />--------------------<br />type EmailAddress = | EmailAddress of string<br /><br />Full name: Ddd.EmailAddressType.EmailAddress</div>
+<div class="tip" id="fs161">val createEmailAddress : s:string -&gt; EmailAddress option<br /><br />Full name: Ddd.EmailAddressType.createEmailAddress</div>
+<div class="tip" id="fs162">val s : string</div>
+<div class="tip" id="fs163">Multiple items<br />type Regex =<br />&#160;&#160;new : pattern:string -&gt; Regex + 1 overload<br />&#160;&#160;member GetGroupNames : unit -&gt; string[]<br />&#160;&#160;member GetGroupNumbers : unit -&gt; int[]<br />&#160;&#160;member GroupNameFromNumber : i:int -&gt; string<br />&#160;&#160;member GroupNumberFromName : name:string -&gt; int<br />&#160;&#160;member IsMatch : input:string -&gt; bool + 1 overload<br />&#160;&#160;member Match : input:string -&gt; Match + 2 overloads<br />&#160;&#160;member Matches : input:string -&gt; MatchCollection + 1 overload<br />&#160;&#160;member Options : RegexOptions<br />&#160;&#160;member Replace : input:string * replacement:string -&gt; string + 5 overloads<br />&#160;&#160;...<br /><br />Full name: System.Text.RegularExpressions.Regex<br /><br />--------------------<br />Regex(pattern: string) : unit<br />Regex(pattern: string, options: RegexOptions) : unit</div>
+<div class="tip" id="fs164">Regex.IsMatch(input: string, pattern: string) : bool<br />Regex.IsMatch(input: string, pattern: string, options: RegexOptions) : bool</div>
+<div class="tip" id="fs165">union case Option.Some: Value: &#39;T -&gt; Option&lt;&#39;T&gt;</div>
+<div class="tip" id="fs166">union case Option.None: Option&lt;&#39;T&gt;</div>
+<div class="tip" id="fs167">module EmailAddressType<br /><br />from Ddd</div>
+<div class="tip" id="fs168">val email1 : EmailAddress option<br /><br />Full name: Ddd.TestEmailAddressType.email1</div>
+<div class="tip" id="fs169">val email2 : EmailAddress option<br /><br />Full name: Ddd.TestEmailAddressType.email2</div>
+<div class="tip" id="fs170">Multiple items<br />union case String50.String50: string -&gt; String50<br /><br />--------------------<br />type String50 = | String50 of string<br /><br />Full name: Ddd.ConstrainedString.String50</div>
+<div class="tip" id="fs171">val createString50 : s:string -&gt; String50 option<br /><br />Full name: Ddd.ConstrainedString.createString50</div>
+<div class="tip" id="fs172">property System.String.Length: int</div>
+<div class="tip" id="fs173">module ConstrainedString<br /><br />from Ddd</div>
+<div class="tip" id="fs174">val s1 : String50 option<br /><br />Full name: Ddd.TestConstrainedString.s1</div>
+<div class="tip" id="fs175">val s2 : String50 option<br /><br />Full name: Ddd.TestConstrainedString.s2</div>
+<div class="tip" id="fs176">module String<br /><br />from Microsoft.FSharp.Core</div>
+<div class="tip" id="fs177">val replicate : count:int -&gt; str:string -&gt; string<br /><br />Full name: Microsoft.FSharp.Core.String.replicate</div>
+<div class="tip" id="fs178">Multiple items<br />union case OrderLineQty.OrderLineQty: int -&gt; OrderLineQty<br /><br />--------------------<br />type OrderLineQty = | OrderLineQty of int<br /><br />Full name: Ddd.ConstrainedInteger.OrderLineQty</div>
+<div class="tip" id="fs179">val createOrderLineQty : qty:int -&gt; OrderLineQty option<br /><br />Full name: Ddd.ConstrainedInteger.createOrderLineQty</div>
+<div class="tip" id="fs180">val qty : int</div>
+<div class="tip" id="fs181">val increment : OrderLineQty -&gt; OrderLineQty option<br /><br />Full name: Ddd.ConstrainedInteger.increment</div>
+<div class="tip" id="fs182">val i : int</div>
+<div class="tip" id="fs183">val decrement : OrderLineQty -&gt; OrderLineQty option<br /><br />Full name: Ddd.ConstrainedInteger.decrement</div>
+<div class="tip" id="fs184">module ConstrainedInteger<br /><br />from Ddd</div>
+<div class="tip" id="fs185">val qty1 : OrderLineQty option<br /><br />Full name: Ddd.TestConstrainedInteger.qty1</div>
+<div class="tip" id="fs186">val qty2 : OrderLineQty option<br /><br />Full name: Ddd.TestConstrainedInteger.qty2</div>
+<div class="tip" id="fs187">val qty3 : OrderLineQty option<br /><br />Full name: Ddd.TestConstrainedInteger.qty3</div>
+<div class="tip" id="fs188">val i : OrderLineQty</div>
+<div class="tip" id="fs189">Multiple items<br />union case String1.String1: string -&gt; String1<br /><br />--------------------<br />type String1 = | String1 of string<br /><br />Full name: Ddd.PrologueVersion2.String1</div>
+<div class="tip" id="fs190">Multiple items<br />union case String50.String50: string -&gt; String50<br /><br />--------------------<br />type String50 = | String50 of string<br /><br />Full name: Ddd.PrologueVersion2.String50</div>
+<div class="tip" id="fs191">Multiple items<br />union case EmailAddress.EmailAddress: string -&gt; EmailAddress<br /><br />--------------------<br />type EmailAddress = | EmailAddress of string<br /><br />Full name: Ddd.PrologueVersion2.EmailAddress</div>
+<div class="tip" id="fs192">type PersonalName =<br />&#160;&#160;{FirstName: String50;<br />&#160;&#160;&#160;MiddleInitial: String1 option;<br />&#160;&#160;&#160;LastName: String50;}<br /><br />Full name: Ddd.PrologueVersion2.PersonalName</div>
+<div class="tip" id="fs193">PersonalName.FirstName: String50</div>
+<div class="tip" id="fs194">PersonalName.MiddleInitial: String1 option</div>
+<div class="tip" id="fs195">PersonalName.LastName: String50</div>
+<div class="tip" id="fs196">type EmailContactInfo =<br />&#160;&#160;{EmailAddress: EmailAddress;<br />&#160;&#160;&#160;IsEmailVerified: bool;}<br /><br />Full name: Ddd.PrologueVersion2.EmailContactInfo</div>
+<div class="tip" id="fs197">Multiple items<br />EmailContactInfo.EmailAddress: EmailAddress<br /><br />--------------------<br />type EmailAddress = | EmailAddress of string<br /><br />Full name: Ddd.PrologueVersion2.EmailAddress</div>
+<div class="tip" id="fs198">EmailContactInfo.IsEmailVerified: bool</div>
+<div class="tip" id="fs199">type Contact =<br />&#160;&#160;{Name: PersonalName;<br />&#160;&#160;&#160;Email: EmailContactInfo;}<br /><br />Full name: Ddd.PrologueVersion2.Contact</div>
+<div class="tip" id="fs200">Contact.Name: PersonalName</div>
+<div class="tip" id="fs201">Contact.Email: EmailContactInfo</div>
+<div class="tip" id="fs202">Multiple items<br />union case String1.String1: string -&gt; String1<br /><br />--------------------<br />type String1 = | String1 of string<br /><br />Full name: Ddd.VerifiedEmailExample.String1</div>
+<div class="tip" id="fs203">Multiple items<br />union case String50.String50: string -&gt; String50<br /><br />--------------------<br />type String50 = | String50 of string<br /><br />Full name: Ddd.VerifiedEmailExample.String50</div>
+<div class="tip" id="fs204">Multiple items<br />union case EmailAddress.EmailAddress: string -&gt; EmailAddress<br /><br />--------------------<br />type EmailAddress = | EmailAddress of string<br /><br />Full name: Ddd.VerifiedEmailExample.EmailAddress</div>
+<div class="tip" id="fs205">type PersonalName =<br />&#160;&#160;{FirstName: String50;<br />&#160;&#160;&#160;MiddleInitial: String1 option;<br />&#160;&#160;&#160;LastName: String50;}<br /><br />Full name: Ddd.VerifiedEmailExample.PersonalName</div>
+<div class="tip" id="fs206">Multiple items<br />union case VerifiedEmail.VerifiedEmail: EmailAddress -&gt; VerifiedEmail<br /><br />--------------------<br />type VerifiedEmail = | VerifiedEmail of EmailAddress<br /><br />Full name: Ddd.VerifiedEmailExample.VerifiedEmail</div>
+<div class="tip" id="fs207">Multiple items<br />union case VerificationHash.VerificationHash: string -&gt; VerificationHash<br /><br />--------------------<br />type VerificationHash = | VerificationHash of string<br /><br />Full name: Ddd.VerifiedEmailExample.VerificationHash</div>
+<div class="tip" id="fs208">type VerificationService = EmailAddress * VerificationHash -&gt; VerifiedEmail option<br /><br />Full name: Ddd.VerifiedEmailExample.VerificationService</div>
+<div class="tip" id="fs209">type EmailContactInfo =<br />&#160;&#160;| Unverified of EmailAddress<br />&#160;&#160;| Verified of VerifiedEmail<br /><br />Full name: Ddd.VerifiedEmailExample.EmailContactInfo</div>
+<div class="tip" id="fs210">union case EmailContactInfo.Unverified: EmailAddress -&gt; EmailContactInfo</div>
+<div class="tip" id="fs211">union case EmailContactInfo.Verified: VerifiedEmail -&gt; EmailContactInfo</div>
+<div class="tip" id="fs212">type Contact =<br />&#160;&#160;{Name: PersonalName;<br />&#160;&#160;&#160;Email: EmailContactInfo;}<br /><br />Full name: Ddd.VerifiedEmailExample.Contact</div>
+<div class="tip" id="fs213">Multiple items<br />union case String1.String1: string -&gt; String1<br /><br />--------------------<br />type String1 = | String1 of string<br /><br />Full name: Ddd.EMailAndContactExample_Before.String1</div>
+<div class="tip" id="fs214">Multiple items<br />union case String50.String50: string -&gt; String50<br /><br />--------------------<br />type String50 = | String50 of string<br /><br />Full name: Ddd.EMailAndContactExample_Before.String50</div>
+<div class="tip" id="fs215">Multiple items<br />union case EmailAddress.EmailAddress: string -&gt; EmailAddress<br /><br />--------------------<br />type EmailAddress = | EmailAddress of string<br /><br />Full name: Ddd.EMailAndContactExample_Before.EmailAddress</div>
+<div class="tip" id="fs216">type PersonalName =<br />&#160;&#160;{FirstName: String50;<br />&#160;&#160;&#160;MiddleInitial: String1 option;<br />&#160;&#160;&#160;LastName: String50;}<br /><br />Full name: Ddd.EMailAndContactExample_Before.PersonalName</div>
+<div class="tip" id="fs217">Multiple items<br />union case VerifiedEmail.VerifiedEmail: EmailAddress -&gt; VerifiedEmail<br /><br />--------------------<br />type VerifiedEmail = | VerifiedEmail of EmailAddress<br /><br />Full name: Ddd.EMailAndContactExample_Before.VerifiedEmail</div>
+<div class="tip" id="fs218">Multiple items<br />union case VerificationHash.VerificationHash: string -&gt; VerificationHash<br /><br />--------------------<br />type VerificationHash = | VerificationHash of string<br /><br />Full name: Ddd.EMailAndContactExample_Before.VerificationHash</div>
+<div class="tip" id="fs219">type VerificationService = EmailAddress * VerificationHash -&gt; VerifiedEmail option<br /><br />Full name: Ddd.EMailAndContactExample_Before.VerificationService</div>
+<div class="tip" id="fs220">type EmailContactInfo =<br />&#160;&#160;| Unverified of EmailAddress<br />&#160;&#160;| Verified of VerifiedEmail<br /><br />Full name: Ddd.EMailAndContactExample_Before.EmailContactInfo</div>
+<div class="tip" id="fs221">type PostalContactInfo =<br />&#160;&#160;{Address1: String50;<br />&#160;&#160;&#160;Address2: String50 option;<br />&#160;&#160;&#160;Town: String50;<br />&#160;&#160;&#160;PostCode: String50;}<br /><br />Full name: Ddd.EMailAndContactExample_Before.PostalContactInfo</div>
+<div class="tip" id="fs222">PostalContactInfo.Address1: String50</div>
+<div class="tip" id="fs223">PostalContactInfo.Address2: String50 option</div>
+<div class="tip" id="fs224">PostalContactInfo.Town: String50</div>
+<div class="tip" id="fs225">PostalContactInfo.PostCode: String50</div>
+<div class="tip" id="fs226">type Contact =<br />&#160;&#160;{Name: PersonalName;<br />&#160;&#160;&#160;Email: EmailContactInfo;<br />&#160;&#160;&#160;Address: PostalContactInfo;}<br /><br />Full name: Ddd.EMailAndContactExample_Before.Contact</div>
+<div class="tip" id="fs227">Contact.Address: PostalContactInfo</div>
+<div class="tip" id="fs228">Multiple items<br />union case String1.String1: string -&gt; String1<br /><br />--------------------<br />type String1 = | String1 of string<br /><br />Full name: Ddd.EMailAndContactExample_After.String1</div>
+<div class="tip" id="fs229">Multiple items<br />union case String50.String50: string -&gt; String50<br /><br />--------------------<br />type String50 = | String50 of string<br /><br />Full name: Ddd.EMailAndContactExample_After.String50</div>
+<div class="tip" id="fs230">Multiple items<br />union case EmailAddress.EmailAddress: string -&gt; EmailAddress<br /><br />--------------------<br />type EmailAddress = | EmailAddress of string<br /><br />Full name: Ddd.EMailAndContactExample_After.EmailAddress</div>
+<div class="tip" id="fs231">type PersonalName =<br />&#160;&#160;{FirstName: String50;<br />&#160;&#160;&#160;MiddleInitial: String1 option;<br />&#160;&#160;&#160;LastName: String50;}<br /><br />Full name: Ddd.EMailAndContactExample_After.PersonalName</div>
+<div class="tip" id="fs232">Multiple items<br />union case VerifiedEmail.VerifiedEmail: EmailAddress -&gt; VerifiedEmail<br /><br />--------------------<br />type VerifiedEmail = | VerifiedEmail of EmailAddress<br /><br />Full name: Ddd.EMailAndContactExample_After.VerifiedEmail</div>
+<div class="tip" id="fs233">Multiple items<br />union case VerificationHash.VerificationHash: string -&gt; VerificationHash<br /><br />--------------------<br />type VerificationHash = | VerificationHash of string<br /><br />Full name: Ddd.EMailAndContactExample_After.VerificationHash</div>
+<div class="tip" id="fs234">type VerificationService = EmailAddress * VerificationHash -&gt; VerifiedEmail option<br /><br />Full name: Ddd.EMailAndContactExample_After.VerificationService</div>
+<div class="tip" id="fs235">type EmailContactInfo =<br />&#160;&#160;| Unverified of EmailAddress<br />&#160;&#160;| Verified of VerifiedEmail<br /><br />Full name: Ddd.EMailAndContactExample_After.EmailContactInfo</div>
+<div class="tip" id="fs236">type PostalContactInfo =<br />&#160;&#160;{Address1: String50;<br />&#160;&#160;&#160;Address2: String50 option;<br />&#160;&#160;&#160;Town: String50;<br />&#160;&#160;&#160;PostCode: String50;}<br /><br />Full name: Ddd.EMailAndContactExample_After.PostalContactInfo</div>
+<div class="tip" id="fs237">type ContactInfo =<br />&#160;&#160;| EmailOnly of EmailContactInfo<br />&#160;&#160;| AddrOnly of PostalContactInfo<br />&#160;&#160;| EmailAndAddr of EmailContactInfo * PostalContactInfo<br /><br />Full name: Ddd.EMailAndContactExample_After.ContactInfo</div>
+<div class="tip" id="fs238">union case ContactInfo.EmailOnly: EmailContactInfo -&gt; ContactInfo</div>
+<div class="tip" id="fs239">union case ContactInfo.AddrOnly: PostalContactInfo -&gt; ContactInfo</div>
+<div class="tip" id="fs240">union case ContactInfo.EmailAndAddr: EmailContactInfo * PostalContactInfo -&gt; ContactInfo</div>
+<div class="tip" id="fs241">type Contact =<br />&#160;&#160;{Name: PersonalName;<br />&#160;&#160;&#160;ContactInfo: ContactInfo;}<br /><br />Full name: Ddd.EMailAndContactExample_After.Contact</div>
+<div class="tip" id="fs242">Multiple items<br />Contact.ContactInfo: ContactInfo<br /><br />--------------------<br />type ContactInfo =<br />&#160;&#160;| EmailOnly of EmailContactInfo<br />&#160;&#160;| AddrOnly of PostalContactInfo<br />&#160;&#160;| EmailAndAddr of EmailContactInfo * PostalContactInfo<br /><br />Full name: Ddd.EMailAndContactExample_After.ContactInfo</div>
+<div class="tip" id="fs243">module EMailAndContactExample_Alternative<br /><br />from Ddd</div>
+<div class="tip" id="fs244">Multiple items<br />union case String1.String1: string -&gt; String1<br /><br />--------------------<br />type String1 = | String1 of string<br /><br />Full name: Ddd.EMailAndContactExample_Alternative.String1</div>
+<div class="tip" id="fs245">Multiple items<br />union case String50.String50: string -&gt; String50<br /><br />--------------------<br />type String50 = | String50 of string<br /><br />Full name: Ddd.EMailAndContactExample_Alternative.String50</div>
+<div class="tip" id="fs246">Multiple items<br />union case EmailAddress.EmailAddress: string -&gt; EmailAddress<br /><br />--------------------<br />type EmailAddress = | EmailAddress of string<br /><br />Full name: Ddd.EMailAndContactExample_Alternative.EmailAddress</div>
+<div class="tip" id="fs247">type PersonalName =<br />&#160;&#160;{FirstName: String50;<br />&#160;&#160;&#160;MiddleInitial: String1 option;<br />&#160;&#160;&#160;LastName: String50;}<br /><br />Full name: Ddd.EMailAndContactExample_Alternative.PersonalName</div>
+<div class="tip" id="fs248">Multiple items<br />union case VerifiedEmail.VerifiedEmail: EmailAddress -&gt; VerifiedEmail<br /><br />--------------------<br />type VerifiedEmail = | VerifiedEmail of EmailAddress<br /><br />Full name: Ddd.EMailAndContactExample_Alternative.VerifiedEmail</div>
+<div class="tip" id="fs249">Multiple items<br />union case VerificationHash.VerificationHash: string -&gt; VerificationHash<br /><br />--------------------<br />type VerificationHash = | VerificationHash of string<br /><br />Full name: Ddd.EMailAndContactExample_Alternative.VerificationHash</div>
+<div class="tip" id="fs250">type VerificationService = EmailAddress * VerificationHash -&gt; VerifiedEmail option<br /><br />Full name: Ddd.EMailAndContactExample_Alternative.VerificationService</div>
+<div class="tip" id="fs251">type EmailContactInfo =<br />&#160;&#160;| Unverified of EmailAddress<br />&#160;&#160;| Verified of VerifiedEmail<br /><br />Full name: Ddd.EMailAndContactExample_Alternative.EmailContactInfo</div>
+<div class="tip" id="fs252">type PostalContactInfo =<br />&#160;&#160;{Address1: String50;<br />&#160;&#160;&#160;Address2: String50 option;<br />&#160;&#160;&#160;Town: String50;<br />&#160;&#160;&#160;PostCode: String50;}<br /><br />Full name: Ddd.EMailAndContactExample_Alternative.PostalContactInfo</div>
+<div class="tip" id="fs253">type ContactInfo =<br />&#160;&#160;| EmailOnly of EmailContactInfo<br />&#160;&#160;| AddrOnly of PostalContactInfo<br /><br />Full name: Ddd.EMailAndContactExample_Alternative.ContactInfo</div>
+<div class="tip" id="fs254">type Contact =<br />&#160;&#160;{Name: PersonalName;<br />&#160;&#160;&#160;PrimaryContactInfo: ContactInfo;<br />&#160;&#160;&#160;SecondaryContactInfo: ContactInfo option;}<br /><br />Full name: Ddd.EMailAndContactExample_Alternative.Contact</div>
+<div class="tip" id="fs255">Contact.PrimaryContactInfo: ContactInfo</div>
+<div class="tip" id="fs256">Contact.SecondaryContactInfo: ContactInfo option</div>
+
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
             <section >
@@ -711,10 +967,10 @@
 <span class="c">// To execute code in trysharp.org, just highlight and click &quot;Run&quot;</span>
 
 <span class="c">// Try it! highlight from here ===&gt;</span>
-<span class="k">let</span> <span class="i">three</span> <span class="o">=</span> <span class="n">1</span> <span class="o">+</span> <span class="n">2</span>
-<span class="k">let</span> <span class="i">square</span> <span class="i">x</span> <span class="o">=</span> <span class="i">x</span> <span class="o">*</span> <span class="i">x</span>
-<span class="i">printfn</span> <span class="s">&quot;Three is %i&quot;</span> <span class="i">three</span>
-<span class="i">printfn</span> <span class="s">&quot;Three squared is %i&quot;</span> (<span class="i">square</span> <span class="i">three</span>)
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">three</span> <span class="o">=</span> <span class="n">1</span> <span class="o">+</span> <span class="n">2</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="f">square</span> <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">x</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs3', 4)" onmouseover="showTip(event, 'fs3', 4)" class="i">x</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs3', 5)" onmouseover="showTip(event, 'fs3', 5)" class="i">x</span>
+<span onmouseout="hideTip(event, 'fs4', 6)" onmouseover="showTip(event, 'fs4', 6)" class="f">printfn</span> <span class="s">&quot;Three is </span><span class="pf">%i</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs1', 7)" onmouseover="showTip(event, 'fs1', 7)" class="i">three</span>
+<span onmouseout="hideTip(event, 'fs4', 8)" onmouseover="showTip(event, 'fs4', 8)" class="f">printfn</span> <span class="s">&quot;Three squared is </span><span class="pf">%i</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs2', 9)" onmouseover="showTip(event, 'fs2', 9)" class="f">square</span> <span onmouseout="hideTip(event, 'fs1', 10)" onmouseover="showTip(event, 'fs1', 10)" class="i">three</span>)
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 <span class="c">// ======================================================</span>
@@ -722,16 +978,16 @@
 <span class="c">// ======================================================</span>
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">FirstSlide</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">FirstSlide</span> <span class="o">=</span> 
 
-    <span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs5', 11)" onmouseover="showTip(event, 'fs5', 11)" class="t">Contact</span> <span class="o">=</span> {
 
-      <span class="i">FirstName</span><span class="o">:</span> <span class="i">string</span>
-      <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">string</span>
-      <span class="i">LastName</span><span class="o">:</span> <span class="i">string</span>
+      <span onmouseout="hideTip(event, 'fs6', 12)" onmouseover="showTip(event, 'fs6', 12)" class="i">FirstName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs7', 13)" onmouseover="showTip(event, 'fs7', 13)" class="t">string</span>
+      <span onmouseout="hideTip(event, 'fs8', 14)" onmouseover="showTip(event, 'fs8', 14)" class="i">MiddleInitial</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs7', 15)" onmouseover="showTip(event, 'fs7', 15)" class="t">string</span>
+      <span onmouseout="hideTip(event, 'fs9', 16)" onmouseover="showTip(event, 'fs9', 16)" class="i">LastName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs7', 17)" onmouseover="showTip(event, 'fs7', 17)" class="t">string</span>
 
-      <span class="i">EmailAddress</span><span class="o">:</span> <span class="i">string</span>
-      <span class="i">IsEmailVerified</span><span class="o">:</span> <span class="i">bool</span>  <span class="c">// true if ownership of email address is confirmed</span>
+      <span onmouseout="hideTip(event, 'fs10', 18)" onmouseover="showTip(event, 'fs10', 18)" class="i">EmailAddress</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs7', 19)" onmouseover="showTip(event, 'fs7', 19)" class="t">string</span>
+      <span onmouseout="hideTip(event, 'fs11', 20)" onmouseover="showTip(event, 'fs11', 20)" class="i">IsEmailVerified</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs12', 21)" onmouseover="showTip(event, 'fs12', 21)" class="t">bool</span>  <span class="c">// true if ownership of email address is confirmed</span>
 
       }
 
@@ -748,22 +1004,22 @@
 
 <span class="c">// highlight from here ===&gt;</span>
 <span class="c">// define the type</span>
-<span class="k">module</span> <span class="i">ValueTypeExample</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">ValueTypeExample</span> <span class="o">=</span> 
 
-    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">:</span><span class="i">string</span>; <span class="i">LastName</span><span class="o">:</span><span class="i">string</span>}
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs13', 22)" onmouseover="showTip(event, 'fs13', 22)" class="t">PersonalName</span> <span class="o">=</span> {<span onmouseout="hideTip(event, 'fs14', 23)" onmouseover="showTip(event, 'fs14', 23)" class="i">FirstName</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs7', 24)" onmouseover="showTip(event, 'fs7', 24)" class="t">string</span>; <span onmouseout="hideTip(event, 'fs15', 25)" onmouseover="showTip(event, 'fs15', 25)" class="i">LastName</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs7', 26)" onmouseover="showTip(event, 'fs7', 26)" class="t">string</span>}
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
 <span class="c">// highlight from here ===&gt;</span>
 <span class="c">// test the code </span>
-<span class="k">module</span> <span class="i">TestValueTypeExample</span> <span class="o">=</span> 
-    <span class="k">open</span> <span class="i">ValueTypeExample</span>
+<span class="k">module</span> <span class="t">TestValueTypeExample</span> <span class="o">=</span> 
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs16', 27)" onmouseover="showTip(event, 'fs16', 27)" class="i">ValueTypeExample</span>
         
-    <span class="k">let</span> <span class="i">alice</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}
-    <span class="k">let</span> <span class="i">aliceClone</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}
-    <span class="i">printfn</span> <span class="s">&quot;Alice&#39;s name is %A&quot;</span> <span class="i">alice</span>
-    <span class="i">printfn</span> <span class="s">&quot;AliceClone&#39;s name is %A&quot;</span> <span class="i">aliceClone</span>
-    <span class="i">printfn</span> <span class="s">&quot;Are Alice and clone equal? %b&quot;</span> (<span class="i">alice</span> <span class="o">=</span> <span class="i">aliceClone</span>)
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs17', 28)" onmouseover="showTip(event, 'fs17', 28)" class="i">alice</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs18', 29)" onmouseover="showTip(event, 'fs18', 29)" class="i">aliceClone</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}
+    <span onmouseout="hideTip(event, 'fs4', 30)" onmouseover="showTip(event, 'fs4', 30)" class="f">printfn</span> <span class="s">&quot;Alice&#39;s name is </span><span class="pf">%A</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs17', 31)" onmouseover="showTip(event, 'fs17', 31)" class="i">alice</span>
+    <span onmouseout="hideTip(event, 'fs4', 32)" onmouseover="showTip(event, 'fs4', 32)" class="f">printfn</span> <span class="s">&quot;AliceClone&#39;s name is </span><span class="pf">%A</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs18', 33)" onmouseover="showTip(event, 'fs18', 33)" class="i">aliceClone</span>
+    <span onmouseout="hideTip(event, 'fs4', 34)" onmouseover="showTip(event, 'fs4', 34)" class="f">printfn</span> <span class="s">&quot;Are Alice and clone equal? </span><span class="pf">%b</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs17', 35)" onmouseover="showTip(event, 'fs17', 35)" class="i">alice</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs18', 36)" onmouseover="showTip(event, 'fs18', 36)" class="i">aliceClone</span>)
 <span class="c">// &lt;==== highlight to here and Run </span>
 
 <span class="c">// NOTE you may need to scroll up in the outpt window to see the print statements</span>
@@ -776,35 +1032,35 @@
 
 <span class="c">// highlight from here ===&gt;</span>
 <span class="c">// define the type</span>
-<span class="k">module</span> <span class="i">EntityTypeExample</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">EntityTypeExample</span> <span class="o">=</span> 
 
     <span class="c">// value type</span>
-    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">:</span><span class="i">string</span>; <span class="i">LastName</span><span class="o">:</span><span class="i">string</span>}
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs19', 37)" onmouseover="showTip(event, 'fs19', 37)" class="t">PersonalName</span> <span class="o">=</span> {<span onmouseout="hideTip(event, 'fs14', 38)" onmouseover="showTip(event, 'fs14', 38)" class="i">FirstName</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs7', 39)" onmouseover="showTip(event, 'fs7', 39)" class="t">string</span>; <span onmouseout="hideTip(event, 'fs15', 40)" onmouseover="showTip(event, 'fs15', 40)" class="i">LastName</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs7', 41)" onmouseover="showTip(event, 'fs7', 41)" class="t">string</span>}
     
     <span class="c">// entity type</span>
-    [&lt;<span class="i">CustomEquality</span>; <span class="i">NoComparison</span>&gt;]    
-    <span class="k">type</span> <span class="i">Person</span> <span class="o">=</span> {<span class="i">Id</span><span class="o">:</span><span class="i">int</span>; <span class="i">Name</span><span class="o">:</span><span class="i">PersonalName</span>} <span class="k">with</span>
+    [&lt;<span onmouseout="hideTip(event, 'fs20', 42)" onmouseover="showTip(event, 'fs20', 42)" class="t">CustomEquality</span>; <span onmouseout="hideTip(event, 'fs21', 43)" onmouseover="showTip(event, 'fs21', 43)" class="t">NoComparison</span>&gt;]    
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs22', 44)" onmouseover="showTip(event, 'fs22', 44)" class="t">Person</span> <span class="o">=</span> {<span onmouseout="hideTip(event, 'fs23', 45)" onmouseover="showTip(event, 'fs23', 45)" class="i">Id</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs24', 46)" onmouseover="showTip(event, 'fs24', 46)" class="t">int</span>; <span onmouseout="hideTip(event, 'fs25', 47)" onmouseover="showTip(event, 'fs25', 47)" class="i">Name</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs19', 48)" onmouseover="showTip(event, 'fs19', 48)" class="t">PersonalName</span>} <span class="k">with</span>
         
-        <span class="k">override</span> <span class="i">this</span><span class="o">.</span><span class="i">Equals</span>(<span class="i">other</span>) <span class="o">=</span>
-            <span class="k">match</span> <span class="i">other</span> <span class="k">with</span>
-            | <span class="o">:?</span> <span class="i">Person</span> <span class="k">as</span> <span class="i">p</span> <span class="k">-&gt;</span> (<span class="i">this</span><span class="o">.</span><span class="i">Id</span> <span class="o">=</span> <span class="i">p</span><span class="o">.</span><span class="i">Id</span>)
+        <span class="k">override</span> <span onmouseout="hideTip(event, 'fs26', 49)" onmouseover="showTip(event, 'fs26', 49)" class="i">this</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs27', 50)" onmouseover="showTip(event, 'fs27', 50)" class="f">Equals</span>(<span onmouseout="hideTip(event, 'fs28', 51)" onmouseover="showTip(event, 'fs28', 51)" class="i">other</span>) <span class="o">=</span>
+            <span class="k">match</span> <span onmouseout="hideTip(event, 'fs28', 52)" onmouseover="showTip(event, 'fs28', 52)" class="i">other</span> <span class="k">with</span>
+            | <span class="o">:?</span> <span onmouseout="hideTip(event, 'fs22', 53)" onmouseover="showTip(event, 'fs22', 53)" class="t">Person</span> <span class="k">as</span> <span onmouseout="hideTip(event, 'fs29', 54)" onmouseover="showTip(event, 'fs29', 54)" class="i">p</span> <span class="k">-&gt;</span> (<span onmouseout="hideTip(event, 'fs26', 55)" onmouseover="showTip(event, 'fs26', 55)" class="i">this</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs23', 56)" onmouseover="showTip(event, 'fs23', 56)" class="i">Id</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs29', 57)" onmouseover="showTip(event, 'fs29', 57)" class="i">p</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs23', 58)" onmouseover="showTip(event, 'fs23', 58)" class="i">Id</span>)
             | _ <span class="k">-&gt;</span> <span class="k">false</span>
         
-        <span class="k">override</span> <span class="i">this</span><span class="o">.</span><span class="i">GetHashCode</span>() <span class="o">=</span> <span class="i">hash</span> <span class="i">this</span><span class="o">.</span><span class="i">Id</span>
+        <span class="k">override</span> <span onmouseout="hideTip(event, 'fs26', 59)" onmouseover="showTip(event, 'fs26', 59)" class="i">this</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs30', 60)" onmouseover="showTip(event, 'fs30', 60)" class="f">GetHashCode</span>() <span class="o">=</span> <span onmouseout="hideTip(event, 'fs31', 61)" onmouseover="showTip(event, 'fs31', 61)" class="f">hash</span> <span onmouseout="hideTip(event, 'fs26', 62)" onmouseover="showTip(event, 'fs26', 62)" class="i">this</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs23', 63)" onmouseover="showTip(event, 'fs23', 63)" class="i">Id</span>
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
 <span class="c">// highlight from here ===&gt;</span>
 <span class="c">// test the code </span>
-<span class="k">module</span> <span class="i">TestEntityTypeExample</span> <span class="o">=</span> 
-    <span class="k">open</span> <span class="i">EntityTypeExample</span>
+<span class="k">module</span> <span class="t">TestEntityTypeExample</span> <span class="o">=</span> 
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs32', 64)" onmouseover="showTip(event, 'fs32', 64)" class="i">EntityTypeExample</span>
     
-    <span class="k">let</span> <span class="i">alice</span> <span class="o">=</span> {<span class="i">Id</span><span class="o">=</span><span class="n">1</span>; <span class="i">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}}
-    <span class="k">let</span> <span class="i">bilbo</span> <span class="o">=</span> {<span class="i">Id</span><span class="o">=</span><span class="n">1</span>; <span class="i">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Bilbo&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Baggins&quot;</span>}}
-    <span class="i">printfn</span> <span class="s">&quot;Alice is %A&quot;</span> <span class="i">alice</span>
-    <span class="i">printfn</span> <span class="s">&quot;Bilbo is %A&quot;</span> <span class="i">bilbo</span>
-    <span class="i">printfn</span> <span class="s">&quot;Are Alice and Bilbo equal? %b&quot;</span> (<span class="i">alice</span> <span class="o">=</span> <span class="i">bilbo</span>)
-    <span class="i">printfn</span> <span class="s">&quot;Are Alice.Name and Bilbo.Name equal? %b&quot;</span> (<span class="i">alice</span><span class="o">.</span><span class="i">Name</span> <span class="o">=</span> <span class="i">bilbo</span><span class="o">.</span><span class="i">Name</span>)
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs33', 65)" onmouseover="showTip(event, 'fs33', 65)" class="i">alice</span> <span class="o">=</span> {<span class="i">Id</span><span class="o">=</span><span class="n">1</span>; <span class="i">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}}
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs34', 66)" onmouseover="showTip(event, 'fs34', 66)" class="i">bilbo</span> <span class="o">=</span> {<span class="i">Id</span><span class="o">=</span><span class="n">1</span>; <span class="i">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Bilbo&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Baggins&quot;</span>}}
+    <span onmouseout="hideTip(event, 'fs4', 67)" onmouseover="showTip(event, 'fs4', 67)" class="f">printfn</span> <span class="s">&quot;Alice is </span><span class="pf">%A</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs33', 68)" onmouseover="showTip(event, 'fs33', 68)" class="i">alice</span>
+    <span onmouseout="hideTip(event, 'fs4', 69)" onmouseover="showTip(event, 'fs4', 69)" class="f">printfn</span> <span class="s">&quot;Bilbo is </span><span class="pf">%A</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs34', 70)" onmouseover="showTip(event, 'fs34', 70)" class="i">bilbo</span>
+    <span onmouseout="hideTip(event, 'fs4', 71)" onmouseover="showTip(event, 'fs4', 71)" class="f">printfn</span> <span class="s">&quot;Are Alice and Bilbo equal? </span><span class="pf">%b</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs33', 72)" onmouseover="showTip(event, 'fs33', 72)" class="i">alice</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs34', 73)" onmouseover="showTip(event, 'fs34', 73)" class="i">bilbo</span>)
+    <span onmouseout="hideTip(event, 'fs4', 74)" onmouseover="showTip(event, 'fs4', 74)" class="f">printfn</span> <span class="s">&quot;Are Alice.Name and Bilbo.Name equal? </span><span class="pf">%b</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs33', 75)" onmouseover="showTip(event, 'fs33', 75)" class="i">alice</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs25', 76)" onmouseover="showTip(event, 'fs25', 76)" class="i">Name</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs34', 77)" onmouseover="showTip(event, 'fs34', 77)" class="i">bilbo</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs25', 78)" onmouseover="showTip(event, 'fs25', 78)" class="i">Name</span>)
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
@@ -814,37 +1070,37 @@
 
 <span class="c">// highlight from here ===&gt;</span>
 <span class="c">// define the type</span>
-<span class="k">module</span> <span class="i">EntityVersioningExample</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">EntityVersioningExample</span> <span class="o">=</span> 
 
-    <span class="k">open</span> <span class="i">System</span>
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs35', 79)" onmouseover="showTip(event, 'fs35', 79)" class="i">System</span>
     
     <span class="c">//value type</span>
-    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">:</span><span class="i">string</span>; <span class="i">LastName</span><span class="o">:</span><span class="i">string</span>}
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs36', 80)" onmouseover="showTip(event, 'fs36', 80)" class="t">PersonalName</span> <span class="o">=</span> {<span onmouseout="hideTip(event, 'fs14', 81)" onmouseover="showTip(event, 'fs14', 81)" class="i">FirstName</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs37', 82)" onmouseover="showTip(event, 'fs37', 82)" class="t">string</span>; <span onmouseout="hideTip(event, 'fs15', 83)" onmouseover="showTip(event, 'fs15', 83)" class="i">LastName</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs37', 84)" onmouseover="showTip(event, 'fs37', 84)" class="t">string</span>}
     
     <span class="c">// entity type</span>
-    [&lt;<span class="i">NoEquality</span>; <span class="i">NoComparison</span>&gt;]    
-    <span class="k">type</span> <span class="i">Person</span> <span class="o">=</span> {<span class="i">Id</span><span class="o">:</span><span class="i">int</span>; <span class="i">Version</span><span class="o">:</span><span class="i">Guid</span>; <span class="i">Name</span><span class="o">:</span><span class="i">PersonalName</span>} 
+    [&lt;<span onmouseout="hideTip(event, 'fs38', 85)" onmouseover="showTip(event, 'fs38', 85)" class="t">NoEquality</span>; <span onmouseout="hideTip(event, 'fs21', 86)" onmouseover="showTip(event, 'fs21', 86)" class="t">NoComparison</span>&gt;]    
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs39', 87)" onmouseover="showTip(event, 'fs39', 87)" class="t">Person</span> <span class="o">=</span> {<span onmouseout="hideTip(event, 'fs23', 88)" onmouseover="showTip(event, 'fs23', 88)" class="i">Id</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs24', 89)" onmouseover="showTip(event, 'fs24', 89)" class="t">int</span>; <span onmouseout="hideTip(event, 'fs40', 90)" onmouseover="showTip(event, 'fs40', 90)" class="i">Version</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs41', 91)" onmouseover="showTip(event, 'fs41', 91)" class="t">Guid</span>; <span onmouseout="hideTip(event, 'fs25', 92)" onmouseover="showTip(event, 'fs25', 92)" class="i">Name</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs36', 93)" onmouseover="showTip(event, 'fs36', 93)" class="t">PersonalName</span>} 
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
 <span class="c">// highlight from here ===&gt;</span>
 <span class="c">// test the code </span>
-<span class="k">module</span> <span class="i">TestEntityVersioningExample</span> <span class="o">=</span> 
-    <span class="k">open</span> <span class="i">EntityVersioningExample</span> 
-    <span class="k">open</span> <span class="i">System</span>
+<span class="k">module</span> <span class="t">TestEntityVersioningExample</span> <span class="o">=</span> 
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs42', 94)" onmouseover="showTip(event, 'fs42', 94)" class="i">EntityVersioningExample</span> 
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs35', 95)" onmouseover="showTip(event, 'fs35', 95)" class="i">System</span>
 
-    <span class="k">let</span> <span class="i">alice</span> <span class="o">=</span>{<span class="i">Id</span><span class="o">=</span><span class="n">1</span>; <span class="i">Version</span><span class="o">=</span><span class="i">Guid</span><span class="o">.</span><span class="i">NewGuid</span>(); 
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs43', 96)" onmouseover="showTip(event, 'fs43', 96)" class="i">alice</span> <span class="o">=</span>{<span class="i">Id</span><span class="o">=</span><span class="n">1</span>; <span onmouseout="hideTip(event, 'fs44', 97)" onmouseover="showTip(event, 'fs44', 97)" class="i">Version</span><span class="o">=</span><span onmouseout="hideTip(event, 'fs41', 98)" onmouseover="showTip(event, 'fs41', 98)" class="t">Guid</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs45', 99)" onmouseover="showTip(event, 'fs45', 99)" class="f">NewGuid</span>(); 
                 <span class="i">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}}
                 
-    <span class="k">let</span> <span class="i">aliceV2</span> <span class="o">=</span> {<span class="i">alice</span> <span class="k">with</span> 
-                    <span class="i">Version</span><span class="o">=</span><span class="i">Guid</span><span class="o">.</span><span class="i">NewGuid</span>(); 
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs46', 100)" onmouseover="showTip(event, 'fs46', 100)" class="i">aliceV2</span> <span class="o">=</span> {<span onmouseout="hideTip(event, 'fs43', 101)" onmouseover="showTip(event, 'fs43', 101)" class="i">alice</span> <span class="k">with</span> 
+                    <span onmouseout="hideTip(event, 'fs44', 102)" onmouseover="showTip(event, 'fs44', 102)" class="i">Version</span><span class="o">=</span><span onmouseout="hideTip(event, 'fs41', 103)" onmouseover="showTip(event, 'fs41', 103)" class="t">Guid</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs45', 104)" onmouseover="showTip(event, 'fs45', 104)" class="f">NewGuid</span>(); 
                     <span class="i">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Al&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adamson&quot;</span>}}
     
-    <span class="i">printfn</span> <span class="s">&quot;Alice is %A&quot;</span> <span class="i">alice</span>
-    <span class="i">printfn</span> <span class="s">&quot;AliceV2 is %A&quot;</span> <span class="i">aliceV2</span>
+    <span onmouseout="hideTip(event, 'fs4', 105)" onmouseover="showTip(event, 'fs4', 105)" class="f">printfn</span> <span class="s">&quot;Alice is </span><span class="pf">%A</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs43', 106)" onmouseover="showTip(event, 'fs43', 106)" class="i">alice</span>
+    <span onmouseout="hideTip(event, 'fs4', 107)" onmouseover="showTip(event, 'fs4', 107)" class="f">printfn</span> <span class="s">&quot;AliceV2 is </span><span class="pf">%A</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs46', 108)" onmouseover="showTip(event, 'fs46', 108)" class="i">aliceV2</span>
     <span class="c">//printfn &quot;Are Alice and AliceV2 equal? %b&quot; (alice = aliceV2)   // uncomment this to get a compiler error</span>
-    <span class="i">printfn</span> <span class="s">&quot;Are Alice and AliceV2 same id? %b&quot;</span> (<span class="i">alice</span><span class="o">.</span><span class="i">Id</span> <span class="o">=</span> <span class="i">aliceV2</span><span class="o">.</span><span class="i">Id</span>)
-    <span class="i">printfn</span> <span class="s">&quot;Are Alice and AliceV2 same version? %b&quot;</span> (<span class="i">alice</span><span class="o">.</span><span class="i">Version</span> <span class="o">=</span> <span class="i">aliceV2</span><span class="o">.</span><span class="i">Version</span>)
+    <span onmouseout="hideTip(event, 'fs4', 109)" onmouseover="showTip(event, 'fs4', 109)" class="f">printfn</span> <span class="s">&quot;Are Alice and AliceV2 same id? </span><span class="pf">%b</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs43', 110)" onmouseover="showTip(event, 'fs43', 110)" class="i">alice</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs23', 111)" onmouseover="showTip(event, 'fs23', 111)" class="i">Id</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs46', 112)" onmouseover="showTip(event, 'fs46', 112)" class="i">aliceV2</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs23', 113)" onmouseover="showTip(event, 'fs23', 113)" class="i">Id</span>)
+    <span onmouseout="hideTip(event, 'fs4', 114)" onmouseover="showTip(event, 'fs4', 114)" class="f">printfn</span> <span class="s">&quot;Are Alice and AliceV2 same version? </span><span class="pf">%b</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs43', 115)" onmouseover="showTip(event, 'fs43', 115)" class="i">alice</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs47', 116)" onmouseover="showTip(event, 'fs47', 116)" class="i">Version</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs46', 117)" onmouseover="showTip(event, 'fs46', 117)" class="i">aliceV2</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs47', 118)" onmouseover="showTip(event, 'fs47', 118)" class="i">Version</span>)
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 <span class="c">// ======================================================</span>
@@ -853,28 +1109,28 @@
 
 <span class="c">// highlight from here ===&gt;</span>
 <span class="c">// define the type</span>
-<span class="k">module</span> <span class="i">EntityMutabilityExample</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">EntityMutabilityExample</span> <span class="o">=</span> 
     
     <span class="c">//value type</span>
-    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {<span class="i">FirstName</span><span class="o">:</span><span class="i">string</span>; <span class="i">LastName</span><span class="o">:</span><span class="i">string</span>}
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs48', 119)" onmouseover="showTip(event, 'fs48', 119)" class="t">PersonalName</span> <span class="o">=</span> {<span onmouseout="hideTip(event, 'fs14', 120)" onmouseover="showTip(event, 'fs14', 120)" class="i">FirstName</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs7', 121)" onmouseover="showTip(event, 'fs7', 121)" class="t">string</span>; <span onmouseout="hideTip(event, 'fs15', 122)" onmouseover="showTip(event, 'fs15', 122)" class="i">LastName</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs7', 123)" onmouseover="showTip(event, 'fs7', 123)" class="t">string</span>}
     
     <span class="c">// entity type</span>
-    [&lt;<span class="i">NoEquality</span>; <span class="i">NoComparison</span>&gt;]    
-    <span class="k">type</span> <span class="i">Person</span> <span class="o">=</span> {<span class="i">Id</span><span class="o">:</span><span class="i">int</span>; <span class="k">mutable</span> <span class="i">Name</span><span class="o">:</span><span class="i">PersonalName</span>} 
+    [&lt;<span onmouseout="hideTip(event, 'fs38', 124)" onmouseover="showTip(event, 'fs38', 124)" class="t">NoEquality</span>; <span onmouseout="hideTip(event, 'fs21', 125)" onmouseover="showTip(event, 'fs21', 125)" class="t">NoComparison</span>&gt;]    
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs49', 126)" onmouseover="showTip(event, 'fs49', 126)" class="t">Person</span> <span class="o">=</span> {<span onmouseout="hideTip(event, 'fs23', 127)" onmouseover="showTip(event, 'fs23', 127)" class="i">Id</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs24', 128)" onmouseover="showTip(event, 'fs24', 128)" class="t">int</span>; <span class="k">mutable</span> <span onmouseout="hideTip(event, 'fs25', 129)" onmouseover="showTip(event, 'fs25', 129)" class="v">Name</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs48', 130)" onmouseover="showTip(event, 'fs48', 130)" class="t">PersonalName</span>} 
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
 
 <span class="c">// highlight from here ===&gt;</span>
 <span class="c">// test the code </span>
-<span class="k">module</span> <span class="i">TestEntityMutabilityExample</span> <span class="o">=</span> 
-    <span class="k">open</span> <span class="i">EntityMutabilityExample</span> 
+<span class="k">module</span> <span class="t">TestEntityMutabilityExample</span> <span class="o">=</span> 
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs50', 131)" onmouseover="showTip(event, 'fs50', 131)" class="i">EntityMutabilityExample</span> 
     
-    <span class="k">let</span> <span class="i">alice</span> <span class="o">=</span>{<span class="i">Id</span><span class="o">=</span><span class="n">1</span>; <span class="i">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}}
-    <span class="i">printfn</span> <span class="s">&quot;Alice before change  is %A&quot;</span> <span class="i">alice</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs51', 132)" onmouseover="showTip(event, 'fs51', 132)" class="i">alice</span> <span class="o">=</span>{<span class="i">Id</span><span class="o">=</span><span class="n">1</span>; <span class="v">Name</span><span class="o">=</span>{<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adams&quot;</span>}}
+    <span onmouseout="hideTip(event, 'fs4', 133)" onmouseover="showTip(event, 'fs4', 133)" class="f">printfn</span> <span class="s">&quot;Alice before change  is </span><span class="pf">%A</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs51', 134)" onmouseover="showTip(event, 'fs51', 134)" class="i">alice</span>
                 
-    <span class="i">alice</span><span class="o">.</span><span class="i">Name</span> <span class="o">&lt;-</span> {<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Al&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adamson&quot;</span>}
-    <span class="i">printfn</span> <span class="s">&quot;Alice after change  is %A&quot;</span> <span class="i">alice</span>
+    <span onmouseout="hideTip(event, 'fs51', 135)" onmouseover="showTip(event, 'fs51', 135)" class="i">alice</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs25', 136)" onmouseover="showTip(event, 'fs25', 136)" class="v">Name</span> <span class="o">&lt;-</span> {<span class="i">FirstName</span><span class="o">=</span><span class="s">&quot;Al&quot;</span>; <span class="i">LastName</span><span class="o">=</span><span class="s">&quot;Adamson&quot;</span>}
+    <span onmouseout="hideTip(event, 'fs4', 137)" onmouseover="showTip(event, 'fs4', 137)" class="f">printfn</span> <span class="s">&quot;Alice after change  is </span><span class="pf">%A</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs51', 138)" onmouseover="showTip(event, 'fs51', 138)" class="i">alice</span>
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 <span class="c">// ======================================================</span>
@@ -882,17 +1138,17 @@
 <span class="c">// ======================================================</span>
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">ValueAndEntityReview</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">ValueAndEntityReview</span> <span class="o">=</span> 
 
-    [&lt;<span class="i">StructuralEquality</span>;<span class="i">NoComparison</span>&gt;]
-    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {         <span class="c">// a Value Object</span>
-        <span class="i">FirstName</span> <span class="o">:</span> <span class="i">string</span>; 
-        <span class="i">LastName</span> <span class="o">:</span> <span class="i">string</span> }
+    [&lt;<span onmouseout="hideTip(event, 'fs52', 139)" onmouseover="showTip(event, 'fs52', 139)" class="t">StructuralEquality</span>;<span onmouseout="hideTip(event, 'fs21', 140)" onmouseover="showTip(event, 'fs21', 140)" class="t">NoComparison</span>&gt;]
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs53', 141)" onmouseover="showTip(event, 'fs53', 141)" class="t">PersonalName</span> <span class="o">=</span> {         <span class="c">// a Value Object</span>
+        <span onmouseout="hideTip(event, 'fs14', 142)" onmouseover="showTip(event, 'fs14', 142)" class="i">FirstName</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs7', 143)" onmouseover="showTip(event, 'fs7', 143)" class="t">string</span>; 
+        <span onmouseout="hideTip(event, 'fs15', 144)" onmouseover="showTip(event, 'fs15', 144)" class="i">LastName</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs7', 145)" onmouseover="showTip(event, 'fs7', 145)" class="t">string</span> }
     
-    [&lt;<span class="i">NoEquality</span>; <span class="i">NoComparison</span>&gt;]       
-    <span class="k">type</span> <span class="i">Person</span> <span class="o">=</span> {               <span class="c">// an Entity</span>
-        <span class="i">Id</span> <span class="o">:</span> <span class="i">int</span>; 
-        <span class="i">Name</span> <span class="o">:</span> <span class="i">PersonalName</span> }  
+    [&lt;<span onmouseout="hideTip(event, 'fs38', 146)" onmouseover="showTip(event, 'fs38', 146)" class="t">NoEquality</span>; <span onmouseout="hideTip(event, 'fs21', 147)" onmouseover="showTip(event, 'fs21', 147)" class="t">NoComparison</span>&gt;]       
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs54', 148)" onmouseover="showTip(event, 'fs54', 148)" class="t">Person</span> <span class="o">=</span> {               <span class="c">// an Entity</span>
+        <span onmouseout="hideTip(event, 'fs23', 149)" onmouseover="showTip(event, 'fs23', 149)" class="i">Id</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs24', 150)" onmouseover="showTip(event, 'fs24', 150)" class="t">int</span>; 
+        <span onmouseout="hideTip(event, 'fs25', 151)" onmouseover="showTip(event, 'fs25', 151)" class="i">Name</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs53', 152)" onmouseover="showTip(event, 'fs53', 152)" class="t">PersonalName</span> }  
 
 
     <span class="c">// try to put an Entity inside a Value</span>
@@ -906,45 +1162,45 @@
 <span class="c">// ======================================================</span>
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">CardGameBoundedContext</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">CardGameBoundedContext</span> <span class="o">=</span> 
 
-    <span class="k">type</span> <span class="i">Suit</span> <span class="o">=</span> <span class="i">Club</span> | <span class="i">Diamond</span> | <span class="i">Spade</span> | <span class="i">Heart</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs55', 153)" onmouseover="showTip(event, 'fs55', 153)" class="t">Suit</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs56', 154)" onmouseover="showTip(event, 'fs56', 154)" class="p">Club</span> | <span onmouseout="hideTip(event, 'fs57', 155)" onmouseover="showTip(event, 'fs57', 155)" class="p">Diamond</span> | <span onmouseout="hideTip(event, 'fs58', 156)" onmouseover="showTip(event, 'fs58', 156)" class="p">Spade</span> | <span onmouseout="hideTip(event, 'fs59', 157)" onmouseover="showTip(event, 'fs59', 157)" class="p">Heart</span>
                 <span class="c">// | means a choice -- pick one from the list</span>
                 
-    <span class="k">type</span> <span class="i">Rank</span> <span class="o">=</span> <span class="i">Two</span> | <span class="i">Three</span> | <span class="i">Four</span> | <span class="i">Five</span> | <span class="i">Six</span> | <span class="i">Seven</span> | <span class="i">Eight</span> 
-                | <span class="i">Nine</span> | <span class="i">Ten</span> | <span class="i">Jack</span> | <span class="i">Queen</span> | <span class="i">King</span> | <span class="i">Ace</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs60', 158)" onmouseover="showTip(event, 'fs60', 158)" class="t">Rank</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs61', 159)" onmouseover="showTip(event, 'fs61', 159)" class="p">Two</span> | <span onmouseout="hideTip(event, 'fs62', 160)" onmouseover="showTip(event, 'fs62', 160)" class="p">Three</span> | <span onmouseout="hideTip(event, 'fs63', 161)" onmouseover="showTip(event, 'fs63', 161)" class="p">Four</span> | <span onmouseout="hideTip(event, 'fs64', 162)" onmouseover="showTip(event, 'fs64', 162)" class="p">Five</span> | <span onmouseout="hideTip(event, 'fs65', 163)" onmouseover="showTip(event, 'fs65', 163)" class="p">Six</span> | <span onmouseout="hideTip(event, 'fs66', 164)" onmouseover="showTip(event, 'fs66', 164)" class="p">Seven</span> | <span onmouseout="hideTip(event, 'fs67', 165)" onmouseover="showTip(event, 'fs67', 165)" class="p">Eight</span> 
+                | <span onmouseout="hideTip(event, 'fs68', 166)" onmouseover="showTip(event, 'fs68', 166)" class="p">Nine</span> | <span onmouseout="hideTip(event, 'fs69', 167)" onmouseover="showTip(event, 'fs69', 167)" class="p">Ten</span> | <span onmouseout="hideTip(event, 'fs70', 168)" onmouseover="showTip(event, 'fs70', 168)" class="p">Jack</span> | <span onmouseout="hideTip(event, 'fs71', 169)" onmouseover="showTip(event, 'fs71', 169)" class="p">Queen</span> | <span onmouseout="hideTip(event, 'fs72', 170)" onmouseover="showTip(event, 'fs72', 170)" class="p">King</span> | <span onmouseout="hideTip(event, 'fs73', 171)" onmouseover="showTip(event, 'fs73', 171)" class="p">Ace</span>
 
-    <span class="k">type</span> <span class="i">Card</span> <span class="o">=</span> <span class="i">Suit</span> <span class="o">*</span> <span class="i">Rank</span>   <span class="c">// * means a pair -- one from each type</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs74', 172)" onmouseover="showTip(event, 'fs74', 172)" class="t">Card</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs55', 173)" onmouseover="showTip(event, 'fs55', 173)" class="t">Suit</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs60', 174)" onmouseover="showTip(event, 'fs60', 174)" class="t">Rank</span>   <span class="c">// * means a pair -- one from each type</span>
     
-    <span class="k">type</span> <span class="i">Hand</span> <span class="o">=</span> <span class="i">Card</span> <span class="i">list</span>
-    <span class="k">type</span> <span class="i">Deck</span> <span class="o">=</span> <span class="i">Card</span> <span class="i">list</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs75', 175)" onmouseover="showTip(event, 'fs75', 175)" class="t">Hand</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs74', 176)" onmouseover="showTip(event, 'fs74', 176)" class="t">Card</span> <span onmouseout="hideTip(event, 'fs76', 177)" onmouseover="showTip(event, 'fs76', 177)" class="t">list</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs77', 178)" onmouseover="showTip(event, 'fs77', 178)" class="t">Deck</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs74', 179)" onmouseover="showTip(event, 'fs74', 179)" class="t">Card</span> <span onmouseout="hideTip(event, 'fs76', 180)" onmouseover="showTip(event, 'fs76', 180)" class="t">list</span>
     
-    <span class="k">type</span> <span class="i">Player</span> <span class="o">=</span> {<span class="i">Name</span><span class="o">:</span><span class="i">string</span>; <span class="i">Hand</span><span class="o">:</span><span class="i">Hand</span>}
-    <span class="k">type</span> <span class="i">Game</span> <span class="o">=</span> {<span class="i">Deck</span><span class="o">:</span><span class="i">Deck</span>; <span class="i">Players</span><span class="o">:</span> <span class="i">Player</span> <span class="i">list</span>}
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs78', 181)" onmouseover="showTip(event, 'fs78', 181)" class="t">Player</span> <span class="o">=</span> {<span onmouseout="hideTip(event, 'fs79', 182)" onmouseover="showTip(event, 'fs79', 182)" class="i">Name</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs7', 183)" onmouseover="showTip(event, 'fs7', 183)" class="t">string</span>; <span onmouseout="hideTip(event, 'fs80', 184)" onmouseover="showTip(event, 'fs80', 184)" class="i">Hand</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs80', 185)" onmouseover="showTip(event, 'fs80', 185)" class="t">Hand</span>}
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs81', 186)" onmouseover="showTip(event, 'fs81', 186)" class="t">Game</span> <span class="o">=</span> {<span onmouseout="hideTip(event, 'fs82', 187)" onmouseover="showTip(event, 'fs82', 187)" class="i">Deck</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs82', 188)" onmouseover="showTip(event, 'fs82', 188)" class="t">Deck</span>; <span onmouseout="hideTip(event, 'fs83', 189)" onmouseover="showTip(event, 'fs83', 189)" class="i">Players</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs78', 190)" onmouseover="showTip(event, 'fs78', 190)" class="t">Player</span> <span onmouseout="hideTip(event, 'fs76', 191)" onmouseover="showTip(event, 'fs76', 191)" class="t">list</span>}
     
-    <span class="k">type</span> <span class="i">Deal</span> <span class="o">=</span> <span class="i">Deck</span> <span class="k">-&gt;</span> (<span class="i">Deck</span> <span class="o">*</span> <span class="i">Card</span>) <span class="c">// X -&gt; Y means a function</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs84', 192)" onmouseover="showTip(event, 'fs84', 192)" class="i">Deal</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs77', 193)" onmouseover="showTip(event, 'fs77', 193)" class="t">Deck</span> <span class="k">-&gt;</span> (<span onmouseout="hideTip(event, 'fs77', 194)" onmouseover="showTip(event, 'fs77', 194)" class="t">Deck</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs74', 195)" onmouseover="showTip(event, 'fs74', 195)" class="t">Card</span>) <span class="c">// X -&gt; Y means a function</span>
                                       <span class="c">// input of type X</span>
                                       <span class="c">// output of type Y</span>
 
-    <span class="k">type</span> <span class="i">PickupCard</span> <span class="o">=</span> (<span class="i">Hand</span> <span class="o">*</span> <span class="i">Card</span>)<span class="k">-&gt;</span> <span class="i">Hand</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs85', 196)" onmouseover="showTip(event, 'fs85', 196)" class="i">PickupCard</span> <span class="o">=</span> (<span onmouseout="hideTip(event, 'fs75', 197)" onmouseover="showTip(event, 'fs75', 197)" class="t">Hand</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs74', 198)" onmouseover="showTip(event, 'fs74', 198)" class="t">Card</span>)<span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs75', 199)" onmouseover="showTip(event, 'fs75', 199)" class="t">Hand</span>
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">TestCardGameBoundedContext</span> <span class="o">=</span> 
-    <span class="k">open</span> <span class="i">CardGameBoundedContext</span>
+<span class="k">module</span> <span class="t">TestCardGameBoundedContext</span> <span class="o">=</span> 
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs86', 200)" onmouseover="showTip(event, 'fs86', 200)" class="i">CardGameBoundedContext</span>
 
-    <span class="k">let</span> <span class="i">aceHearts</span>  <span class="o">=</span> (<span class="i">Heart</span>, <span class="i">Ace</span>)
-    <span class="k">let</span> <span class="i">aceSpades</span> <span class="o">=</span> (<span class="i">Spade</span>, <span class="i">Ace</span>)
-    <span class="k">let</span> <span class="i">twoClubs</span> <span class="o">=</span> (<span class="i">Club</span>, <span class="i">Two</span>)
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs87', 201)" onmouseover="showTip(event, 'fs87', 201)" class="i">aceHearts</span>  <span class="o">=</span> (<span onmouseout="hideTip(event, 'fs59', 202)" onmouseover="showTip(event, 'fs59', 202)" class="p">Heart</span>, <span onmouseout="hideTip(event, 'fs73', 203)" onmouseover="showTip(event, 'fs73', 203)" class="p">Ace</span>)
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs88', 204)" onmouseover="showTip(event, 'fs88', 204)" class="i">aceSpades</span> <span class="o">=</span> (<span onmouseout="hideTip(event, 'fs58', 205)" onmouseover="showTip(event, 'fs58', 205)" class="p">Spade</span>, <span onmouseout="hideTip(event, 'fs73', 206)" onmouseover="showTip(event, 'fs73', 206)" class="p">Ace</span>)
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs89', 207)" onmouseover="showTip(event, 'fs89', 207)" class="i">twoClubs</span> <span class="o">=</span> (<span onmouseout="hideTip(event, 'fs56', 208)" onmouseover="showTip(event, 'fs56', 208)" class="p">Club</span>, <span onmouseout="hideTip(event, 'fs61', 209)" onmouseover="showTip(event, 'fs61', 209)" class="p">Two</span>)
 
-    <span class="k">let</span> <span class="i">myHand</span> <span class="o">=</span> [<span class="i">aceHearts</span>; <span class="i">aceSpades</span>; <span class="i">twoClubs</span>]
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs90', 210)" onmouseover="showTip(event, 'fs90', 210)" class="i">myHand</span> <span class="o">=</span> [<span onmouseout="hideTip(event, 'fs87', 211)" onmouseover="showTip(event, 'fs87', 211)" class="i">aceHearts</span>; <span onmouseout="hideTip(event, 'fs88', 212)" onmouseover="showTip(event, 'fs88', 212)" class="i">aceSpades</span>; <span onmouseout="hideTip(event, 'fs89', 213)" onmouseover="showTip(event, 'fs89', 213)" class="i">twoClubs</span>]
 
-    <span class="k">let</span> <span class="i">deck</span> <span class="o">=</span> [<span class="i">aceHearts</span>; <span class="i">aceSpades</span>; <span class="i">twoClubs</span>]
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs91', 214)" onmouseover="showTip(event, 'fs91', 214)" class="i">deck</span> <span class="o">=</span> [<span onmouseout="hideTip(event, 'fs87', 215)" onmouseover="showTip(event, 'fs87', 215)" class="i">aceHearts</span>; <span onmouseout="hideTip(event, 'fs88', 216)" onmouseover="showTip(event, 'fs88', 216)" class="i">aceSpades</span>; <span onmouseout="hideTip(event, 'fs89', 217)" onmouseover="showTip(event, 'fs89', 217)" class="i">twoClubs</span>]
 
-    <span class="k">let</span> <span class="i">deal</span> <span class="i">cards</span> <span class="o">=</span> 
-        <span class="k">let</span> <span class="i">head</span><span class="o">::</span><span class="i">tail</span> <span class="o">=</span> <span class="i">cards</span>   <span class="c">// compiler has found a potential bug here!</span>
-        (<span class="i">tail</span>, <span class="i">head</span>)
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs92', 218)" onmouseover="showTip(event, 'fs92', 218)" class="f">deal</span> <span onmouseout="hideTip(event, 'fs93', 219)" onmouseover="showTip(event, 'fs93', 219)" class="i">cards</span> <span class="o">=</span> 
+        <span class="k">let</span> <span onmouseout="hideTip(event, 'fs94', 220)" onmouseover="showTip(event, 'fs94', 220)" class="i">head</span><span class="o">::</span><span onmouseout="hideTip(event, 'fs95', 221)" onmouseover="showTip(event, 'fs95', 221)" class="i">tail</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs93', 222)" onmouseover="showTip(event, 'fs93', 222)" class="i">cards</span>   <span class="c">// compiler has found a potential bug here!</span>
+        (<span onmouseout="hideTip(event, 'fs95', 223)" onmouseover="showTip(event, 'fs95', 223)" class="i">tail</span>, <span onmouseout="hideTip(event, 'fs94', 224)" onmouseover="showTip(event, 'fs94', 224)" class="i">head</span>)
 
 <span class="c">// &lt;==== highlight to here and Run</span>
 
@@ -955,78 +1211,78 @@
 <span class="c">// ======================================================</span>
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">ProductTypeExamples</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">ProductTypeExamples</span> <span class="o">=</span> 
 
-    <span class="k">let</span> <span class="i">x</span> <span class="o">=</span> (<span class="n">1</span>,<span class="n">2</span>)    <span class="c">//  int * int</span>
-    <span class="k">let</span> <span class="i">y</span> <span class="o">=</span> (<span class="k">true</span>,<span class="k">false</span>)    <span class="c">//  bool * bool </span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs96', 225)" onmouseover="showTip(event, 'fs96', 225)" class="i">x</span> <span class="o">=</span> (<span class="n">1</span>,<span class="n">2</span>)    <span class="c">//  int * int</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs97', 226)" onmouseover="showTip(event, 'fs97', 226)" class="i">y</span> <span class="o">=</span> (<span class="k">true</span>,<span class="k">false</span>)    <span class="c">//  bool * bool </span>
 
-    <span class="k">type</span> <span class="i">Person</span> <span class="o">=</span> <span class="i">Person</span> <span class="k">of</span> <span class="i">string</span> <span class="c">// dummy type    </span>
-    <span class="k">type</span> <span class="i">Date</span> <span class="o">=</span> <span class="i">Date</span> <span class="k">of</span> <span class="i">string</span> <span class="c">// dummy type    </span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs98', 227)" onmouseover="showTip(event, 'fs98', 227)" class="t">Person</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs98', 228)" onmouseover="showTip(event, 'fs98', 228)" class="p">Person</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 229)" onmouseover="showTip(event, 'fs7', 229)" class="t">string</span> <span class="c">// dummy type    </span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs99', 230)" onmouseover="showTip(event, 'fs99', 230)" class="t">Date</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs99', 231)" onmouseover="showTip(event, 'fs99', 231)" class="p">Date</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 232)" onmouseover="showTip(event, 'fs7', 232)" class="t">string</span> <span class="c">// dummy type    </span>
 
-    <span class="k">type</span> <span class="i">Birthday</span> <span class="o">=</span> <span class="i">Person</span> <span class="o">*</span> <span class="i">Date</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs100', 233)" onmouseover="showTip(event, 'fs100', 233)" class="t">Birthday</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs98', 234)" onmouseover="showTip(event, 'fs98', 234)" class="t">Person</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs99', 235)" onmouseover="showTip(event, 'fs99', 235)" class="t">Date</span>
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">TestProductTypeExamples</span> <span class="o">=</span> 
-    <span class="k">open</span> <span class="i">ProductTypeExamples</span>
+<span class="k">module</span> <span class="t">TestProductTypeExamples</span> <span class="o">=</span> 
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs101', 236)" onmouseover="showTip(event, 'fs101', 236)" class="i">ProductTypeExamples</span>
 
-    <span class="k">let</span> <span class="i">alice</span> <span class="o">=</span> <span class="i">Person</span> <span class="s">&quot;Alice&quot;</span>
-    <span class="k">let</span> <span class="i">date1</span> <span class="o">=</span> <span class="i">Date</span> <span class="s">&quot;Jan 12th&quot;</span>
-    <span class="k">let</span> <span class="i">aliceBDay</span> <span class="o">=</span> (<span class="i">alice</span>,<span class="i">date1</span>)
-    <span class="k">let</span> <span class="i">aliceBDay2</span> <span class="o">:</span> <span class="i">Birthday</span> <span class="o">=</span> (<span class="i">alice</span>,<span class="i">date1</span>)  <span class="c">// with explicit typing</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs102', 237)" onmouseover="showTip(event, 'fs102', 237)" class="i">alice</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs98', 238)" onmouseover="showTip(event, 'fs98', 238)" class="p">Person</span> <span class="s">&quot;Alice&quot;</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs103', 239)" onmouseover="showTip(event, 'fs103', 239)" class="i">date1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs99', 240)" onmouseover="showTip(event, 'fs99', 240)" class="p">Date</span> <span class="s">&quot;Jan 12th&quot;</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs104', 241)" onmouseover="showTip(event, 'fs104', 241)" class="i">aliceBDay</span> <span class="o">=</span> (<span onmouseout="hideTip(event, 'fs102', 242)" onmouseover="showTip(event, 'fs102', 242)" class="i">alice</span>,<span onmouseout="hideTip(event, 'fs103', 243)" onmouseover="showTip(event, 'fs103', 243)" class="i">date1</span>)
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs105', 244)" onmouseover="showTip(event, 'fs105', 244)" class="i">aliceBDay2</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs100', 245)" onmouseover="showTip(event, 'fs100', 245)" class="t">Birthday</span> <span class="o">=</span> (<span onmouseout="hideTip(event, 'fs102', 246)" onmouseover="showTip(event, 'fs102', 246)" class="i">alice</span>,<span onmouseout="hideTip(event, 'fs103', 247)" onmouseover="showTip(event, 'fs103', 247)" class="i">date1</span>)  <span class="c">// with explicit typing</span>
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">ChoiceTypeExamples</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">ChoiceTypeExamples</span> <span class="o">=</span> 
     
-    <span class="k">type</span> <span class="i">Temp</span> <span class="o">=</span> 
-      | <span class="i">F</span> <span class="k">of</span> <span class="i">int</span>
-      | <span class="i">C</span> <span class="k">of</span> <span class="i">float</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs106', 248)" onmouseover="showTip(event, 'fs106', 248)" class="t">Temp</span> <span class="o">=</span> 
+      | <span onmouseout="hideTip(event, 'fs107', 249)" onmouseover="showTip(event, 'fs107', 249)" class="p">F</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs24', 250)" onmouseover="showTip(event, 'fs24', 250)" class="t">int</span>
+      | <span onmouseout="hideTip(event, 'fs108', 251)" onmouseover="showTip(event, 'fs108', 251)" class="p">C</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs109', 252)" onmouseover="showTip(event, 'fs109', 252)" class="t">float</span>
 
 
-    <span class="k">type</span> <span class="i">CardType</span> <span class="o">=</span> <span class="i">CardType</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">CardNumber</span> <span class="o">=</span> <span class="i">CardNumber</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs110', 253)" onmouseover="showTip(event, 'fs110', 253)" class="t">CardType</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs110', 254)" onmouseover="showTip(event, 'fs110', 254)" class="p">CardType</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 255)" onmouseover="showTip(event, 'fs7', 255)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs111', 256)" onmouseover="showTip(event, 'fs111', 256)" class="t">CardNumber</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs111', 257)" onmouseover="showTip(event, 'fs111', 257)" class="p">CardNumber</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 258)" onmouseover="showTip(event, 'fs7', 258)" class="t">string</span>
 
-    <span class="k">type</span> <span class="i">PaymentMethod</span> <span class="o">=</span> 
-      | <span class="i">Cash</span>
-      | <span class="i">Cheque</span> <span class="k">of</span> <span class="i">int</span>
-      | <span class="i">Card</span> <span class="k">of</span> <span class="i">CardType</span> <span class="o">*</span> <span class="i">CardNumber</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs112', 259)" onmouseover="showTip(event, 'fs112', 259)" class="t">PaymentMethod</span> <span class="o">=</span> 
+      | <span onmouseout="hideTip(event, 'fs113', 260)" onmouseover="showTip(event, 'fs113', 260)" class="p">Cash</span>
+      | <span onmouseout="hideTip(event, 'fs114', 261)" onmouseover="showTip(event, 'fs114', 261)" class="p">Cheque</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs24', 262)" onmouseover="showTip(event, 'fs24', 262)" class="t">int</span>
+      | <span onmouseout="hideTip(event, 'fs115', 263)" onmouseover="showTip(event, 'fs115', 263)" class="p">Card</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs110', 264)" onmouseover="showTip(event, 'fs110', 264)" class="t">CardType</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs111', 265)" onmouseover="showTip(event, 'fs111', 265)" class="t">CardNumber</span>
 
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">TestChoiceTypeExamples</span> <span class="o">=</span> 
-    <span class="k">open</span> <span class="i">ChoiceTypeExamples</span>
+<span class="k">module</span> <span class="t">TestChoiceTypeExamples</span> <span class="o">=</span> 
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs116', 266)" onmouseover="showTip(event, 'fs116', 266)" class="i">ChoiceTypeExamples</span>
 
-    <span class="k">let</span> <span class="i">isFever</span> <span class="i">temp</span> <span class="o">=</span> 
-        <span class="k">match</span> <span class="i">temp</span> <span class="k">with</span>
-        | <span class="i">F</span> <span class="i">tempInF</span> <span class="k">-&gt;</span> <span class="i">tempInF</span> <span class="o">&gt;</span> <span class="n">101</span>
-        | <span class="i">C</span> <span class="i">tempInC</span> <span class="k">-&gt;</span> <span class="i">tempInC</span> <span class="o">&gt;</span> <span class="n">38.0</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs117', 267)" onmouseover="showTip(event, 'fs117', 267)" class="f">isFever</span> <span onmouseout="hideTip(event, 'fs118', 268)" onmouseover="showTip(event, 'fs118', 268)" class="i">temp</span> <span class="o">=</span> 
+        <span class="k">match</span> <span onmouseout="hideTip(event, 'fs118', 269)" onmouseover="showTip(event, 'fs118', 269)" class="i">temp</span> <span class="k">with</span>
+        | <span onmouseout="hideTip(event, 'fs107', 270)" onmouseover="showTip(event, 'fs107', 270)" class="p">F</span> <span onmouseout="hideTip(event, 'fs119', 271)" onmouseover="showTip(event, 'fs119', 271)" class="i">tempInF</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs119', 272)" onmouseover="showTip(event, 'fs119', 272)" class="i">tempInF</span> <span class="o">&gt;</span> <span class="n">101</span>
+        | <span onmouseout="hideTip(event, 'fs108', 273)" onmouseover="showTip(event, 'fs108', 273)" class="p">C</span> <span onmouseout="hideTip(event, 'fs120', 274)" onmouseover="showTip(event, 'fs120', 274)" class="i">tempInC</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs120', 275)" onmouseover="showTip(event, 'fs120', 275)" class="i">tempInC</span> <span class="o">&gt;</span> <span class="n">38.0</span>
 
-    <span class="k">let</span> <span class="i">temp1</span> <span class="o">=</span> <span class="i">F</span> <span class="n">103</span> 
-    <span class="i">printfn</span> <span class="s">&quot;temp %A is fever? %b&quot;</span> <span class="i">temp1</span> (<span class="i">isFever</span> <span class="i">temp1</span>)
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs121', 276)" onmouseover="showTip(event, 'fs121', 276)" class="i">temp1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs107', 277)" onmouseover="showTip(event, 'fs107', 277)" class="p">F</span> <span class="n">103</span> 
+    <span onmouseout="hideTip(event, 'fs4', 278)" onmouseover="showTip(event, 'fs4', 278)" class="f">printfn</span> <span class="s">&quot;temp </span><span class="pf">%A</span><span class="s"> is fever? </span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs121', 279)" onmouseover="showTip(event, 'fs121', 279)" class="i">temp1</span> (<span onmouseout="hideTip(event, 'fs117', 280)" onmouseover="showTip(event, 'fs117', 280)" class="f">isFever</span> <span onmouseout="hideTip(event, 'fs121', 281)" onmouseover="showTip(event, 'fs121', 281)" class="i">temp1</span>)
 
-    <span class="k">let</span> <span class="i">temp2</span> <span class="o">=</span> <span class="i">C</span> <span class="n">37.0</span>
-    <span class="i">printfn</span> <span class="s">&quot;temp %A is fever? %b&quot;</span> <span class="i">temp2</span> (<span class="i">isFever</span> <span class="i">temp2</span>)
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs122', 282)" onmouseover="showTip(event, 'fs122', 282)" class="i">temp2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs108', 283)" onmouseover="showTip(event, 'fs108', 283)" class="p">C</span> <span class="n">37.0</span>
+    <span onmouseout="hideTip(event, 'fs4', 284)" onmouseover="showTip(event, 'fs4', 284)" class="f">printfn</span> <span class="s">&quot;temp </span><span class="pf">%A</span><span class="s"> is fever? </span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs122', 285)" onmouseover="showTip(event, 'fs122', 285)" class="i">temp2</span> (<span onmouseout="hideTip(event, 'fs117', 286)" onmouseover="showTip(event, 'fs117', 286)" class="f">isFever</span> <span onmouseout="hideTip(event, 'fs122', 287)" onmouseover="showTip(event, 'fs122', 287)" class="i">temp2</span>)
 
-    <span class="k">let</span> <span class="i">printPayment</span> <span class="i">paymentMethod</span> <span class="o">=</span> 
-        <span class="k">match</span> <span class="i">paymentMethod</span> <span class="k">with</span>
-        | <span class="i">Cash</span> <span class="k">-&gt;</span> 
-            <span class="i">printfn</span> <span class="s">&quot;Paid in cash&quot;</span>
-        | <span class="i">Cheque</span> <span class="i">checkNo</span> <span class="k">-&gt;</span>
-            <span class="i">printfn</span> <span class="s">&quot;Paid by cheque: %i&quot;</span> <span class="i">checkNo</span>
-        | <span class="i">Card</span> (<span class="i">cardType</span>,<span class="i">cardNo</span>) <span class="k">-&gt;</span>
-            <span class="i">printfn</span> <span class="s">&quot;Paid with %A %A&quot;</span> <span class="i">cardType</span> <span class="i">cardNo</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs123', 288)" onmouseover="showTip(event, 'fs123', 288)" class="f">printPayment</span> <span onmouseout="hideTip(event, 'fs124', 289)" onmouseover="showTip(event, 'fs124', 289)" class="i">paymentMethod</span> <span class="o">=</span> 
+        <span class="k">match</span> <span onmouseout="hideTip(event, 'fs124', 290)" onmouseover="showTip(event, 'fs124', 290)" class="i">paymentMethod</span> <span class="k">with</span>
+        | <span onmouseout="hideTip(event, 'fs113', 291)" onmouseover="showTip(event, 'fs113', 291)" class="p">Cash</span> <span class="k">-&gt;</span> 
+            <span onmouseout="hideTip(event, 'fs4', 292)" onmouseover="showTip(event, 'fs4', 292)" class="f">printfn</span> <span class="s">&quot;Paid in cash&quot;</span>
+        | <span onmouseout="hideTip(event, 'fs114', 293)" onmouseover="showTip(event, 'fs114', 293)" class="p">Cheque</span> <span onmouseout="hideTip(event, 'fs125', 294)" onmouseover="showTip(event, 'fs125', 294)" class="i">checkNo</span> <span class="k">-&gt;</span>
+            <span onmouseout="hideTip(event, 'fs4', 295)" onmouseover="showTip(event, 'fs4', 295)" class="f">printfn</span> <span class="s">&quot;Paid by cheque: </span><span class="pf">%i</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs125', 296)" onmouseover="showTip(event, 'fs125', 296)" class="i">checkNo</span>
+        | <span onmouseout="hideTip(event, 'fs115', 297)" onmouseover="showTip(event, 'fs115', 297)" class="p">Card</span> (<span onmouseout="hideTip(event, 'fs126', 298)" onmouseover="showTip(event, 'fs126', 298)" class="i">cardType</span>,<span onmouseout="hideTip(event, 'fs127', 299)" onmouseover="showTip(event, 'fs127', 299)" class="i">cardNo</span>) <span class="k">-&gt;</span>
+            <span onmouseout="hideTip(event, 'fs4', 300)" onmouseover="showTip(event, 'fs4', 300)" class="f">printfn</span> <span class="s">&quot;Paid with </span><span class="pf">%A</span><span class="s"> </span><span class="pf">%A</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs126', 301)" onmouseover="showTip(event, 'fs126', 301)" class="i">cardType</span> <span onmouseout="hideTip(event, 'fs127', 302)" onmouseover="showTip(event, 'fs127', 302)" class="i">cardNo</span>
 
-    <span class="k">let</span> <span class="i">cashPayment</span> <span class="o">=</span> <span class="i">Cash</span>
-    <span class="k">let</span> <span class="i">chequePayment</span>  <span class="o">=</span> <span class="i">Cheque</span> <span class="n">123</span>
-    <span class="k">let</span> <span class="i">cardPayment</span>  <span class="o">=</span> <span class="i">Card</span> (<span class="i">CardType</span> <span class="s">&quot;Visa&quot;</span>,<span class="i">CardNumber</span> <span class="s">&quot;123&quot;</span>)
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs128', 303)" onmouseover="showTip(event, 'fs128', 303)" class="i">cashPayment</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs113', 304)" onmouseover="showTip(event, 'fs113', 304)" class="p">Cash</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs129', 305)" onmouseover="showTip(event, 'fs129', 305)" class="i">chequePayment</span>  <span class="o">=</span> <span onmouseout="hideTip(event, 'fs114', 306)" onmouseover="showTip(event, 'fs114', 306)" class="p">Cheque</span> <span class="n">123</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs130', 307)" onmouseover="showTip(event, 'fs130', 307)" class="i">cardPayment</span>  <span class="o">=</span> <span onmouseout="hideTip(event, 'fs115', 308)" onmouseover="showTip(event, 'fs115', 308)" class="p">Card</span> (<span onmouseout="hideTip(event, 'fs110', 309)" onmouseover="showTip(event, 'fs110', 309)" class="p">CardType</span> <span class="s">&quot;Visa&quot;</span>,<span onmouseout="hideTip(event, 'fs111', 310)" onmouseover="showTip(event, 'fs111', 310)" class="p">CardNumber</span> <span class="s">&quot;123&quot;</span>)
     
-    <span class="i">printPayment</span> <span class="i">cashPayment</span>
-    <span class="i">printPayment</span> <span class="i">chequePayment</span>
-    <span class="i">printPayment</span> <span class="i">cardPayment</span>
+    <span onmouseout="hideTip(event, 'fs123', 311)" onmouseover="showTip(event, 'fs123', 311)" class="f">printPayment</span> <span onmouseout="hideTip(event, 'fs128', 312)" onmouseover="showTip(event, 'fs128', 312)" class="i">cashPayment</span>
+    <span onmouseout="hideTip(event, 'fs123', 313)" onmouseover="showTip(event, 'fs123', 313)" class="f">printPayment</span> <span onmouseout="hideTip(event, 'fs129', 314)" onmouseover="showTip(event, 'fs129', 314)" class="i">chequePayment</span>
+    <span onmouseout="hideTip(event, 'fs123', 315)" onmouseover="showTip(event, 'fs123', 315)" class="f">printPayment</span> <span onmouseout="hideTip(event, 'fs130', 316)" onmouseover="showTip(event, 'fs130', 316)" class="i">cardPayment</span>
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
@@ -1036,19 +1292,19 @@
 <span class="c">// ======================================================</span>
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">OptionalType</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">OptionalType</span> <span class="o">=</span> 
 
-    <span class="k">type</span> <span class="i">OptionalString</span> <span class="o">=</span> 
-        | <span class="i">SomeString</span> <span class="k">of</span> <span class="i">string</span>
-        | <span class="i">Nothing</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs131', 317)" onmouseover="showTip(event, 'fs131', 317)" class="t">OptionalString</span> <span class="o">=</span> 
+        | <span onmouseout="hideTip(event, 'fs132', 318)" onmouseover="showTip(event, 'fs132', 318)" class="p">SomeString</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 319)" onmouseover="showTip(event, 'fs7', 319)" class="t">string</span>
+        | <span onmouseout="hideTip(event, 'fs133', 320)" onmouseover="showTip(event, 'fs133', 320)" class="p">Nothing</span>
 
-    <span class="k">type</span> <span class="i">OptionalInt</span> <span class="o">=</span> 
-        | <span class="i">SomeInt</span> <span class="k">of</span> <span class="i">string</span>
-        | <span class="i">Nothing</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs134', 321)" onmouseover="showTip(event, 'fs134', 321)" class="t">OptionalInt</span> <span class="o">=</span> 
+        | <span onmouseout="hideTip(event, 'fs135', 322)" onmouseover="showTip(event, 'fs135', 322)" class="p">SomeInt</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 323)" onmouseover="showTip(event, 'fs7', 323)" class="t">string</span>
+        | <span onmouseout="hideTip(event, 'fs136', 324)" onmouseover="showTip(event, 'fs136', 324)" class="p">Nothing</span>
 
-    <span class="k">type</span> <span class="i">OptionalBool</span> <span class="o">=</span> 
-        | <span class="i">SomeBool</span> <span class="k">of</span> <span class="i">string</span>
-        | <span class="i">Nothing</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs137', 325)" onmouseover="showTip(event, 'fs137', 325)" class="t">OptionalBool</span> <span class="o">=</span> 
+        | <span onmouseout="hideTip(event, 'fs138', 326)" onmouseover="showTip(event, 'fs138', 326)" class="p">SomeBool</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 327)" onmouseover="showTip(event, 'fs7', 327)" class="t">string</span>
+        | <span onmouseout="hideTip(event, 'fs139', 328)" onmouseover="showTip(event, 'fs139', 328)" class="p">Nothing</span>
 
     <span class="c">// built in!</span>
 <span class="c">//    type Option&lt;&#39;T&gt; = </span>
@@ -1059,147 +1315,147 @@
 
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">TestOptionalType</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">TestOptionalType</span> <span class="o">=</span> 
 
-    <span class="k">type</span> <span class="i">PersonalName1</span> <span class="o">=</span> 
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs140', 329)" onmouseover="showTip(event, 'fs140', 329)" class="t">PersonalName1</span> <span class="o">=</span> 
         {
-        <span class="i">FirstName</span><span class="o">:</span> <span class="i">string</span>
-        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">Option</span><span class="o">&lt;</span><span class="i">string</span><span class="o">&gt;</span>
-        <span class="i">LastName</span><span class="o">:</span> <span class="i">string</span>
+        <span onmouseout="hideTip(event, 'fs141', 330)" onmouseover="showTip(event, 'fs141', 330)" class="i">FirstName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs7', 331)" onmouseover="showTip(event, 'fs7', 331)" class="t">string</span>
+        <span onmouseout="hideTip(event, 'fs142', 332)" onmouseover="showTip(event, 'fs142', 332)" class="i">MiddleInitial</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs143', 333)" onmouseover="showTip(event, 'fs143', 333)" class="t">Option</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs7', 334)" onmouseover="showTip(event, 'fs7', 334)" class="t">string</span><span class="o">&gt;</span>
+        <span onmouseout="hideTip(event, 'fs144', 335)" onmouseover="showTip(event, 'fs144', 335)" class="i">LastName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs7', 336)" onmouseover="showTip(event, 'fs7', 336)" class="t">string</span>
         }
 
-    <span class="k">type</span> <span class="i">PersonalName2</span> <span class="o">=</span> 
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs145', 337)" onmouseover="showTip(event, 'fs145', 337)" class="t">PersonalName2</span> <span class="o">=</span> 
         {
-        <span class="i">FirstName</span><span class="o">:</span> <span class="i">string</span>
-        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">string</span> <span class="i">option</span>
-        <span class="i">LastName</span><span class="o">:</span> <span class="i">string</span>
+        <span onmouseout="hideTip(event, 'fs146', 338)" onmouseover="showTip(event, 'fs146', 338)" class="i">FirstName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs7', 339)" onmouseover="showTip(event, 'fs7', 339)" class="t">string</span>
+        <span onmouseout="hideTip(event, 'fs147', 340)" onmouseover="showTip(event, 'fs147', 340)" class="i">MiddleInitial</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs7', 341)" onmouseover="showTip(event, 'fs7', 341)" class="t">string</span> <span onmouseout="hideTip(event, 'fs148', 342)" onmouseover="showTip(event, 'fs148', 342)" class="t">option</span>
+        <span onmouseout="hideTip(event, 'fs149', 343)" onmouseover="showTip(event, 'fs149', 343)" class="i">LastName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs7', 344)" onmouseover="showTip(event, 'fs7', 344)" class="t">string</span>
         }
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">SingleChoiceType</span> <span class="o">=</span>
+<span class="k">module</span> <span class="t">SingleChoiceType</span> <span class="o">=</span>
 
-    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">PhoneNumber</span> <span class="o">=</span> <span class="i">PhoneNumber</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs150', 345)" onmouseover="showTip(event, 'fs150', 345)" class="t">EmailAddress</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs150', 346)" onmouseover="showTip(event, 'fs150', 346)" class="p">EmailAddress</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 347)" onmouseover="showTip(event, 'fs7', 347)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs151', 348)" onmouseover="showTip(event, 'fs151', 348)" class="t">PhoneNumber</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs151', 349)" onmouseover="showTip(event, 'fs151', 349)" class="p">PhoneNumber</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 350)" onmouseover="showTip(event, 'fs7', 350)" class="t">string</span>
 
-    <span class="k">type</span> <span class="i">CustomerId</span> <span class="o">=</span> <span class="i">CustomerId</span> <span class="k">of</span> <span class="i">int</span>
-    <span class="k">type</span> <span class="i">OrderId</span> <span class="o">=</span> <span class="i">OrderId</span> <span class="k">of</span> <span class="i">int</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs152', 351)" onmouseover="showTip(event, 'fs152', 351)" class="t">CustomerId</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs152', 352)" onmouseover="showTip(event, 'fs152', 352)" class="p">CustomerId</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs24', 353)" onmouseover="showTip(event, 'fs24', 353)" class="t">int</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs153', 354)" onmouseover="showTip(event, 'fs153', 354)" class="t">OrderId</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs153', 355)" onmouseover="showTip(event, 'fs153', 355)" class="p">OrderId</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs24', 356)" onmouseover="showTip(event, 'fs24', 356)" class="t">int</span>
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">TestSingleChoiceType</span> <span class="o">=</span> 
-    <span class="k">open</span> <span class="i">SingleChoiceType</span>       
+<span class="k">module</span> <span class="t">TestSingleChoiceType</span> <span class="o">=</span> 
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs154', 357)" onmouseover="showTip(event, 'fs154', 357)" class="i">SingleChoiceType</span>       
 
-    <span class="k">let</span> <span class="i">email1</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="s">&quot;abc&quot;</span>
-    <span class="k">let</span> <span class="i">email2</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="s">&quot;def&quot;</span>
-    <span class="k">let</span> <span class="i">phone1</span> <span class="o">=</span> <span class="i">PhoneNumber</span> <span class="s">&quot;abc&quot;</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs155', 358)" onmouseover="showTip(event, 'fs155', 358)" class="i">email1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs150', 359)" onmouseover="showTip(event, 'fs150', 359)" class="p">EmailAddress</span> <span class="s">&quot;abc&quot;</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs156', 360)" onmouseover="showTip(event, 'fs156', 360)" class="i">email2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs150', 361)" onmouseover="showTip(event, 'fs150', 361)" class="p">EmailAddress</span> <span class="s">&quot;def&quot;</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs157', 362)" onmouseover="showTip(event, 'fs157', 362)" class="i">phone1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs151', 363)" onmouseover="showTip(event, 'fs151', 363)" class="p">PhoneNumber</span> <span class="s">&quot;abc&quot;</span>
 
-    <span class="i">printfn</span> <span class="s">&quot;%A = %A? %b&quot;</span> <span class="i">email1</span> <span class="i">email2</span> (<span class="i">email1</span><span class="o">=</span><span class="i">email2</span>)
+    <span onmouseout="hideTip(event, 'fs4', 364)" onmouseover="showTip(event, 'fs4', 364)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%A</span><span class="s"> = </span><span class="pf">%A</span><span class="s">? </span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs155', 365)" onmouseover="showTip(event, 'fs155', 365)" class="i">email1</span> <span onmouseout="hideTip(event, 'fs156', 366)" onmouseover="showTip(event, 'fs156', 366)" class="i">email2</span> (<span onmouseout="hideTip(event, 'fs155', 367)" onmouseover="showTip(event, 'fs155', 367)" class="i">email1</span><span class="o">=</span><span onmouseout="hideTip(event, 'fs156', 368)" onmouseover="showTip(event, 'fs156', 368)" class="i">email2</span>)
     <span class="c">//printfn &quot;%A = %A? %b&quot; email1 phone1 (email1=phone1)   // uncommento get compiler error</span>
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">EmailAddressType</span> <span class="o">=</span>
-    <span class="k">open</span> <span class="i">System</span><span class="o">.</span><span class="i">Text</span><span class="o">.</span><span class="i">RegularExpressions</span> 
+<span class="k">module</span> <span class="t">EmailAddressType</span> <span class="o">=</span>
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs35', 369)" onmouseover="showTip(event, 'fs35', 369)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs158', 370)" onmouseover="showTip(event, 'fs158', 370)" class="i">Text</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs159', 371)" onmouseover="showTip(event, 'fs159', 371)" class="i">RegularExpressions</span> 
 
-    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs160', 372)" onmouseover="showTip(event, 'fs160', 372)" class="t">EmailAddress</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs160', 373)" onmouseover="showTip(event, 'fs160', 373)" class="p">EmailAddress</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 374)" onmouseover="showTip(event, 'fs7', 374)" class="t">string</span>
 
     <span class="c">// createEmailAddress : string -&gt; EmailAddress option</span>
-    <span class="k">let</span> <span class="i">createEmailAddress</span> (<span class="i">s</span><span class="o">:</span><span class="i">string</span>) <span class="o">=</span> 
-        <span class="k">if</span> <span class="i">Regex</span><span class="o">.</span><span class="i">IsMatch</span>(<span class="i">s</span>,<span class="s">@&quot;^\S+@\S+\.\S+$&quot;</span>) 
-            <span class="k">then</span> <span class="i">Some</span> (<span class="i">EmailAddress</span> <span class="i">s</span>)
-            <span class="k">else</span> <span class="i">None</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs161', 375)" onmouseover="showTip(event, 'fs161', 375)" class="f">createEmailAddress</span> (<span onmouseout="hideTip(event, 'fs162', 376)" onmouseover="showTip(event, 'fs162', 376)" class="i">s</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs7', 377)" onmouseover="showTip(event, 'fs7', 377)" class="t">string</span>) <span class="o">=</span> 
+        <span class="k">if</span> <span onmouseout="hideTip(event, 'fs163', 378)" onmouseover="showTip(event, 'fs163', 378)" class="t">Regex</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs164', 379)" onmouseover="showTip(event, 'fs164', 379)" class="f">IsMatch</span>(<span onmouseout="hideTip(event, 'fs162', 380)" onmouseover="showTip(event, 'fs162', 380)" class="i">s</span>,<span class="s">@&quot;^\S+@\S+\.\S+$&quot;</span>) 
+            <span class="k">then</span> <span onmouseout="hideTip(event, 'fs165', 381)" onmouseover="showTip(event, 'fs165', 381)" class="p">Some</span> (<span onmouseout="hideTip(event, 'fs160', 382)" onmouseover="showTip(event, 'fs160', 382)" class="p">EmailAddress</span> <span onmouseout="hideTip(event, 'fs162', 383)" onmouseover="showTip(event, 'fs162', 383)" class="i">s</span>)
+            <span class="k">else</span> <span onmouseout="hideTip(event, 'fs166', 384)" onmouseover="showTip(event, 'fs166', 384)" class="p">None</span>
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">TestEmailAddressType</span> <span class="o">=</span>
-    <span class="k">open</span> <span class="i">EmailAddressType</span>
+<span class="k">module</span> <span class="t">TestEmailAddressType</span> <span class="o">=</span>
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs167', 385)" onmouseover="showTip(event, 'fs167', 385)" class="i">EmailAddressType</span>
 
-    <span class="k">let</span> <span class="i">email1</span> <span class="o">=</span> <span class="i">createEmailAddress</span> <span class="s">&quot;a@example.com&quot;</span>
-    <span class="k">let</span> <span class="i">email2</span> <span class="o">=</span> <span class="i">createEmailAddress</span> <span class="s">&quot;example.com&quot;</span>
-<span class="c">// &lt;==== highlight to here and Run</span>
-
-
-<span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">ConstrainedString</span> <span class="o">=</span>
-
-    <span class="k">type</span> <span class="i">String50</span> <span class="o">=</span> <span class="i">String50</span> <span class="k">of</span> <span class="i">string</span>
-
-    <span class="k">let</span> <span class="i">createString50</span> (<span class="i">s</span><span class="o">:</span><span class="i">string</span>) <span class="o">=</span> 
-        <span class="k">if</span> <span class="i">s</span> <span class="o">=</span> <span class="k">null</span>
-            <span class="k">then</span> <span class="i">None</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="i">s</span><span class="o">.</span><span class="i">Length</span> <span class="o">&lt;=</span> <span class="n">50</span>
-            <span class="k">then</span> <span class="i">Some</span> (<span class="i">String50</span> <span class="i">s</span>)
-            <span class="k">else</span> <span class="i">None</span>    
-<span class="c">// &lt;==== highlight to here and Run</span>
-
-<span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">TestConstrainedString</span> <span class="o">=</span>
-    <span class="k">open</span> <span class="i">ConstrainedString</span>
-
-    <span class="k">let</span> <span class="i">s1</span> <span class="o">=</span> <span class="i">createString50</span> <span class="s">&quot;12345&quot;</span>
-    <span class="k">let</span> <span class="i">s2</span> <span class="o">=</span> <span class="i">createString50</span> (<span class="i">String</span><span class="o">.</span><span class="i">replicate</span> <span class="n">100</span> <span class="s">&quot;a&quot;</span>)
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs168', 386)" onmouseover="showTip(event, 'fs168', 386)" class="i">email1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs161', 387)" onmouseover="showTip(event, 'fs161', 387)" class="f">createEmailAddress</span> <span class="s">&quot;a@example.com&quot;</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs169', 388)" onmouseover="showTip(event, 'fs169', 388)" class="i">email2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs161', 389)" onmouseover="showTip(event, 'fs161', 389)" class="f">createEmailAddress</span> <span class="s">&quot;example.com&quot;</span>
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">ConstrainedInteger</span> <span class="o">=</span>
+<span class="k">module</span> <span class="t">ConstrainedString</span> <span class="o">=</span>
 
-    <span class="k">type</span> <span class="i">OrderLineQty</span> <span class="o">=</span> <span class="i">OrderLineQty</span> <span class="k">of</span> <span class="i">int</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs170', 390)" onmouseover="showTip(event, 'fs170', 390)" class="t">String50</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs170', 391)" onmouseover="showTip(event, 'fs170', 391)" class="p">String50</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 392)" onmouseover="showTip(event, 'fs7', 392)" class="t">string</span>
 
-    <span class="k">let</span> <span class="i">createOrderLineQty</span> <span class="i">qty</span> <span class="o">=</span> 
-        <span class="k">if</span> <span class="i">qty</span> <span class="o">&gt;</span><span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="i">qty</span> <span class="o">&lt;=</span> <span class="n">99</span>
-            <span class="k">then</span> <span class="i">Some</span> (<span class="i">OrderLineQty</span> <span class="i">qty</span>)
-            <span class="k">else</span> <span class="i">None</span>
-
-    <span class="k">let</span> <span class="i">increment</span> (<span class="i">OrderLineQty</span> <span class="i">i</span>) <span class="o">=</span>
-        <span class="i">createOrderLineQty</span> (<span class="i">i</span> <span class="o">+</span> <span class="n">1</span>)
-
-    <span class="k">let</span> <span class="i">decrement</span> (<span class="i">OrderLineQty</span> <span class="i">i</span>) <span class="o">=</span>
-        <span class="i">createOrderLineQty</span> (<span class="i">i</span> <span class="o">-</span> <span class="n">1</span>)
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs171', 393)" onmouseover="showTip(event, 'fs171', 393)" class="f">createString50</span> (<span onmouseout="hideTip(event, 'fs162', 394)" onmouseover="showTip(event, 'fs162', 394)" class="i">s</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs7', 395)" onmouseover="showTip(event, 'fs7', 395)" class="t">string</span>) <span class="o">=</span> 
+        <span class="k">if</span> <span onmouseout="hideTip(event, 'fs162', 396)" onmouseover="showTip(event, 'fs162', 396)" class="i">s</span> <span class="o">=</span> <span class="k">null</span>
+            <span class="k">then</span> <span onmouseout="hideTip(event, 'fs166', 397)" onmouseover="showTip(event, 'fs166', 397)" class="p">None</span>
+        <span class="k">else</span> <span class="k">if</span> <span onmouseout="hideTip(event, 'fs162', 398)" onmouseover="showTip(event, 'fs162', 398)" class="i">s</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs172', 399)" onmouseover="showTip(event, 'fs172', 399)" class="i">Length</span> <span class="o">&lt;=</span> <span class="n">50</span>
+            <span class="k">then</span> <span onmouseout="hideTip(event, 'fs165', 400)" onmouseover="showTip(event, 'fs165', 400)" class="p">Some</span> (<span onmouseout="hideTip(event, 'fs170', 401)" onmouseover="showTip(event, 'fs170', 401)" class="p">String50</span> <span onmouseout="hideTip(event, 'fs162', 402)" onmouseover="showTip(event, 'fs162', 402)" class="i">s</span>)
+            <span class="k">else</span> <span onmouseout="hideTip(event, 'fs166', 403)" onmouseover="showTip(event, 'fs166', 403)" class="p">None</span>    
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 <span class="c">// highlight from here ===&gt;</span>
-<span class="k">module</span> <span class="i">TestConstrainedInteger</span> <span class="o">=</span>
-    <span class="k">open</span> <span class="i">ConstrainedInteger</span>
+<span class="k">module</span> <span class="t">TestConstrainedString</span> <span class="o">=</span>
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs173', 404)" onmouseover="showTip(event, 'fs173', 404)" class="i">ConstrainedString</span>
 
-    <span class="k">let</span> <span class="i">qty1</span> <span class="o">=</span> <span class="i">createOrderLineQty</span> <span class="n">1</span>
-    <span class="k">let</span> <span class="i">qty2</span> <span class="o">=</span> <span class="i">createOrderLineQty</span> <span class="n">0</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs174', 405)" onmouseover="showTip(event, 'fs174', 405)" class="i">s1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs171', 406)" onmouseover="showTip(event, 'fs171', 406)" class="f">createString50</span> <span class="s">&quot;12345&quot;</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs175', 407)" onmouseover="showTip(event, 'fs175', 407)" class="i">s2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs171', 408)" onmouseover="showTip(event, 'fs171', 408)" class="f">createString50</span> (<span onmouseout="hideTip(event, 'fs176', 409)" onmouseover="showTip(event, 'fs176', 409)" class="t">String</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs177', 410)" onmouseover="showTip(event, 'fs177', 410)" class="f">replicate</span> <span class="n">100</span> <span class="s">&quot;a&quot;</span>)
+<span class="c">// &lt;==== highlight to here and Run</span>
 
-    <span class="k">let</span> <span class="i">qty3</span> <span class="o">=</span> 
-        <span class="k">match</span> <span class="i">qty1</span> <span class="k">with</span>
-        | <span class="i">Some</span> <span class="i">i</span> <span class="k">-&gt;</span> <span class="i">decrement</span> <span class="i">i</span>
-        | <span class="i">None</span> <span class="k">-&gt;</span> <span class="i">None</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="t">ConstrainedInteger</span> <span class="o">=</span>
+
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs178', 411)" onmouseover="showTip(event, 'fs178', 411)" class="t">OrderLineQty</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs178', 412)" onmouseover="showTip(event, 'fs178', 412)" class="p">OrderLineQty</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs24', 413)" onmouseover="showTip(event, 'fs24', 413)" class="t">int</span>
+
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs179', 414)" onmouseover="showTip(event, 'fs179', 414)" class="f">createOrderLineQty</span> <span onmouseout="hideTip(event, 'fs180', 415)" onmouseover="showTip(event, 'fs180', 415)" class="i">qty</span> <span class="o">=</span> 
+        <span class="k">if</span> <span onmouseout="hideTip(event, 'fs180', 416)" onmouseover="showTip(event, 'fs180', 416)" class="i">qty</span> <span class="o">&gt;</span><span class="n">0</span> <span class="o">&amp;&amp;</span> <span onmouseout="hideTip(event, 'fs180', 417)" onmouseover="showTip(event, 'fs180', 417)" class="i">qty</span> <span class="o">&lt;=</span> <span class="n">99</span>
+            <span class="k">then</span> <span onmouseout="hideTip(event, 'fs165', 418)" onmouseover="showTip(event, 'fs165', 418)" class="p">Some</span> (<span onmouseout="hideTip(event, 'fs178', 419)" onmouseover="showTip(event, 'fs178', 419)" class="p">OrderLineQty</span> <span onmouseout="hideTip(event, 'fs180', 420)" onmouseover="showTip(event, 'fs180', 420)" class="i">qty</span>)
+            <span class="k">else</span> <span onmouseout="hideTip(event, 'fs166', 421)" onmouseover="showTip(event, 'fs166', 421)" class="p">None</span>
+
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs181', 422)" onmouseover="showTip(event, 'fs181', 422)" class="f">increment</span> (<span onmouseout="hideTip(event, 'fs178', 423)" onmouseover="showTip(event, 'fs178', 423)" class="p">OrderLineQty</span> <span onmouseout="hideTip(event, 'fs182', 424)" onmouseover="showTip(event, 'fs182', 424)" class="i">i</span>) <span class="o">=</span>
+        <span onmouseout="hideTip(event, 'fs179', 425)" onmouseover="showTip(event, 'fs179', 425)" class="f">createOrderLineQty</span> (<span onmouseout="hideTip(event, 'fs182', 426)" onmouseover="showTip(event, 'fs182', 426)" class="i">i</span> <span class="o">+</span> <span class="n">1</span>)
+
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs183', 427)" onmouseover="showTip(event, 'fs183', 427)" class="f">decrement</span> (<span onmouseout="hideTip(event, 'fs178', 428)" onmouseover="showTip(event, 'fs178', 428)" class="p">OrderLineQty</span> <span onmouseout="hideTip(event, 'fs182', 429)" onmouseover="showTip(event, 'fs182', 429)" class="i">i</span>) <span class="o">=</span>
+        <span onmouseout="hideTip(event, 'fs179', 430)" onmouseover="showTip(event, 'fs179', 430)" class="f">createOrderLineQty</span> (<span onmouseout="hideTip(event, 'fs182', 431)" onmouseover="showTip(event, 'fs182', 431)" class="i">i</span> <span class="o">-</span> <span class="n">1</span>)
+<span class="c">// &lt;==== highlight to here and Run</span>
+
+<span class="c">// highlight from here ===&gt;</span>
+<span class="k">module</span> <span class="t">TestConstrainedInteger</span> <span class="o">=</span>
+    <span class="k">open</span> <span onmouseout="hideTip(event, 'fs184', 432)" onmouseover="showTip(event, 'fs184', 432)" class="i">ConstrainedInteger</span>
+
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs185', 433)" onmouseover="showTip(event, 'fs185', 433)" class="i">qty1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs179', 434)" onmouseover="showTip(event, 'fs179', 434)" class="f">createOrderLineQty</span> <span class="n">1</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs186', 435)" onmouseover="showTip(event, 'fs186', 435)" class="i">qty2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs179', 436)" onmouseover="showTip(event, 'fs179', 436)" class="f">createOrderLineQty</span> <span class="n">0</span>
+
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs187', 437)" onmouseover="showTip(event, 'fs187', 437)" class="i">qty3</span> <span class="o">=</span> 
+        <span class="k">match</span> <span onmouseout="hideTip(event, 'fs185', 438)" onmouseover="showTip(event, 'fs185', 438)" class="i">qty1</span> <span class="k">with</span>
+        | <span onmouseout="hideTip(event, 'fs165', 439)" onmouseover="showTip(event, 'fs165', 439)" class="p">Some</span> <span onmouseout="hideTip(event, 'fs188', 440)" onmouseover="showTip(event, 'fs188', 440)" class="i">i</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs183', 441)" onmouseover="showTip(event, 'fs183', 441)" class="f">decrement</span> <span onmouseout="hideTip(event, 'fs188', 442)" onmouseover="showTip(event, 'fs188', 442)" class="i">i</span>
+        | <span onmouseout="hideTip(event, 'fs166', 443)" onmouseover="showTip(event, 'fs166', 443)" class="p">None</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs166', 444)" onmouseover="showTip(event, 'fs166', 444)" class="p">None</span>
 <span class="c">// &lt;==== highlight to here and Run</span>
 
 <span class="c">// ======================================================</span>
 <span class="c">// Prologue revisited</span>
 <span class="c">// ======================================================</span>
 
-<span class="k">module</span> <span class="i">PrologueVersion2</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">PrologueVersion2</span> <span class="o">=</span> 
 
-    <span class="k">type</span> <span class="i">String1</span> <span class="o">=</span> <span class="i">String1</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">String50</span> <span class="o">=</span> <span class="i">String50</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs189', 445)" onmouseover="showTip(event, 'fs189', 445)" class="t">String1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs189', 446)" onmouseover="showTip(event, 'fs189', 446)" class="p">String1</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 447)" onmouseover="showTip(event, 'fs7', 447)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs190', 448)" onmouseover="showTip(event, 'fs190', 448)" class="t">String50</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs190', 449)" onmouseover="showTip(event, 'fs190', 449)" class="p">String50</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 450)" onmouseover="showTip(event, 'fs7', 450)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs191', 451)" onmouseover="showTip(event, 'fs191', 451)" class="t">EmailAddress</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs191', 452)" onmouseover="showTip(event, 'fs191', 452)" class="p">EmailAddress</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 453)" onmouseover="showTip(event, 'fs7', 453)" class="t">string</span>
 
-    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {
-        <span class="i">FirstName</span><span class="o">:</span> <span class="i">String50</span>
-        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">String1</span> <span class="i">option</span>
-        <span class="i">LastName</span><span class="o">:</span> <span class="i">String50</span> }
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs192', 454)" onmouseover="showTip(event, 'fs192', 454)" class="t">PersonalName</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs193', 455)" onmouseover="showTip(event, 'fs193', 455)" class="i">FirstName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs190', 456)" onmouseover="showTip(event, 'fs190', 456)" class="t">String50</span>
+        <span onmouseout="hideTip(event, 'fs194', 457)" onmouseover="showTip(event, 'fs194', 457)" class="i">MiddleInitial</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs189', 458)" onmouseover="showTip(event, 'fs189', 458)" class="t">String1</span> <span onmouseout="hideTip(event, 'fs148', 459)" onmouseover="showTip(event, 'fs148', 459)" class="t">option</span>
+        <span onmouseout="hideTip(event, 'fs195', 460)" onmouseover="showTip(event, 'fs195', 460)" class="i">LastName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs190', 461)" onmouseover="showTip(event, 'fs190', 461)" class="t">String50</span> }
 
-    <span class="k">type</span> <span class="i">EmailContactInfo</span> <span class="o">=</span> {
-        <span class="i">EmailAddress</span><span class="o">:</span> <span class="i">EmailAddress</span>
-        <span class="i">IsEmailVerified</span><span class="o">:</span> <span class="i">bool</span> }
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs196', 462)" onmouseover="showTip(event, 'fs196', 462)" class="t">EmailContactInfo</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs197', 463)" onmouseover="showTip(event, 'fs197', 463)" class="i">EmailAddress</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs197', 464)" onmouseover="showTip(event, 'fs197', 464)" class="t">EmailAddress</span>
+        <span onmouseout="hideTip(event, 'fs198', 465)" onmouseover="showTip(event, 'fs198', 465)" class="i">IsEmailVerified</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs12', 466)" onmouseover="showTip(event, 'fs12', 466)" class="t">bool</span> }
 
-    <span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
-        <span class="i">Name</span><span class="o">:</span> <span class="i">PersonalName</span> 
-        <span class="i">Email</span><span class="o">:</span> <span class="i">EmailContactInfo</span> }
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs199', 467)" onmouseover="showTip(event, 'fs199', 467)" class="t">Contact</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs200', 468)" onmouseover="showTip(event, 'fs200', 468)" class="i">Name</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs192', 469)" onmouseover="showTip(event, 'fs192', 469)" class="t">PersonalName</span> 
+        <span onmouseout="hideTip(event, 'fs201', 470)" onmouseover="showTip(event, 'fs201', 470)" class="i">Email</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs196', 471)" onmouseover="showTip(event, 'fs196', 471)" class="t">EmailContactInfo</span> }
 
 
 <span class="c">// ======================================================</span>
@@ -1209,102 +1465,102 @@
 <span class="c">// &quot;Rule 2: The verified flag can only be set by a special verification service&quot;</span>
 <span class="c">// ======================================================</span>
 
-<span class="k">module</span> <span class="i">VerifiedEmailExample</span> <span class="o">=</span> 
-    <span class="k">type</span> <span class="i">String1</span> <span class="o">=</span> <span class="i">String1</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">String50</span> <span class="o">=</span> <span class="i">String50</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+<span class="k">module</span> <span class="t">VerifiedEmailExample</span> <span class="o">=</span> 
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs202', 472)" onmouseover="showTip(event, 'fs202', 472)" class="t">String1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs202', 473)" onmouseover="showTip(event, 'fs202', 473)" class="p">String1</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 474)" onmouseover="showTip(event, 'fs7', 474)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs203', 475)" onmouseover="showTip(event, 'fs203', 475)" class="t">String50</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs203', 476)" onmouseover="showTip(event, 'fs203', 476)" class="p">String50</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 477)" onmouseover="showTip(event, 'fs7', 477)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs204', 478)" onmouseover="showTip(event, 'fs204', 478)" class="t">EmailAddress</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs204', 479)" onmouseover="showTip(event, 'fs204', 479)" class="p">EmailAddress</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 480)" onmouseover="showTip(event, 'fs7', 480)" class="t">string</span>
 
-    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {
-        <span class="i">FirstName</span><span class="o">:</span> <span class="i">String50</span>
-        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">String1</span> <span class="i">option</span>
-        <span class="i">LastName</span><span class="o">:</span> <span class="i">String50</span> }
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs205', 481)" onmouseover="showTip(event, 'fs205', 481)" class="t">PersonalName</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs193', 482)" onmouseover="showTip(event, 'fs193', 482)" class="i">FirstName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs203', 483)" onmouseover="showTip(event, 'fs203', 483)" class="t">String50</span>
+        <span onmouseout="hideTip(event, 'fs194', 484)" onmouseover="showTip(event, 'fs194', 484)" class="i">MiddleInitial</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs202', 485)" onmouseover="showTip(event, 'fs202', 485)" class="t">String1</span> <span onmouseout="hideTip(event, 'fs148', 486)" onmouseover="showTip(event, 'fs148', 486)" class="t">option</span>
+        <span onmouseout="hideTip(event, 'fs195', 487)" onmouseover="showTip(event, 'fs195', 487)" class="i">LastName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs203', 488)" onmouseover="showTip(event, 'fs203', 488)" class="t">String50</span> }
 
-    <span class="k">type</span> <span class="i">VerifiedEmail</span> <span class="o">=</span> <span class="i">VerifiedEmail</span> <span class="k">of</span> <span class="i">EmailAddress</span>
-    <span class="k">type</span> <span class="i">VerificationHash</span> <span class="o">=</span> <span class="i">VerificationHash</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">VerificationService</span> <span class="o">=</span> 
-        (<span class="i">EmailAddress</span> <span class="o">*</span> <span class="i">VerificationHash</span>) <span class="k">-&gt;</span>  <span class="i">VerifiedEmail</span> <span class="i">option</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs206', 489)" onmouseover="showTip(event, 'fs206', 489)" class="t">VerifiedEmail</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs206', 490)" onmouseover="showTip(event, 'fs206', 490)" class="p">VerifiedEmail</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs204', 491)" onmouseover="showTip(event, 'fs204', 491)" class="t">EmailAddress</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs207', 492)" onmouseover="showTip(event, 'fs207', 492)" class="t">VerificationHash</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs207', 493)" onmouseover="showTip(event, 'fs207', 493)" class="p">VerificationHash</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 494)" onmouseover="showTip(event, 'fs7', 494)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs208', 495)" onmouseover="showTip(event, 'fs208', 495)" class="i">VerificationService</span> <span class="o">=</span> 
+        (<span onmouseout="hideTip(event, 'fs204', 496)" onmouseover="showTip(event, 'fs204', 496)" class="t">EmailAddress</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs207', 497)" onmouseover="showTip(event, 'fs207', 497)" class="t">VerificationHash</span>) <span class="k">-&gt;</span>  <span onmouseout="hideTip(event, 'fs206', 498)" onmouseover="showTip(event, 'fs206', 498)" class="t">VerifiedEmail</span> <span onmouseout="hideTip(event, 'fs148', 499)" onmouseover="showTip(event, 'fs148', 499)" class="t">option</span>
 
-    <span class="k">type</span> <span class="i">EmailContactInfo</span> <span class="o">=</span> 
-        | <span class="i">Unverified</span> <span class="k">of</span> <span class="i">EmailAddress</span>
-        | <span class="i">Verified</span> <span class="k">of</span> <span class="i">VerifiedEmail</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs209', 500)" onmouseover="showTip(event, 'fs209', 500)" class="t">EmailContactInfo</span> <span class="o">=</span> 
+        | <span onmouseout="hideTip(event, 'fs210', 501)" onmouseover="showTip(event, 'fs210', 501)" class="p">Unverified</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs204', 502)" onmouseover="showTip(event, 'fs204', 502)" class="t">EmailAddress</span>
+        | <span onmouseout="hideTip(event, 'fs211', 503)" onmouseover="showTip(event, 'fs211', 503)" class="p">Verified</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs206', 504)" onmouseover="showTip(event, 'fs206', 504)" class="t">VerifiedEmail</span>
 
-    <span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
-        <span class="i">Name</span><span class="o">:</span> <span class="i">PersonalName</span> 
-        <span class="i">Email</span><span class="o">:</span> <span class="i">EmailContactInfo</span> }
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs212', 505)" onmouseover="showTip(event, 'fs212', 505)" class="t">Contact</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs200', 506)" onmouseover="showTip(event, 'fs200', 506)" class="i">Name</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs205', 507)" onmouseover="showTip(event, 'fs205', 507)" class="t">PersonalName</span> 
+        <span onmouseout="hideTip(event, 'fs201', 508)" onmouseover="showTip(event, 'fs201', 508)" class="i">Email</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs209', 509)" onmouseover="showTip(event, 'fs209', 509)" class="t">EmailContactInfo</span> }
 
 
 <span class="c">// ======================================================</span>
 <span class="c">// A contact must have an email or a postal address</span>
 <span class="c">// ======================================================</span>
 
-<span class="k">module</span> <span class="i">EMailAndContactExample_Before</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">EMailAndContactExample_Before</span> <span class="o">=</span> 
 
 
-    <span class="k">type</span> <span class="i">String1</span> <span class="o">=</span> <span class="i">String1</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">String50</span> <span class="o">=</span> <span class="i">String50</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs213', 510)" onmouseover="showTip(event, 'fs213', 510)" class="t">String1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs213', 511)" onmouseover="showTip(event, 'fs213', 511)" class="p">String1</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 512)" onmouseover="showTip(event, 'fs7', 512)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs214', 513)" onmouseover="showTip(event, 'fs214', 513)" class="t">String50</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs214', 514)" onmouseover="showTip(event, 'fs214', 514)" class="p">String50</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 515)" onmouseover="showTip(event, 'fs7', 515)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs215', 516)" onmouseover="showTip(event, 'fs215', 516)" class="t">EmailAddress</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs215', 517)" onmouseover="showTip(event, 'fs215', 517)" class="p">EmailAddress</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 518)" onmouseover="showTip(event, 'fs7', 518)" class="t">string</span>
 
-    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {
-        <span class="i">FirstName</span><span class="o">:</span> <span class="i">String50</span>
-        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">String1</span> <span class="i">option</span>
-        <span class="i">LastName</span><span class="o">:</span> <span class="i">String50</span> }
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs216', 519)" onmouseover="showTip(event, 'fs216', 519)" class="t">PersonalName</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs193', 520)" onmouseover="showTip(event, 'fs193', 520)" class="i">FirstName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs214', 521)" onmouseover="showTip(event, 'fs214', 521)" class="t">String50</span>
+        <span onmouseout="hideTip(event, 'fs194', 522)" onmouseover="showTip(event, 'fs194', 522)" class="i">MiddleInitial</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs213', 523)" onmouseover="showTip(event, 'fs213', 523)" class="t">String1</span> <span onmouseout="hideTip(event, 'fs148', 524)" onmouseover="showTip(event, 'fs148', 524)" class="t">option</span>
+        <span onmouseout="hideTip(event, 'fs195', 525)" onmouseover="showTip(event, 'fs195', 525)" class="i">LastName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs214', 526)" onmouseover="showTip(event, 'fs214', 526)" class="t">String50</span> }
 
-    <span class="k">type</span> <span class="i">VerifiedEmail</span> <span class="o">=</span> <span class="i">VerifiedEmail</span> <span class="k">of</span> <span class="i">EmailAddress</span>
-    <span class="k">type</span> <span class="i">VerificationHash</span> <span class="o">=</span> <span class="i">VerificationHash</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">VerificationService</span> <span class="o">=</span> 
-        (<span class="i">EmailAddress</span> <span class="o">*</span> <span class="i">VerificationHash</span>) <span class="k">-&gt;</span>  <span class="i">VerifiedEmail</span> <span class="i">option</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs217', 527)" onmouseover="showTip(event, 'fs217', 527)" class="t">VerifiedEmail</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs217', 528)" onmouseover="showTip(event, 'fs217', 528)" class="p">VerifiedEmail</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs215', 529)" onmouseover="showTip(event, 'fs215', 529)" class="t">EmailAddress</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs218', 530)" onmouseover="showTip(event, 'fs218', 530)" class="t">VerificationHash</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs218', 531)" onmouseover="showTip(event, 'fs218', 531)" class="p">VerificationHash</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 532)" onmouseover="showTip(event, 'fs7', 532)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs219', 533)" onmouseover="showTip(event, 'fs219', 533)" class="i">VerificationService</span> <span class="o">=</span> 
+        (<span onmouseout="hideTip(event, 'fs215', 534)" onmouseover="showTip(event, 'fs215', 534)" class="t">EmailAddress</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs218', 535)" onmouseover="showTip(event, 'fs218', 535)" class="t">VerificationHash</span>) <span class="k">-&gt;</span>  <span onmouseout="hideTip(event, 'fs217', 536)" onmouseover="showTip(event, 'fs217', 536)" class="t">VerifiedEmail</span> <span onmouseout="hideTip(event, 'fs148', 537)" onmouseover="showTip(event, 'fs148', 537)" class="t">option</span>
 
-    <span class="k">type</span> <span class="i">EmailContactInfo</span> <span class="o">=</span> 
-        | <span class="i">Unverified</span> <span class="k">of</span> <span class="i">EmailAddress</span>
-        | <span class="i">Verified</span> <span class="k">of</span> <span class="i">VerifiedEmail</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs220', 538)" onmouseover="showTip(event, 'fs220', 538)" class="t">EmailContactInfo</span> <span class="o">=</span> 
+        | <span onmouseout="hideTip(event, 'fs210', 539)" onmouseover="showTip(event, 'fs210', 539)" class="p">Unverified</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs215', 540)" onmouseover="showTip(event, 'fs215', 540)" class="t">EmailAddress</span>
+        | <span onmouseout="hideTip(event, 'fs211', 541)" onmouseover="showTip(event, 'fs211', 541)" class="p">Verified</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs217', 542)" onmouseover="showTip(event, 'fs217', 542)" class="t">VerifiedEmail</span>
 
-    <span class="k">type</span> <span class="i">PostalContactInfo</span> <span class="o">=</span> {
-        <span class="i">Address1</span><span class="o">:</span> <span class="i">String50</span>
-        <span class="i">Address2</span><span class="o">:</span> <span class="i">String50</span> <span class="i">option</span>
-        <span class="i">Town</span><span class="o">:</span> <span class="i">String50</span>
-        <span class="i">PostCode</span><span class="o">:</span> <span class="i">String50</span> }
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs221', 543)" onmouseover="showTip(event, 'fs221', 543)" class="t">PostalContactInfo</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs222', 544)" onmouseover="showTip(event, 'fs222', 544)" class="i">Address1</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs214', 545)" onmouseover="showTip(event, 'fs214', 545)" class="t">String50</span>
+        <span onmouseout="hideTip(event, 'fs223', 546)" onmouseover="showTip(event, 'fs223', 546)" class="i">Address2</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs214', 547)" onmouseover="showTip(event, 'fs214', 547)" class="t">String50</span> <span onmouseout="hideTip(event, 'fs148', 548)" onmouseover="showTip(event, 'fs148', 548)" class="t">option</span>
+        <span onmouseout="hideTip(event, 'fs224', 549)" onmouseover="showTip(event, 'fs224', 549)" class="i">Town</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs214', 550)" onmouseover="showTip(event, 'fs214', 550)" class="t">String50</span>
+        <span onmouseout="hideTip(event, 'fs225', 551)" onmouseover="showTip(event, 'fs225', 551)" class="i">PostCode</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs214', 552)" onmouseover="showTip(event, 'fs214', 552)" class="t">String50</span> }
 
-    <span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
-        <span class="i">Name</span><span class="o">:</span> <span class="i">PersonalName</span> 
-        <span class="i">Email</span><span class="o">:</span> <span class="i">EmailContactInfo</span> 
-        <span class="i">Address</span><span class="o">:</span> <span class="i">PostalContactInfo</span> 
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs226', 553)" onmouseover="showTip(event, 'fs226', 553)" class="t">Contact</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs200', 554)" onmouseover="showTip(event, 'fs200', 554)" class="i">Name</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs216', 555)" onmouseover="showTip(event, 'fs216', 555)" class="t">PersonalName</span> 
+        <span onmouseout="hideTip(event, 'fs201', 556)" onmouseover="showTip(event, 'fs201', 556)" class="i">Email</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs220', 557)" onmouseover="showTip(event, 'fs220', 557)" class="t">EmailContactInfo</span> 
+        <span onmouseout="hideTip(event, 'fs227', 558)" onmouseover="showTip(event, 'fs227', 558)" class="i">Address</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs221', 559)" onmouseover="showTip(event, 'fs221', 559)" class="t">PostalContactInfo</span> 
         }
 
 
-<span class="k">module</span> <span class="i">EMailAndContactExample_After</span> <span class="o">=</span> 
+<span class="k">module</span> <span class="t">EMailAndContactExample_After</span> <span class="o">=</span> 
 
-    <span class="k">type</span> <span class="i">String1</span> <span class="o">=</span> <span class="i">String1</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">String50</span> <span class="o">=</span> <span class="i">String50</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs228', 560)" onmouseover="showTip(event, 'fs228', 560)" class="t">String1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs228', 561)" onmouseover="showTip(event, 'fs228', 561)" class="p">String1</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 562)" onmouseover="showTip(event, 'fs7', 562)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs229', 563)" onmouseover="showTip(event, 'fs229', 563)" class="t">String50</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs229', 564)" onmouseover="showTip(event, 'fs229', 564)" class="p">String50</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 565)" onmouseover="showTip(event, 'fs7', 565)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs230', 566)" onmouseover="showTip(event, 'fs230', 566)" class="t">EmailAddress</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs230', 567)" onmouseover="showTip(event, 'fs230', 567)" class="p">EmailAddress</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 568)" onmouseover="showTip(event, 'fs7', 568)" class="t">string</span>
 
-    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {
-        <span class="i">FirstName</span><span class="o">:</span> <span class="i">String50</span>
-        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">String1</span> <span class="i">option</span>
-        <span class="i">LastName</span><span class="o">:</span> <span class="i">String50</span> }
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs231', 569)" onmouseover="showTip(event, 'fs231', 569)" class="t">PersonalName</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs193', 570)" onmouseover="showTip(event, 'fs193', 570)" class="i">FirstName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs229', 571)" onmouseover="showTip(event, 'fs229', 571)" class="t">String50</span>
+        <span onmouseout="hideTip(event, 'fs194', 572)" onmouseover="showTip(event, 'fs194', 572)" class="i">MiddleInitial</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs228', 573)" onmouseover="showTip(event, 'fs228', 573)" class="t">String1</span> <span onmouseout="hideTip(event, 'fs148', 574)" onmouseover="showTip(event, 'fs148', 574)" class="t">option</span>
+        <span onmouseout="hideTip(event, 'fs195', 575)" onmouseover="showTip(event, 'fs195', 575)" class="i">LastName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs229', 576)" onmouseover="showTip(event, 'fs229', 576)" class="t">String50</span> }
 
-    <span class="k">type</span> <span class="i">VerifiedEmail</span> <span class="o">=</span> <span class="i">VerifiedEmail</span> <span class="k">of</span> <span class="i">EmailAddress</span>
-    <span class="k">type</span> <span class="i">VerificationHash</span> <span class="o">=</span> <span class="i">VerificationHash</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">VerificationService</span> <span class="o">=</span> 
-        (<span class="i">EmailAddress</span> <span class="o">*</span> <span class="i">VerificationHash</span>) <span class="k">-&gt;</span>  <span class="i">VerifiedEmail</span> <span class="i">option</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs232', 577)" onmouseover="showTip(event, 'fs232', 577)" class="t">VerifiedEmail</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs232', 578)" onmouseover="showTip(event, 'fs232', 578)" class="p">VerifiedEmail</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs230', 579)" onmouseover="showTip(event, 'fs230', 579)" class="t">EmailAddress</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs233', 580)" onmouseover="showTip(event, 'fs233', 580)" class="t">VerificationHash</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs233', 581)" onmouseover="showTip(event, 'fs233', 581)" class="p">VerificationHash</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 582)" onmouseover="showTip(event, 'fs7', 582)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs234', 583)" onmouseover="showTip(event, 'fs234', 583)" class="i">VerificationService</span> <span class="o">=</span> 
+        (<span onmouseout="hideTip(event, 'fs230', 584)" onmouseover="showTip(event, 'fs230', 584)" class="t">EmailAddress</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs233', 585)" onmouseover="showTip(event, 'fs233', 585)" class="t">VerificationHash</span>) <span class="k">-&gt;</span>  <span onmouseout="hideTip(event, 'fs232', 586)" onmouseover="showTip(event, 'fs232', 586)" class="t">VerifiedEmail</span> <span onmouseout="hideTip(event, 'fs148', 587)" onmouseover="showTip(event, 'fs148', 587)" class="t">option</span>
 
-    <span class="k">type</span> <span class="i">EmailContactInfo</span> <span class="o">=</span> 
-        | <span class="i">Unverified</span> <span class="k">of</span> <span class="i">EmailAddress</span>
-        | <span class="i">Verified</span> <span class="k">of</span> <span class="i">VerifiedEmail</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs235', 588)" onmouseover="showTip(event, 'fs235', 588)" class="t">EmailContactInfo</span> <span class="o">=</span> 
+        | <span onmouseout="hideTip(event, 'fs210', 589)" onmouseover="showTip(event, 'fs210', 589)" class="p">Unverified</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs230', 590)" onmouseover="showTip(event, 'fs230', 590)" class="t">EmailAddress</span>
+        | <span onmouseout="hideTip(event, 'fs211', 591)" onmouseover="showTip(event, 'fs211', 591)" class="p">Verified</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs232', 592)" onmouseover="showTip(event, 'fs232', 592)" class="t">VerifiedEmail</span>
 
-    <span class="k">type</span> <span class="i">PostalContactInfo</span> <span class="o">=</span> {
-        <span class="i">Address1</span><span class="o">:</span> <span class="i">String50</span>
-        <span class="i">Address2</span><span class="o">:</span> <span class="i">String50</span> <span class="i">option</span>
-        <span class="i">Town</span><span class="o">:</span> <span class="i">String50</span>
-        <span class="i">PostCode</span><span class="o">:</span> <span class="i">String50</span> }
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs236', 593)" onmouseover="showTip(event, 'fs236', 593)" class="t">PostalContactInfo</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs222', 594)" onmouseover="showTip(event, 'fs222', 594)" class="i">Address1</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs229', 595)" onmouseover="showTip(event, 'fs229', 595)" class="t">String50</span>
+        <span onmouseout="hideTip(event, 'fs223', 596)" onmouseover="showTip(event, 'fs223', 596)" class="i">Address2</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs229', 597)" onmouseover="showTip(event, 'fs229', 597)" class="t">String50</span> <span onmouseout="hideTip(event, 'fs148', 598)" onmouseover="showTip(event, 'fs148', 598)" class="t">option</span>
+        <span onmouseout="hideTip(event, 'fs224', 599)" onmouseover="showTip(event, 'fs224', 599)" class="i">Town</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs229', 600)" onmouseover="showTip(event, 'fs229', 600)" class="t">String50</span>
+        <span onmouseout="hideTip(event, 'fs225', 601)" onmouseover="showTip(event, 'fs225', 601)" class="i">PostCode</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs229', 602)" onmouseover="showTip(event, 'fs229', 602)" class="t">String50</span> }
 
-    <span class="k">type</span> <span class="i">ContactInfo</span> <span class="o">=</span> 
-        | <span class="i">EmailOnly</span> <span class="k">of</span> <span class="i">EmailContactInfo</span>
-        | <span class="i">AddrOnly</span> <span class="k">of</span> <span class="i">PostalContactInfo</span>
-        | <span class="i">EmailAndAddr</span> <span class="k">of</span> <span class="i">EmailContactInfo</span> <span class="o">*</span> <span class="i">PostalContactInfo</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs237', 603)" onmouseover="showTip(event, 'fs237', 603)" class="t">ContactInfo</span> <span class="o">=</span> 
+        | <span onmouseout="hideTip(event, 'fs238', 604)" onmouseover="showTip(event, 'fs238', 604)" class="p">EmailOnly</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs235', 605)" onmouseover="showTip(event, 'fs235', 605)" class="t">EmailContactInfo</span>
+        | <span onmouseout="hideTip(event, 'fs239', 606)" onmouseover="showTip(event, 'fs239', 606)" class="p">AddrOnly</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs236', 607)" onmouseover="showTip(event, 'fs236', 607)" class="t">PostalContactInfo</span>
+        | <span onmouseout="hideTip(event, 'fs240', 608)" onmouseover="showTip(event, 'fs240', 608)" class="p">EmailAndAddr</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs235', 609)" onmouseover="showTip(event, 'fs235', 609)" class="t">EmailContactInfo</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs236', 610)" onmouseover="showTip(event, 'fs236', 610)" class="t">PostalContactInfo</span>
 
-    <span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
-        <span class="i">Name</span><span class="o">:</span> <span class="i">PersonalName</span> 
-        <span class="i">ContactInfo</span><span class="o">:</span> <span class="i">ContactInfo</span> 
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs241', 611)" onmouseover="showTip(event, 'fs241', 611)" class="t">Contact</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs200', 612)" onmouseover="showTip(event, 'fs200', 612)" class="i">Name</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs231', 613)" onmouseover="showTip(event, 'fs231', 613)" class="t">PersonalName</span> 
+        <span onmouseout="hideTip(event, 'fs242', 614)" onmouseover="showTip(event, 'fs242', 614)" class="i">ContactInfo</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs242', 615)" onmouseover="showTip(event, 'fs242', 615)" class="t">ContactInfo</span> 
         }
 
 
@@ -1313,40 +1569,40 @@
 <span class="c">// ======================================================</span>
 
 
-<span class="k">module</span> <span class="i">EMailAndContactExample_Alternative</span> <span class="o">=</span> 
+<span class="k">module</span> <span onmouseout="hideTip(event, 'fs243', 616)" onmouseover="showTip(event, 'fs243', 616)" class="t">EMailAndContactExample_Alternative</span> <span class="o">=</span> 
 
-    <span class="k">type</span> <span class="i">String1</span> <span class="o">=</span> <span class="i">String1</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">String50</span> <span class="o">=</span> <span class="i">String50</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">EmailAddress</span> <span class="o">=</span> <span class="i">EmailAddress</span> <span class="k">of</span> <span class="i">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs244', 617)" onmouseover="showTip(event, 'fs244', 617)" class="t">String1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs244', 618)" onmouseover="showTip(event, 'fs244', 618)" class="p">String1</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 619)" onmouseover="showTip(event, 'fs7', 619)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs245', 620)" onmouseover="showTip(event, 'fs245', 620)" class="t">String50</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs245', 621)" onmouseover="showTip(event, 'fs245', 621)" class="p">String50</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 622)" onmouseover="showTip(event, 'fs7', 622)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs246', 623)" onmouseover="showTip(event, 'fs246', 623)" class="t">EmailAddress</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs246', 624)" onmouseover="showTip(event, 'fs246', 624)" class="p">EmailAddress</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 625)" onmouseover="showTip(event, 'fs7', 625)" class="t">string</span>
 
-    <span class="k">type</span> <span class="i">PersonalName</span> <span class="o">=</span> {
-        <span class="i">FirstName</span><span class="o">:</span> <span class="i">String50</span>
-        <span class="i">MiddleInitial</span><span class="o">:</span> <span class="i">String1</span> <span class="i">option</span>
-        <span class="i">LastName</span><span class="o">:</span> <span class="i">String50</span> }
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs247', 626)" onmouseover="showTip(event, 'fs247', 626)" class="t">PersonalName</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs193', 627)" onmouseover="showTip(event, 'fs193', 627)" class="i">FirstName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs245', 628)" onmouseover="showTip(event, 'fs245', 628)" class="t">String50</span>
+        <span onmouseout="hideTip(event, 'fs194', 629)" onmouseover="showTip(event, 'fs194', 629)" class="i">MiddleInitial</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs244', 630)" onmouseover="showTip(event, 'fs244', 630)" class="t">String1</span> <span onmouseout="hideTip(event, 'fs148', 631)" onmouseover="showTip(event, 'fs148', 631)" class="t">option</span>
+        <span onmouseout="hideTip(event, 'fs195', 632)" onmouseover="showTip(event, 'fs195', 632)" class="i">LastName</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs245', 633)" onmouseover="showTip(event, 'fs245', 633)" class="t">String50</span> }
 
-    <span class="k">type</span> <span class="i">VerifiedEmail</span> <span class="o">=</span> <span class="i">VerifiedEmail</span> <span class="k">of</span> <span class="i">EmailAddress</span>
-    <span class="k">type</span> <span class="i">VerificationHash</span> <span class="o">=</span> <span class="i">VerificationHash</span> <span class="k">of</span> <span class="i">string</span>
-    <span class="k">type</span> <span class="i">VerificationService</span> <span class="o">=</span> 
-        (<span class="i">EmailAddress</span> <span class="o">*</span> <span class="i">VerificationHash</span>) <span class="k">-&gt;</span>  <span class="i">VerifiedEmail</span> <span class="i">option</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs248', 634)" onmouseover="showTip(event, 'fs248', 634)" class="t">VerifiedEmail</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs248', 635)" onmouseover="showTip(event, 'fs248', 635)" class="p">VerifiedEmail</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs246', 636)" onmouseover="showTip(event, 'fs246', 636)" class="t">EmailAddress</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs249', 637)" onmouseover="showTip(event, 'fs249', 637)" class="t">VerificationHash</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs249', 638)" onmouseover="showTip(event, 'fs249', 638)" class="p">VerificationHash</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs7', 639)" onmouseover="showTip(event, 'fs7', 639)" class="t">string</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs250', 640)" onmouseover="showTip(event, 'fs250', 640)" class="i">VerificationService</span> <span class="o">=</span> 
+        (<span onmouseout="hideTip(event, 'fs246', 641)" onmouseover="showTip(event, 'fs246', 641)" class="t">EmailAddress</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs249', 642)" onmouseover="showTip(event, 'fs249', 642)" class="t">VerificationHash</span>) <span class="k">-&gt;</span>  <span onmouseout="hideTip(event, 'fs248', 643)" onmouseover="showTip(event, 'fs248', 643)" class="t">VerifiedEmail</span> <span onmouseout="hideTip(event, 'fs148', 644)" onmouseover="showTip(event, 'fs148', 644)" class="t">option</span>
 
-    <span class="k">type</span> <span class="i">EmailContactInfo</span> <span class="o">=</span> 
-        | <span class="i">Unverified</span> <span class="k">of</span> <span class="i">EmailAddress</span>
-        | <span class="i">Verified</span> <span class="k">of</span> <span class="i">VerifiedEmail</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs251', 645)" onmouseover="showTip(event, 'fs251', 645)" class="t">EmailContactInfo</span> <span class="o">=</span> 
+        | <span onmouseout="hideTip(event, 'fs210', 646)" onmouseover="showTip(event, 'fs210', 646)" class="p">Unverified</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs246', 647)" onmouseover="showTip(event, 'fs246', 647)" class="t">EmailAddress</span>
+        | <span onmouseout="hideTip(event, 'fs211', 648)" onmouseover="showTip(event, 'fs211', 648)" class="p">Verified</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs248', 649)" onmouseover="showTip(event, 'fs248', 649)" class="t">VerifiedEmail</span>
 
-    <span class="k">type</span> <span class="i">PostalContactInfo</span> <span class="o">=</span> {
-        <span class="i">Address1</span><span class="o">:</span> <span class="i">String50</span>
-        <span class="i">Address2</span><span class="o">:</span> <span class="i">String50</span> <span class="i">option</span>
-        <span class="i">Town</span><span class="o">:</span> <span class="i">String50</span>
-        <span class="i">PostCode</span><span class="o">:</span> <span class="i">String50</span> }
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs252', 650)" onmouseover="showTip(event, 'fs252', 650)" class="t">PostalContactInfo</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs222', 651)" onmouseover="showTip(event, 'fs222', 651)" class="i">Address1</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs245', 652)" onmouseover="showTip(event, 'fs245', 652)" class="t">String50</span>
+        <span onmouseout="hideTip(event, 'fs223', 653)" onmouseover="showTip(event, 'fs223', 653)" class="i">Address2</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs245', 654)" onmouseover="showTip(event, 'fs245', 654)" class="t">String50</span> <span onmouseout="hideTip(event, 'fs148', 655)" onmouseover="showTip(event, 'fs148', 655)" class="t">option</span>
+        <span onmouseout="hideTip(event, 'fs224', 656)" onmouseover="showTip(event, 'fs224', 656)" class="i">Town</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs245', 657)" onmouseover="showTip(event, 'fs245', 657)" class="t">String50</span>
+        <span onmouseout="hideTip(event, 'fs225', 658)" onmouseover="showTip(event, 'fs225', 658)" class="i">PostCode</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs245', 659)" onmouseover="showTip(event, 'fs245', 659)" class="t">String50</span> }
 
-    <span class="k">type</span> <span class="i">ContactInfo</span> <span class="o">=</span> 
-        | <span class="i">EmailOnly</span> <span class="k">of</span> <span class="i">EmailContactInfo</span>
-        | <span class="i">AddrOnly</span> <span class="k">of</span> <span class="i">PostalContactInfo</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs253', 660)" onmouseover="showTip(event, 'fs253', 660)" class="t">ContactInfo</span> <span class="o">=</span> 
+        | <span onmouseout="hideTip(event, 'fs238', 661)" onmouseover="showTip(event, 'fs238', 661)" class="p">EmailOnly</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs251', 662)" onmouseover="showTip(event, 'fs251', 662)" class="t">EmailContactInfo</span>
+        | <span onmouseout="hideTip(event, 'fs239', 663)" onmouseover="showTip(event, 'fs239', 663)" class="p">AddrOnly</span> <span class="k">of</span> <span onmouseout="hideTip(event, 'fs252', 664)" onmouseover="showTip(event, 'fs252', 664)" class="t">PostalContactInfo</span>
 
-    <span class="k">type</span> <span class="i">Contact</span> <span class="o">=</span> {
-        <span class="i">Name</span><span class="o">:</span> <span class="i">PersonalName</span> 
-        <span class="i">PrimaryContactInfo</span><span class="o">:</span> <span class="i">ContactInfo</span>
-        <span class="i">SecondaryContactInfo</span><span class="o">:</span> <span class="i">ContactInfo</span> <span class="i">option</span>
+    <span class="k">type</span> <span onmouseout="hideTip(event, 'fs254', 665)" onmouseover="showTip(event, 'fs254', 665)" class="t">Contact</span> <span class="o">=</span> {
+        <span onmouseout="hideTip(event, 'fs200', 666)" onmouseover="showTip(event, 'fs200', 666)" class="i">Name</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs247', 667)" onmouseover="showTip(event, 'fs247', 667)" class="t">PersonalName</span> 
+        <span onmouseout="hideTip(event, 'fs255', 668)" onmouseover="showTip(event, 'fs255', 668)" class="i">PrimaryContactInfo</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs253', 669)" onmouseover="showTip(event, 'fs253', 669)" class="t">ContactInfo</span>
+        <span onmouseout="hideTip(event, 'fs256', 670)" onmouseover="showTip(event, 'fs256', 670)" class="i">SecondaryContactInfo</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs253', 671)" onmouseover="showTip(event, 'fs253', 671)" class="t">ContactInfo</span> <span onmouseout="hideTip(event, 'fs148', 672)" onmouseover="showTip(event, 'fs148', 672)" class="t">option</span>
         }
 </code></pre></td>
 </tr>
