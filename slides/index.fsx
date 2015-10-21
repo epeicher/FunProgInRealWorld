@@ -14,15 +14,17 @@
 ---
 
 ### ¿Qué es Programación Funcional?
-* Paradigma de Programación Declarativo: Qué hacer, no cómo hacerlo. Realizado con expressiones en contraste a estamentos.
-* Se utilizan funciones para transformar los datos. Dada una entrada, siempre se produce la misma salida. 
-* No se producen efectos laterales. Existe lo que se denomina *referencia transparencial*.
-* Estructuras de datos inmutables. No se cambia el estado. No hay variables que cambien su valor.
+* Expressiones en contraste a estamentos.
+* Se utilizan funciones sin efectos laterales: *Referencia transparencial*.
+* Estructuras de datos inmutables. 
+* Funciones de alto nivel: Aceptan o devuelven funciones.
+
+> Las funciones son *ciudadanos de primera clase*
 
 ---
 
 ### ¿Por qué me debería interesar la Programación Funcional?
-* La ausencia de efectos laterales provoca:
+* La ausencia de efectos laterales implica:
     - Fácilmente paralelizables ya que el orden de ejecución de funciones no importa.    
     - Refactorizar es más simple.
     - Funciones de alto nivel son mucho más fácilmente reutilizables.
@@ -31,28 +33,75 @@ En este aspecto los lenguajes funcionales destacan sobre los imperativos.
 
 ***
 
-## Introducción a F#
-- Un poquitín de historia
-- Por qué F#
-- Características principales
+# Introducción a F#
 
 ---
 
-### Breve contexto histórico
+## Breve contexto histórico
 - En 1970 se desarrolla el lenguaje ML *(Meta Language)* en la Universidad de Edinburgh con fines académicos.
 - Surgen los dialectos CAML *(Categorical Abstract Machine Language)* en Francia.
-- En 2005, Don Syme a través del *Microsoft Research Cambridge* implementa F# basándose en la familia de lenguages CAML.
+- En 2005 Don Syme a través de *Microsoft Research Cambridge* publica F# un lenguaje para .NET basado en la familia de lenguages CAML.
 
 ---
+
+## ¿Por qué F#?
+- Interoperable con la plataforma .NET
+- Multiplataforma
+- Código Abierto
+- Conciso
+- Robusto
+- Concurrente
+- Tiene un *REPL*!
+
+---
+
+## Características Principales
+- Fuertemente tipado con inferencia de tipos
+- Multiparadigma
+- **Proveedores de tipos**: *Information Rich Programming*
+- Programación Asíncrona
+- Programación Paralela
+- Expresiones Computacionales
+ 
+***
 
 # Enséñame el código
 
 ---
 
-### Enséñame el código
-- Sintaxis 
-- Inferencia de tipos
-- Definición de tipos
+### Sintaxis e Inferencia de tipos
+*)
+let f x = x + 2
+let f x = x + 2.0
+let f x = x + "Hey you"
+let f x y =                     // Parámetros separados por espacios
+    let z = x**2.0 + y**2.0     // No hay llaves, se utiliza la indentación
+    sqrt z                      // Valor de retorno
+
+(**
+---
+
+# Y el Hola Mundo!?
+
+---
+
+## Ups, lo había olvidado
+*)
+printf "Hola Mundo"
+(**
+---
+
+### Definición de tipos
+*)
+type tuple = int*string
+type record = { Nombre:string; Edad:int }
+type discriminatedUnion = 
+    | On
+    | Off
+    | Disabled of string
+(**
+---
+
 - *Pattern matching*
 - *Currying* y Aplicaciones Parciales
 - Composición y *Pipelining*
