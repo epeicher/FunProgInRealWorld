@@ -129,15 +129,61 @@ let enciendeElInterruptor unInterruptor =
 
 (**
 ---
-- *Currying* y Aplicaciones Parciales
-- Composición y *Pipelining*
+
+## *Currying* y Aplicaciones Parciales
+- Se puede llamar a una función con menos argumentos de los que espera
+- Se devuelve una función que acepta los argumentos restantes
+*)
+
+let convierteEuros tasaCambio dinero = dinero * tasaCambio
+let convierteEurosADolares = convierteEuros 1.12
+let convierteEurosAPesetas = convierteEuros 166.386
+
+(**
+---
+
+## Composición
+Crear nuevas funciones a partir de otras existentes.
+
+> **Operador composición:**  
+ \>>
+
+*)
+let grita (s:string) = s.ToUpper()
+let exclama s = s + "!"
+
+let anima = exclama >> grita
+
+let textoPancarta = anima "vamos rafa"
+
+(*** include-value: textoPancarta ***)
+(**
+---
+
+## *Pipelining*
+Enlaza la salida de una función con la entrada de otra.
+
+> ** Operador *Pipe*:**  
+|>
+*)
+let duplica x = 2 * x
+let triplica y = 3 * y
+
+let aplicaOperaciones x = x |> duplica |> triplica |> float |> sqrt
+
+let resultado = aplicaOperaciones 24;;
+
+(*** include-value: resultado ***)
+(**
+---
+
 - Proveedores de tipos
 - Programación Asíncrona
 - Expresiones Computacionales
 
 ***
 
-# Demonstraciones
+# Demos
 
 ***
 
