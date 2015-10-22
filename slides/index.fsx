@@ -71,7 +71,9 @@ En este aspecto los lenguajes funcionales destacan sobre los imperativos.
 
 ### Sintaxis e Inferencia de tipos
 *)
-let f x = x + 2
+let a = 2                       // No hay ";"
+let b = "hola"                  // No hay declaración de tipos
+let f x = x + 2                 // Una función
 let f x = x + 2.0
 let f x = x + "Hey you"
 let f x y =                     // Parámetros separados por espacios
