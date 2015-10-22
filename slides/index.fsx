@@ -92,17 +92,41 @@ printf "Hola Mundo"
 ---
 
 ### Definición de tipos
+Aparte de los tipos básicos
 *)
-type tuple = int*string
+type tuple = string*int
 type record = { Nombre:string; Edad:int }
 type discriminatedUnion = 
     | On
     | Off
-    | Disabled of string
+    | Roto of string
+
+type PersonClass(Nombre:string, Edad:int) =
+
+    let mutable peso = 80.0
+
+    member this.Nombre = Nombre
+    member this.Edad = Edad
+    member this.Peso = peso
+
+    member this.GetAñodeNacimiento() = System.DateTime.Now.Year - Edad
+    member this.PierdePeso(value) = 
+        peso <- peso - value
+        peso
+
 (**
 ---
 
-- *Pattern matching*
+## *Pattern matching*
+*)
+let enciendeElInterruptor unInterruptor = 
+    match unInterruptor with
+    | On -> "Ya estaba Encendido"
+    | Off -> "Encendido"
+    | Roto s -> "El Interruptor está " + s
+
+(**
+---
 - *Currying* y Aplicaciones Parciales
 - Composición y *Pipelining*
 - Proveedores de tipos
