@@ -9,6 +9,16 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WsdlTest", "WsdlTest\WsdlTe
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HelloWorld", "HelloWorld\HelloWorld.fsproj", "{0556CC4D-F7D7-42F8-B7AF-29A52092DC65}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "db", "db", "{F7574765-D9CB-44E7-96A0-BF237FD66A6D}"
+	ProjectSection(SolutionItems) = preProject
+		Demos\db\DemoDatabase.mdf = Demos\db\DemoDatabase.mdf
+		Demos\db\DemoDatabase_log.ldf = Demos\db\DemoDatabase_log.ldf
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBDemo", "DBDemo\DBDemo.csproj", "{92094B56-C893-4E19-96E9-F6588AB2275A}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tutorial1", "Tutorial1\Tutorial1.fsproj", "{41CAFE62-738C-4336-9308-99FE0C8A5960}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +37,14 @@ Global
 		{0556CC4D-F7D7-42F8-B7AF-29A52092DC65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0556CC4D-F7D7-42F8-B7AF-29A52092DC65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0556CC4D-F7D7-42F8-B7AF-29A52092DC65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92094B56-C893-4E19-96E9-F6588AB2275A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92094B56-C893-4E19-96E9-F6588AB2275A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92094B56-C893-4E19-96E9-F6588AB2275A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92094B56-C893-4E19-96E9-F6588AB2275A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41CAFE62-738C-4336-9308-99FE0C8A5960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41CAFE62-738C-4336-9308-99FE0C8A5960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41CAFE62-738C-4336-9308-99FE0C8A5960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41CAFE62-738C-4336-9308-99FE0C8A5960}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
