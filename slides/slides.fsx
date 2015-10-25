@@ -33,7 +33,7 @@
 
 ***
 
-# Demonstraciones
+# Demos
 
 ***
 
@@ -67,7 +67,7 @@ Chart.Line pib
 
 ***
 
-### Qué es eso de *Machine Learning*
+### ¿Una aplicación Web en F#?
 
 ***
 

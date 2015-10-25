@@ -59,6 +59,7 @@
     <None Include="Twitter.fsx" />
     <None Include="BancoMundialSolved.fsx" />
     <None Include="DatabaseDemo.fsx" />
+    <None Include="Async.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FsCheck">

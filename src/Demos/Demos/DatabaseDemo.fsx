@@ -1,7 +1,6 @@
 ﻿#r "System.Data"
 #r "System.Data.Linq"
 #r "FSharp.Data.TypeProviders"
-#r @"..\packages\FsCheck.2.1.0\lib\net45\FsCheck.dll"
 
 open System
 open System.Data
@@ -27,6 +26,7 @@ for v in Seq.take 100 table do
 
 
 // Insert some Random data
+#r @"..\packages\FsCheck.2.1.0\lib\net45\FsCheck.dll"
 
 let personas = List.map System.Nullable [1..8] 
 let tipoProyectos = List.map System.Nullable [1..6] |> List.append [Nullable<int>()]

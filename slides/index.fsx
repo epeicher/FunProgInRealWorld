@@ -7,6 +7,18 @@
 
 ***
 
+## Programación Funcional en el Mundo Real
+### Introducción a F#
+
+<img style="border: none" src="images/logo.png" alt="Logo" />
+
+Roberto Aranda López
+
+[@glomenar](http://www.twitter.com/glomenar)  
+ese.rober@gmail.com
+
+***
+
 ## Programación Funcional
 - Qué es
 - Por qué me debería interesar
@@ -14,22 +26,30 @@
 ---
 
 ### ¿Qué es Programación Funcional?
-* Expressiones en contraste a estamentos.
-* Se utilizan funciones sin efectos laterales: *Referencia transparencial*.
-* Estructuras de datos inmutables. 
-* Funciones de alto nivel: Aceptan o devuelven funciones.
+<section data-markdown>
+    <script type="text/template">
+* Un paradigma de Programación: Una manera de construir programas. <!-- .element: class="fragment" data-fragment-index="1" -->
+* Evita cambios de estado. Estructuras de datos inmutables. No hay asignaciones.       <!-- .element: class="fragment" data-fragment-index="2" -->
+* Se utilizan funciones sin efectos laterales: Referencia transparencial. <!-- .element: class="fragment" data-fragment-index="3" -->
+* Funciones de alto nivel: Aceptan o devuelven funciones.           <!-- .element: class="fragment" data-fragment-index="4" -->
 
-> Las funciones son *ciudadanos de primera clase*
+> Las funciones son ciudadanos de primera clase                   <!-- .element: class="fragment" data-fragment-index="5" -->
+    </script>
+</section>
 
----
+***
 
 ### ¿Por qué me debería interesar la Programación Funcional?
-* La ausencia de efectos laterales implica:
-    - Fácilmente paralelizables ya que el orden de ejecución de funciones no importa.    
-    - Refactorizar es más simple.
-    - Funciones de alto nivel son mucho más fácilmente reutilizables.
-* El incremento en número de *cores* implica la necesidad de concurrencia. 
-En este aspecto los lenguajes funcionales destacan sobre los imperativos.
+<section data-markdown>
+    <script type="text/template">
+* La ausencia de efectos laterales implica que es mas simple:   <!-- .element: class="fragment" data-fragment-index="1" -->
+    - Paralelización                                            <!-- .element: class="fragment" data-fragment-index="2" --> 
+    - Refactorización                                           <!-- .element: class="fragment" data-fragment-index="3" --> 
+    - Reutilización                                             <!-- .element: class="fragment" data-fragment-index="4" -->
+* El incremento en número de cores implica la necesidad de concurrencia. <!-- .element: class="fragment" data-fragment-index="5" -->
+* Lenguajes tradicionalmente imperativos usan características funcionales, por ejemplo LINQ, Expresiones Lambda        <!-- .element: class="fragment" data-fragment-index="6" -->
+    </script>
+</section>
 
 ***
 
@@ -96,14 +116,14 @@ printf "Hola Mundo"
 ### Definición de tipos
 Aparte de los tipos básicos
 *)
-type tuple = string*int
-type record = { Nombre:string; Edad:int }
+type tupla = string*int
+type myRegistro = { Nombre:string; Edad:int }
 type discriminatedUnion = 
     | On
     | Off
-    | Roto of string
+    | Inservible of string
 
-type PersonClass(Nombre:string, Edad:int) =
+type ClasePersona(Nombre:string, Edad:int) =
 
     let mutable peso = 80.0
 
@@ -119,20 +139,37 @@ type PersonClass(Nombre:string, Edad:int) =
 (**
 ---
 
-## *Pattern matching*
+## Uso 
 *)
-let enciendeElInterruptor unInterruptor = 
-    match unInterruptor with
-    | On -> "Ya estaba Encendido"
-    | Off -> "Encendido"
-    | Roto s -> "El Interruptor está " + s
+let valorTupla = "John",14
+let valorRegistro = {Nombre="John"; Edad=14}
+let valorUnionType = On
+let otroValorUnionType = Inservible "quemado"
+let instanciaPersona = ClasePersona("John", 14)
 
 (**
 ---
 
-## *Currying* y Aplicaciones Parciales
-- Se puede llamar a una función con menos argumentos de los que espera
-- Se devuelve una función que acepta los argumentos restantes
+## *Pattern matching*
+*)
+let enciendeEsteInterruptor unInterruptor = 
+    match unInterruptor with
+    | On -> "Ya estaba Encendido"
+    | Off -> "Encendido"
+    | Inservible s -> "El Interruptor está " + s
+
+(**
+---
+
+## Currying y Aplicaciones Parciales
+<section data-markdown>
+    <script type="text/template">
+- Currying: Transforma una función con múltiples argumentos en una función con un argumento   <!-- .element: class="fragment" data-fragment-index="1" -->
+- En F# todas las funciones estan currificadas por defecto                                    <!-- .element: class="fragment" data-fragment-index="2" -->
+- Se puede llamar a una función con menos argumentos de los que espera                          <!-- .element: class="fragment" data-fragment-index="3" -->
+- Se devuelve una función que acepta los argumentos restantes                                   <!-- .element: class="fragment" data-fragment-index="4" -->
+</script>
+</section>
 *)
 
 let convierteEuros tasaCambio dinero = dinero * tasaCambio
@@ -177,9 +214,58 @@ let resultado = aplicaOperaciones 24;;
 (**
 ---
 
-- Proveedores de tipos
-- Programación Asíncrona
-- Expresiones Computacionales
+## Proveedores de tipos
+### Problemas que resuelve
+- Los datos crudos no son tipos
+- Necesitamos conocer los nombres de las propiedades
+- Enorme cantidad de fuentes de datos
+
+---
+
+### Cómo
+- Mapean diferentes fuentes de datos a tipos de F#
+- Se producen a demanda
+- Representan las propiedades de los datos
+- Se adaptan a los cambios de esquema
+- Ejemplos en las Demos
+
+---
+
+## Programación Asíncrona
+
+*)
+open System.Net
+open System
+open System.IO
+
+let extractLinksAsync html =
+    async {
+        return System.Text.RegularExpressions.Regex.Matches(html, @"http://\S+""")
+    }
+    
+let downloadAndExtractLinks url =
+    async {
+        let webClient = new System.Net.WebClient()
+        let! html = webClient.AsyncDownloadString(Uri(url))
+        let! links = extractLinksAsync html
+        return url,links.Count
+    }
+
+let links = downloadAndExtractLinks "http://www.google.com/"
+
+let ls = Async.RunSynchronously links
+(**
+---
+
+## Programación Paralela
+*)
+let downloadGoogleLinks = downloadAndExtractLinks "http://www.google.com/"
+let downloadWikipediaLinks = downloadAndExtractLinks "http://www.wikipedia.com/"
+
+[downloadGoogleLinks; downloadWikipediaLinks] 
+    |> Async.Parallel
+    |> Async.RunSynchronously 
+(**
 
 ***
 
@@ -189,7 +275,6 @@ let resultado = aplicaOperaciones 24;;
 
 ### Conectándonos al Banco Mundial en 5 minutos
 
----
 *)
 #r "../packages/FSharp.Data.2.2.5/lib/net40/FSharp.Data.dll"
 #load "../packages/FSharp.Charting.0.90.12/FSharp.Charting.fsx"
@@ -206,8 +291,6 @@ Chart.Line pib
 ***
 
 ### Diseño Orientado al Dominio
-
----
 
 *)
 module JuegoCartasBoundedContext = 
@@ -251,7 +334,7 @@ type Contact = {
         ### ¿Qué falta en este diseño? <!-- .element: class="fragment" data-fragment-index="1" -->
         - ¿Qué valores son opcionales, son todos obligatorios? <!-- .element: class="fragment" data-fragment-index="2" -->
         - ¿Cuáles son las restricciones? <!-- .element: class="fragment" data-fragment-index="3" -->
-        - ¿Hay algunos valores que estén releacionados? <!-- .element: class="fragment" data-fragment-index="4" -->
+        - ¿Hay algunos valores que estén relacionados? <!-- .element: class="fragment" data-fragment-index="4" -->
         - ¿Hay alguna lógica de dominio que tenga que conocer? <!-- .element: class="fragment" data-fragment-index="5" -->
     </script>
 </section>
@@ -259,7 +342,7 @@ type Contact = {
 ---
 
 *)
-module VerifiedEmailExample = 
+module ContactExample = 
     type String1 = String1 of string
     type String50 = String50 of string
     type EmailAddress = EmailAddress of string
@@ -270,9 +353,6 @@ module VerifiedEmailExample =
         LastName: String50 }
 
     type VerifiedEmail = VerifiedEmail of EmailAddress
-    type VerificationHash = VerificationHash of string
-    type VerificationService = 
-        (EmailAddress * VerificationHash) ->  VerifiedEmail option
 
     type EmailContactInfo = 
         | Unverified of EmailAddress
@@ -282,8 +362,6 @@ module VerifiedEmailExample =
         Name: PersonalName 
         Email: EmailContactInfo }
 (**
----
-
 ***
 
 ### Nuestras viejas amigas las Bases de Datos
