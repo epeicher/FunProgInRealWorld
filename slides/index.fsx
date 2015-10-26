@@ -76,7 +76,7 @@ ese.rober@gmail.com
 ---
 
 ## Características Principales
-- Fuertemente tipado con inferencia de tipos
+- Estáticamente tipado con inferencia de tipos
 - Multiparadigma
 - **Proveedores de tipos**: *Information Rich Programming*
 - Programación Asíncrona
@@ -372,7 +372,7 @@ module ContactExample =
 
 ***
 
-### Qué es eso de *Machine Learning*
+### ¿Una aplicación Web en F#?
 
 ***
 
