@@ -15,7 +15,7 @@ let secret = "S0VktxiFZ2JN2BUPQAFRbkstTsGTYHaehIJyhg0Vg"
 
 let connector = Twitter.Authenticate(key, secret) 
 
-let twitter = connector.Connect("7554814")
+let twitter = connector.Connect("8950124")
 
 open System.Windows.Forms
 open FSharp.Control

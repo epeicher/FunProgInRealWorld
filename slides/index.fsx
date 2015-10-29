@@ -92,10 +92,15 @@ ese.rober@gmail.com
 ### Sintaxis e Inferencia de tipos
 *)
 let a = 2                       // No hay ";"
+
 let b = "hola"                  // No hay declaración de tipos
+
 let f x = x + 2                 // Una función
+
 let f x = x + 2.0
+
 let f x = x + "Hey you"
+
 let f x y =                     // Parámetros separados por espacios
     let z = x**2.0 + y**2.0     // No hay llaves, se utiliza la indentación
     sqrt z                      // Valor de retorno
@@ -142,9 +147,13 @@ type ClasePersona(Nombre:string, Edad:int) =
 ## Uso 
 *)
 let valorTupla = "John",14
+
 let valorRegistro = {Nombre="John"; Edad=14}
+
 let valorUnionType = On
+
 let otroValorUnionType = Inservible "quemado"
+
 let instanciaPersona = ClasePersona("John", 14)
 
 (**
@@ -173,6 +182,7 @@ let enciendeEsteInterruptor unInterruptor =
 *)
 
 let convierteEuros tasaCambio dinero = dinero * tasaCambio
+
 let convierteEurosADolares = convierteEuros 1.12
 let convierteEurosAPesetas = convierteEuros 166.386
 
@@ -240,7 +250,7 @@ open System.IO
 
 let extractLinksAsync html =
     async {
-        return System.Text.RegularExpressions.Regex.Matches(html, @"http://\S+""")
+        return System.Text.RegularExpressions.Regex.Matches(html, @"http://\S+")
     }
     
 let downloadAndExtractLinks url =

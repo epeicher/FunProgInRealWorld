@@ -4,7 +4,7 @@ open System.IO
 
 let extractLinksAsync html =
     async {
-        return System.Text.RegularExpressions.Regex.Matches(html, @"http://\S+""")
+        return System.Text.RegularExpressions.Regex.Matches(html, @"http://\S+")
     }
     
 let downloadAndExtractLinks url =
